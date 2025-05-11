@@ -40,7 +40,7 @@
       const secret = 'RAHASIA123'; // Harus sama di player.html
       const ciphertext = CryptoJS.AES.encrypt(JSON.stringify(data), secret).toString();
       const token = encodeURIComponent(ciphertext);
-      const finalLink = `player.html?data=${token}`;
+      const finalLink = `https://labolatv.pages.dev/player.html?data=${token}`;
 
       // Tampilkan link + tombol copy
       document.getElementById("playerLink").value = finalLink;
