@@ -30,7 +30,7 @@
     async function encrypt(data) {
       const key = await crypto.subtle.importKey(
         "raw",
-        new TextEncoder().encode("Maulana45219#"), // HARUS 16 byte
+        new TextEncoder().encode("Maulana45219"), // HARUS 16 byte
         { name: "AES-GCM" },
         false,
         ["encrypt"]
@@ -53,7 +53,7 @@
       const key = document.getElementById("key").value;
       const combined = JSON.stringify({ mpd, keyId, key });
       const encrypted = await encrypt(combined);
-      const url = `${window.location.protocol}//${window.location.host}/player.html?data=${encodeURIComponent(encrypted)}`;
+      const url = `player.html?data=${encodeURIComponent(encrypted)}`;
       
       document.getElementById("generatedLink").value = url;
       document.getElementById("result").classList.remove("hidden");
