@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video Player</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.5.0/shaka-player.compiled.min.js"></script>
+</head>
+<body class="bg-black text-white min-h-screen flex items-center justify-center">
+  <video id="video" width="100%" controls autoplay class="max-w-4xl w-full rounded-lg shadow-lg"></video>
+
+  <script>
+    async function decrypt(data) {
+      const raw = atob(data);
+      const bytes = new Uint8Array([...raw].map(c => c.charCodeAt(0)));
+      const iv = bytes.slice(0, 12);
+      const encrypted = bytes.slice(12);
+
+      const key = await crypto.subtle.importKey(
+        "raw",
+        new TextEncoder().encode("Maulana45219#"), // HARUS SAMA seperti form
+        { name: "AES-GCM" },
+        false,
+        ["decrypt"]
+      );
+
+      const decrypted = await crypto.subtle.decrypt(
+        { name: "AES-GCM", iv },
+        key,
+        encrypted
+      );
+      return new TextDecoder().decode(decrypted);
+    }
+
+    async function initPlayer() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const data = urlParams.get("data");
+      if (!data) return alert("Data tidak ditemukan!");
+
+      try {
+        const decrypted = await decrypt(data);
+        const { mpd, keyId, key } = JSON.parse(decrypted);
+
+        const video = document.getElementById("video");
+        const player = new shaka.Player(video);
+
+        shaka.polyfill.installAll();
+        if (!shaka.Player.isBrowserSupported()) {
+          alert("Browser tidak mendukung Shaka Player");
+          return;
+        }
+
+        player.configure({
+          drm: {
+            clearKeys: {
+              [keyId]: key
+            }
+          }
+        });
+
+        await player.load(mpd);
+        console.log("Video dimuat!");
+      } catch (err) {
+        console.error("Gagal memuat video:", err);
+        alert("Gagal memuat video.");
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", initPlayer);
+  </script>
+</body>
+</html>
