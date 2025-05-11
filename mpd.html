@@ -1,70 +1,39 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Masukkan Data Player</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Input Video</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </head>
-<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-4">
-  <div class="w-full max-w-md bg-gray-800 p-6 rounded-2xl shadow-lg">
-    <h2 class="text-2xl font-bold mb-4 text-center">Masukkan URL & Kunci Video</h2>
-    <form id="videoForm" class="space-y-4">
-      <input type="url" id="mpd" placeholder="MPD URL" required class="w-full px-4 py-2 rounded bg-gray-700 text-white" />
-      <input type="text" id="keyId" placeholder="Key ID" required class="w-full px-4 py-2 rounded bg-gray-700 text-white" />
-      <input type="text" id="key" placeholder="Key" required class="w-full px-4 py-2 rounded bg-gray-700 text-white" />
-      <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded font-bold">Submit</button>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+  <div class="bg-white p-6 rounded shadow max-w-lg w-full">
+    <h1 class="text-2xl font-bold mb-4 text-center">Input URL MPD + ClearKey</h1>
+    <form id="playerForm" class="space-y-4">
+      <input type="url" id="mpd" class="w-full border px-3 py-2 rounded" placeholder="URL .mpd" required>
+      <input type="text" id="keyid" class="w-full border px-3 py-2 rounded" placeholder="Key ID" required>
+      <input type="text" id="key" class="w-full border px-3 py-2 rounded" placeholder="Key" required>
+      <button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Tonton Video</button>
     </form>
-
-    <!-- Output -->
-    <div id="result" class="mt-6 hidden">
-      <label class="block mb-2 font-semibold">Link Player:</label>
-      <div class="flex space-x-2">
-        <input type="text" id="generatedLink" readonly class="flex-1 px-3 py-2 rounded bg-gray-700 text-white" />
-        <button id="copyBtn" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded">Copy</button>
-      </div>
-    </div>
   </div>
 
-  <script>
-    async function encrypt(data) {
-      const key = await crypto.subtle.importKey(
-        "raw",
-        new TextEncoder().encode("Maulana45219"), // HARUS 16 byte
-        { name: "AES-GCM" },
-        false,
-        ["encrypt"]
-      );
-      const iv = crypto.getRandomValues(new Uint8Array(12));
-      const encoded = new TextEncoder().encode(data);
-      const encrypted = await crypto.subtle.encrypt(
-        { name: "AES-GCM", iv },
-        key,
-        encoded
-      );
-      const buffer = new Uint8Array([...iv, ...new Uint8Array(encrypted)]);
-      return btoa(String.fromCharCode(...buffer));
-    }
+<script>
+  document.getElementById("playerForm").addEventListener("submit", function (e) {
+    e.preventDefault();
 
-    document.getElementById("videoForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const mpd = document.getElementById("mpd").value;
-      const keyId = document.getElementById("keyId").value;
-      const key = document.getElementById("key").value;
-      const combined = JSON.stringify({ mpd, keyId, key });
-      const encrypted = await encrypt(combined);
-      const url = `player.html?data=${encodeURIComponent(encrypted)}`;
-      
-      document.getElementById("generatedLink").value = url;
-      document.getElementById("result").classList.remove("hidden");
-    });
+    const data = {
+      mpd: document.getElementById("mpd").value.trim(),
+      keyid: document.getElementById("keyid").value.trim(),
+      key: document.getElementById("key").value.trim()
+    };
 
-    document.getElementById("copyBtn").addEventListener("click", () => {
-      const link = document.getElementById("generatedLink");
-      link.select();
-      document.execCommand("copy");
-      alert("Link berhasil disalin!");
-    });
-  </script>
+    const secret = 'RAHASIA123'; // kunci rahasia harus sama di kedua file
+    const ciphertext = CryptoJS.AES.encrypt(JSON.stringify(data), secret).toString();
+    const token = encodeURIComponent(ciphertext);
+
+    window.location.href = `player.html?data=${token}`;
+  });
+</script>
 </body>
 </html>
