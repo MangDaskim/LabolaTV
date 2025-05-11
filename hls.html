@@ -8,6 +8,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </head>
 <body class="bg-gray-800 text-white flex items-center justify-center h-screen my-8">
+
+  <!-- Form Password -->
+  <div id="loginSection" class="fixed inset-0 flex items-center justify-center bg-gray-900 z-50">
+    <div class="bg-gray-800 p-6 rounded shadow-md w-full max-w-sm text-center">
+      <h2 class="text-xl font-bold mb-4">🔒 Masukkan Password</h2>
+      <input type="password" id="passwordInput" placeholder="Password..." class="w-full p-2 rounded bg-gray-700 text-white mb-4">
+      <button onclick="checkPassword()" class="w-full bg-blue-600 hover:bg-blue-700 py-2 rounded">Masuk</button>
+      <p id="errorMsg" class="text-red-500 text-sm mt-2 hidden">❌ Password salah</p>
+    </div>
+  </div>
+
+<div id="mainContent" class="hidden">
   <div class="w-full max-w-xl p-6 bg-gray-900 rounded-md shadow-lg">
     <h1 class="text-xl text-center font-bold mb-6">Masukkan URL M3U8</h1>
     <form id="playerForm" class="space-y-4">
@@ -29,6 +41,7 @@
       </div>
       <p id="copyMessage" class="text-green-400 mt-2 text-sm"></p>
     </div>
+  </div>
   </div>
 
   <script>
