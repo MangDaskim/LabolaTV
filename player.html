@@ -2,72 +2,53 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Video Player</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shaka Player</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.5.0/shaka-player.compiled.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/shaka-player@4.3.6/dist/shaka-player.compiled.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </head>
-<body class="bg-black text-white min-h-screen flex items-center justify-center">
-  <video id="video" width="100%" controls autoplay class="max-w-4xl w-full rounded-lg shadow-lg"></video>
+<body class="bg-black flex items-center justify-center min-h-screen p-4">
+  <div class="w-full max-w-5xl">
+    <video id="video" class="w-full aspect-video rounded shadow" controls autoplay></video>
+  </div>
 
-  <script>
-    async function decrypt(data) {
-      const raw = atob(data);
-      const bytes = new Uint8Array([...raw].map(c => c.charCodeAt(0)));
-      const iv = bytes.slice(0, 12);
-      const encrypted = bytes.slice(12);
+ <script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const token = urlParams.get('data');
+  const secret = 'RAHASIA123'; // harus sama dengan index.html
 
-      const key = await crypto.subtle.importKey(
-        "raw",
-        new TextEncoder().encode("Maulana45219"), // HARUS SAMA seperti form
-        { name: "AES-GCM" },
-        false,
-        ["decrypt"]
-      );
+  try {
+    const bytes = CryptoJS.AES.decrypt(token, secret);
+    const decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
 
-      const decrypted = await crypto.subtle.decrypt(
-        { name: "AES-GCM", iv },
-        key,
-        encrypted
-      );
-      return new TextDecoder().decode(decrypted);
-    }
+    const { mpd, keyid, key } = decryptedData;
 
-    async function initPlayer() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const data = urlParams.get("data");
-      if (!data) return alert("Data tidak ditemukan!");
+    const video = document.getElementById('video');
+    const player = new shaka.Player(video);
 
-      try {
-        const decrypted = await decrypt(data);
-        const { mpd, keyId, key } = JSON.parse(decrypted);
+    shaka.polyfill.installAll();
 
-        const video = document.getElementById("video");
-        const player = new shaka.Player(video);
-
-        shaka.polyfill.installAll();
-        if (!shaka.Player.isBrowserSupported()) {
-          alert("Browser tidak mendukung Shaka Player");
-          return;
-        }
-
-        player.configure({
-          drm: {
-            clearKeys: {
-              [keyId]: key
-            }
+    if (shaka.Player.isBrowserSupported()) {
+      player.configure({
+        drm: {
+          clearKeys: {
+            [keyid]: key
           }
-        });
+        }
+      });
 
-        await player.load(mpd);
-        console.log("Video dimuat!");
-      } catch (err) {
-        console.error("Gagal memuat video:", err);
-        alert("Gagal memuat video.");
-      }
+      player.load(mpd).catch(error => {
+        alert("Gagal memuat video: " + error.message);
+        console.error(error);
+      });
+    } else {
+      alert("Browser tidak mendukung Shaka Player.");
     }
-
-    document.addEventListener("DOMContentLoaded", initPlayer);
-  </script>
+  } catch (error) {
+    alert("Data tidak valid atau rusak.");
+    console.error(error);
+  }
+</script>
 </body>
 </html>
