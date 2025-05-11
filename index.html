@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Input Data Player</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white h-screen flex justify-center items-center">
+  <form id="playerForm" class="bg-gray-800 p-6 rounded-lg shadow-lg w-96">
+    <h2 class="text-xl font-semibold mb-4">Masukkan Data Player</h2>
+    <div class="mb-4">
+      <label for="mpd" class="block mb-2 text-sm">MPD URL</label>
+      <input type="url" id="mpd" class="w-full p-2 rounded-md text-black" required />
+    </div>
+    <div class="mb-4">
+      <label for="keyId" class="block mb-2 text-sm">Key ID</label>
+      <input type="text" id="keyId" class="w-full p-2 rounded-md text-black" required />
+    </div>
+    <div class="mb-4">
+      <label for="key" class="block mb-2 text-sm">Key</label>
+      <input type="text" id="key" class="w-full p-2 rounded-md text-black" required />
+    </div>
+    <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md mt-4">Kirim</button>
+  </form>
+
+  <script>
+    document.getElementById('playerForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const mpd = document.getElementById('mpd').value;
+      const keyId = document.getElementById('keyId').value;
+      const key = document.getElementById('key').value;
+
+      // Redirect ke Cloudflare Worker untuk mengenkripsi dan redirect ke halaman player
+      const workerUrl = `https://your-worker-url.workers.dev?mpd=${encodeURIComponent(mpd)}&keyId=${encodeURIComponent(keyId)}&key=${encodeURIComponent(key)}`;
+      window.location.href = workerUrl;
+    });
+  </script>
+</body>
+</html>
