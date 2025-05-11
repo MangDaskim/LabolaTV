@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Masukkan Data Player</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-4">
+  <div class="w-full max-w-md bg-gray-800 p-6 rounded-2xl shadow-lg">
+    <h2 class="text-2xl font-bold mb-4 text-center">Masukkan URL & Kunci Video</h2>
+    <form id="videoForm" class="space-y-4">
+      <input type="url" id="mpd" placeholder="MPD URL" required class="w-full px-4 py-2 rounded bg-gray-700 text-white" />
+      <input type="text" id="keyId" placeholder="Key ID" required class="w-full px-4 py-2 rounded bg-gray-700 text-white" />
+      <input type="text" id="key" placeholder="Key" required class="w-full px-4 py-2 rounded bg-gray-700 text-white" />
+      <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded font-bold">Tonton Video</button>
+    </form>
+  </div>
+
+  <script>
+    async function encrypt(data) {
+      const key = await crypto.subtle.importKey(
+        "raw",
+        new TextEncoder().encode("Maulana45219#"), // HARUS 16 byte
+        { name: "AES-GCM" },
+        false,
+        ["encrypt"]
+      );
+      const iv = crypto.getRandomValues(new Uint8Array(12));
+      const encoded = new TextEncoder().encode(data);
+      const encrypted = await crypto.subtle.encrypt(
+        { name: "AES-GCM", iv },
+        key,
+        encoded
+      );
+      const buffer = new Uint8Array([...iv, ...new Uint8Array(encrypted)]);
+      return btoa(String.fromCharCode(...buffer));
+    }
+
+    document.getElementById("videoForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const mpd = document.getElementById("mpd").value;
+      const keyId = document.getElementById("keyId").value;
+      const key = document.getElementById("key").value;
+      const combined = JSON.stringify({ mpd, keyId, key });
+      const encrypted = await encrypt(combined);
+      window.location.href = `/player.html?data=${encodeURIComponent(encrypted)}`;
+    });
+  </script>
+</body>
+</html>
