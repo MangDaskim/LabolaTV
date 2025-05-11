@@ -1,54 +1,75 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shaka Player</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player Video</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/shaka-player@4.3.6/dist/shaka-player.compiled.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/shaka-player.compiled.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #000;
+    }
+    #videoContainer {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      max-height: 100vh;
+    }
+  </style>
 </head>
-<body class="bg-black flex items-center justify-center min-h-screen p-4">
-  <div class="w-full max-w-5xl">
-    <video id="video" class="w-full aspect-video rounded shadow" controls autoplay></video>
+<body>
+  <div id="videoContainer">
+    <video id="video" autoplay controls></video>
   </div>
 
- <script>
-  const urlParams = new URLSearchParams(window.location.search);
-  const token = urlParams.get('data');
-  const secret = 'RAHASIA123'; // harus sama dengan index.html
+  <script>
+    async function initPlayer() {
+      const params = new URLSearchParams(window.location.search);
+      const encryptedData = params.get("data");
 
-  try {
-    const bytes = CryptoJS.AES.decrypt(token, secret);
-    const decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+      if (!encryptedData) {
+        alert("Data tidak ditemukan.");
+        return;
+      }
 
-    const { mpd, keyid, key } = decryptedData;
+      try {
+        const secret = 'RAHASIA123'; // Sama seperti di index.html
+        const decryptedBytes = CryptoJS.AES.decrypt(decodeURIComponent(encryptedData), secret);
+        const decryptedText = decryptedBytes.toString(CryptoJS.enc.Utf8);
+        const { mpd, keyid, key } = JSON.parse(decryptedText);
 
-    const video = document.getElementById('video');
-    const player = new shaka.Player(video);
+        const video = document.getElementById("video");
+        const player = new shaka.Player(video);
 
-    shaka.polyfill.installAll();
-
-    if (shaka.Player.isBrowserSupported()) {
-      player.configure({
-        drm: {
-          clearKeys: {
-            [keyid]: key
+        // DRM Key setup
+        player.configure({
+          drm: {
+            clearKeys: {
+              [keyid]: key
+            }
           }
-        }
-      });
+        });
 
-      player.load(mpd).catch(error => {
-        alert("Gagal memuat video: " + error.message);
-        console.error(error);
-      });
-    } else {
-      alert("Browser tidak mendukung Shaka Player.");
+        await player.load(mpd);
+        console.log("Video berhasil dimuat");
+      } catch (error) {
+        console.error("Gagal memuat video:", error);
+        alert("Terjadi kesalahan saat memuat video.");
+      }
     }
-  } catch (error) {
-    alert("Data tidak valid atau rusak.");
-    console.error(error);
-  }
-</script>
+
+    document.addEventListener('DOMContentLoaded', initPlayer);
+  </script>
 </body>
 </html>
