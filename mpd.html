@@ -24,6 +24,7 @@
         <input type="text" id="playerLink" readonly class="flex-1 px-3 py-2 rounded bg-gray-700 text-white" />
         <button id="copyBtn" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded">Copy</button>
       </div>
+      <p id="copyMessage" class="text-green-400 mt-2 text-sm"></p>
     </div>
   </div>
 
@@ -48,12 +49,16 @@
     });
 
     document.getElementById("copyBtn").addEventListener("click", () => {
-      const linkInput = document.getElementById("playerLink");
-      linkInput.select();
-      linkInput.setSelectionRange(0, 99999); // Untuk mobile
-      document.execCommand("copy");
-      alert("Link berhasil disalin!");
-    });
+  const linkInput = document.getElementById("playerLink");
+  const copyMessage = document.getElementById("copyMessage");
+
+  linkInput.select();
+  linkInput.setSelectionRange(0, 99999); // Untuk mobile
+  document.execCommand("copy");
+
+  // Tampilkan pesan berhasil
+  copyMessage.textContent = "✅ Link berhasil disalin!";
+});
   </script>
 </body>
 </html>
