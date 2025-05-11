@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Player Video</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/shaka-player.compiled.min.js"></script>
@@ -34,17 +34,37 @@
   </div>
 
   <script>
+    // Hanya izinkan dari domain tertentu dalam iframe
+    const allowedReferrers = [
+      "https://namamu.pages.dev", // Ganti ini dengan domain kamu yang sah
+    ];
+
+    if (window === window.top) {
+      // Dicegah jika dibuka langsung (bukan iframe)
+      document.body.innerHTML = '<div style="color:white;text-align:center;padding:20px">🚫 Halaman ini hanya bisa digunakan di iframe.</div>';
+      throw new Error("Harus lewat iframe");
+    }
+
+    const ref = document.referrer;
+    const allowed = allowedReferrers.some(domain => ref.startsWith(domain));
+
+    if (!allowed) {
+      document.body.innerHTML = '<div style="color:white;text-align:center;padding:20px">⚠️ Akses iframe tidak diizinkan dari domain ini.</div>';
+      throw new Error("Referrer tidak diizinkan");
+    }
+
+    // Inisialisasi Player
     async function initPlayer() {
       const params = new URLSearchParams(window.location.search);
       const encryptedData = params.get("data");
 
       if (!encryptedData) {
-        alert("Data tidak ditemukan.");
+        document.body.innerHTML = '<div style="color:white;text-align:center;padding:20px">❌ Data video tidak ditemukan.</div>';
         return;
       }
 
       try {
-        const secret = 'RAHASIA123'; // Sama seperti di index.html
+        const secret = 'RAHASIA123'; // Harus sama dengan di index.html
         const decryptedBytes = CryptoJS.AES.decrypt(decodeURIComponent(encryptedData), secret);
         const decryptedText = decryptedBytes.toString(CryptoJS.enc.Utf8);
         const { mpd, keyid, key } = JSON.parse(decryptedText);
@@ -52,7 +72,6 @@
         const video = document.getElementById("video");
         const player = new shaka.Player(video);
 
-        // DRM Key setup
         player.configure({
           drm: {
             clearKeys: {
@@ -62,10 +81,10 @@
         });
 
         await player.load(mpd);
-        console.log("Video berhasil dimuat");
+        console.log("✅ Video berhasil dimuat");
       } catch (error) {
         console.error("Gagal memuat video:", error);
-        alert("Terjadi kesalahan saat memuat video.");
+        document.body.innerHTML = '<div style="color:white;text-align:center;padding:20px">❌ Gagal memuat video. Periksa data Anda.</div>';
       }
     }
 
