@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Input Data M3U8</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body class="bg-gray-800 text-white flex items-center justify-center h-screen">
+  <div class="w-full max-w-xl p-6 bg-gray-900 rounded-md shadow-lg">
+    <h1 class="text-xl text-center font-bold mb-6">Masukkan URL M3U8</h1>
+    <form id="playerForm" class="space-y-4">
+      <div class="space-y-2">
+        <label for="m3u8" class="block">URL M3U8:</label>
+        <input type="url" id="m3u8" class="w-full p-2 rounded bg-gray-700 text-white" placeholder="Masukkan URL M3U8" required />
+      </div>
+
+      <div class="flex items-center justify-between">
+        <button type="submit" class="w-full py-2 bg-blue-600 hover:bg-blue-700 rounded">Generate Player Link</button>
+      </div>
+    </form>
+
+    <div id="result" class="mt-6 hidden">
+      <p class="text-center text-green-400">✅ Link Player Anda:</p>
+      <div class="flex space-x-2">
+        <input type="text" id="playerLink" readonly class="flex-1 p-2 rounded bg-gray-700 text-white" />
+        <button id="copyBtn" class="bg-green-600 hover:bg-green-700 p-2 rounded">Copy</button>
+      </div>
+      <p id="copyMessage" class="text-green-400 mt-2 text-sm"></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("playerForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const m3u8 = document.getElementById("m3u8").value.trim();
+      const data = { m3u8 };
+
+      const secret = 'RAHASIA123'; // Kunci yang digunakan untuk enkripsi
+      const ciphertext = CryptoJS.AES.encrypt(JSON.stringify(data), secret).toString();
+      const token = encodeURIComponent(ciphertext);
+
+      const resultDiv = document.getElementById("result");
+      const playerLink = document.getElementById("playerLink");
+
+      // Tampilkan hasil link
+      playerLink.value = `https://labolatv.pages.dev/player-hls.html?data=${token}`;
+      resultDiv.classList.remove("hidden");
+    });
+
+    // Copy link ke clipboard
+    document.getElementById("copyBtn").addEventListener("click", function () {
+      const linkInput = document.getElementById("playerLink");
+      const copyMessage = document.getElementById("copyMessage");
+
+      linkInput.select();
+      document.execCommand("copy");
+
+      // Tampilkan pesan berhasil disalin
+      copyMessage.textContent = "✅ Link berhasil disalin!";
+    });
+  </script>
+</body>
+</html>
