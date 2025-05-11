@@ -22,7 +22,7 @@
     </form>
 
     <div id="result" class="mt-6 hidden">
-      <p class="text-center text-green-400">✅ Link Player Anda:</p>
+      <p class="text-center">Link Player Anda:</p>
       <div class="flex space-x-2">
         <input type="text" id="playerLink" readonly class="flex-1 p-2 rounded bg-gray-700 text-white" />
         <button id="copyBtn" class="bg-green-600 hover:bg-green-700 p-2 rounded">Copy</button>
@@ -46,7 +46,7 @@
       const playerLink = document.getElementById("playerLink");
 
       // Tampilkan hasil link
-      playerLink.value = `https://labolatv.pages.dev/player-hls.html?data=${token}`;
+      playerLink.value = `https://labolatv.pages.dev/player2.html?data=${token}`;
       resultDiv.classList.remove("hidden");
     });
 
