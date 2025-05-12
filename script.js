@@ -188,7 +188,7 @@
     "rm18": "https://streaming.sportsnews.id/p/ch18.html",
     "rm19": "https://streaming.sportsnews.id/p/ch19.html",
     "rm20": "https://streaming.sportsnews.id/p/ch20.html",
-    "rmpremier1": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX1%2BgpkAJIOrDJgYVIPPVLfThCNlxZuF7D0gw9bQ%2FlH550u3XaLeW%2BFpc5W8rC9QYMGn1wCg8z2uR7fnsQ5lgQW%2FijRZemKDiXx%2BVXerji3e7MR%2FuXZ39N1IOkeeMAZuDl6XQzz%2BhHZ3Dp%2FQkdxEktejLWuBH3e7kLhqNkgygjWGZALk08ahTg457oNqR16vWVZPVLHvyoWAbpL5wd55BTGWEBPbPf54AsCP4mqbAYvf0mbnSYaf%2FZtNp"
+    "rmpremier1": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX18GaSf4JkCFt5jfeHE2iaxvuRPFeB5kv1%2FhhaI%2BNLgn2PSU64Q0AO4MyX0t8cHoTAucpUnCv1rq%2FgQFkm3ABQZaFm%2B%2BMiCI3D3FzSC%2FFI5CAwFKSXD2a4M71iQ82YIy7Z7zHAjwk7f8%2F5GHpVBXFcp43T5KCmCK9m3G%2FDVi%2B%2FD77xs9yHpUjTIeSeAuEVHRFSEljF%2BT9lpnpoqD6LL4fHnEgHIYH8FlI29fBghioIeS6YnOVLfOfBbjWIR83MdD0neQXrzOSLBnwv2Q3X182fSE6Vw5R4IH46w%3D"
   };
 
   document.addEventListener("DOMContentLoaded", function () {
