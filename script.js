@@ -105,10 +105,7 @@
     "tvri": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2FrcsjIWxb9bisRvowGhjoU1kMm1qNdhyhI0zj0OBycxChSG0RO0%2FJ%2F0qYk48Wc3ATKvQlKLEJ%2FhhLHciTDfzNUWX7RSWtlj5XqxKSfVoVnqPd7voA8WkawbONdbC6DqKN9OFLldes9T%2BdaVuXCT3NQayQFo2CckJ5A6tRQ4QLvvAyElpPMRResH9uORZga21qNBoKjOXc%2BuFDXcNL8RPDSPUfWWgygqECEo5AIu%2FuQBRmow%2B5dD350q3bt7p9EuLwXGJ8UA9qKtw%3D%3D",
     "tvrisport": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX18xf0Mcc395ua%2BOtASpFuvMOXhcJHBnULIP1pN5%2F0d%2FDp8%2FhRE0IWyTTe6hhfl2qpOxxKketLwVUsJHELRiv4FIOyhDD03gT9tX9yoOziWmiRuTBYOi1NoQ",
     "tudnusa": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX19l4LqijTT6nHpkTfy44wnohzBVxqjF1rxh77Zqyh5sbR%2BotcsgDaqnXYaqbpmbTO%2FpuEgCDmgsecwK7jOzrEq0CHbILYlHsQuQSmHhwe1A6egVaveovoEnnmXTxIqr0Ho%2Bh0c0XBHKbbFGqtJhhVdi7uTkCnz1RQ06TWyEeI5f7B%2Fxk%2BIz8%2FGbEVWYtSrm0THFMP10O8hDJkkjWlExqdgmZB7bNqBsfM0%3D",
-    "trt1": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2BViikogoBPMLitCvnGl%2B3SUCUN1RHiUMlp6LN9oWLMTwMDtj0a8IlKuYMZkjGxaQn6nQi2LW%2FoLKsnmPZoyKwHVSzPV8m5dfWkca0WR7ToohSEQeNhdDzBhjTBSy%2FUjxPa4itWi8tBZ0LeYXxrx12%2B7V9E3SzdUBpNH8pxBsFlAPUftaZPUHqxFGPbio0RvmitppxsVHyolvZTjohh9Pdyz1jqkecklXk95i6oqNxPzhxQObUkGVQazP9DCWy%2BGjCOPG83BQqyc0%2Ba2B06p3BNVlEtZ95kUzc%3D",
-
-    // ARENA P
-    "arena1p": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX18Q9PwR%2BMQYuGcd8nIqWOug7v19UAVpoqE8XiSEr9pVPwWb2103O7xu796YMwyoYICcfPI%2B8ai0AXV99WTQQwWX65h0bGt0vf6PCWuHxpMftKI%2FDCMIPFguEbHrbXXkAJkw5XBJUxdiGbD73Zix%2FDsjPCTBMLFzkO%2BtKo2L6DcWGyJBGV%2FAo%2F4XLHD4hlX%2F7F3d2S95XAalrnTlPHSzoWC4WbSbPBMWRh6qzjWlWgIkani6%2BaOHcniI"
+    "trt1": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2BViikogoBPMLitCvnGl%2B3SUCUN1RHiUMlp6LN9oWLMTwMDtj0a8IlKuYMZkjGxaQn6nQi2LW%2FoLKsnmPZoyKwHVSzPV8m5dfWkca0WR7ToohSEQeNhdDzBhjTBSy%2FUjxPa4itWi8tBZ0LeYXxrx12%2B7V9E3SzdUBpNH8pxBsFlAPUftaZPUHqxFGPbio0RvmitppxsVHyolvZTjohh9Pdyz1jqkecklXk95i6oqNxPzhxQObUkGVQazP9DCWy%2BGjCOPG83BQqyc0%2Ba2B06p3BNVlEtZ95kUzc%3D"
   };
 
   document.addEventListener("DOMContentLoaded", function () {
