@@ -168,7 +168,27 @@
     "b5": "https://play.176001.tv/?sfk=mKTTRNGU23K8eZlJNQ3hZOUpUNUJHeG94SWJEN0R6Smo3cTBORnJoOUR1Q1JVeVdmNzhDVVJoK3BPZzBOZzRIQjJsNXo5SnNYMmczb25XZ3Nia3FaRVo1c3VCVzhZSWgwckdjbHVXT3VlRG1ZOFdvTC9MTkZScjd1bElzWFg5WkJNME5Qb0FVY1JBS3hTWnhrOUhFbW5ra3Mxa0wrc2JGZEhvNkxzQjh6cFQ4N0NGeFlxM1MrY1VEQmxvS2RvSU8wcGtuTktNa2FqZStsUlpXSkNPTkJyTUQ2WGVyeWJqUHJ4SnIzZS9aaytPRWw2aXNIRjlFUHZZK2ZyRERybzF6M1pPWC9wT01RVmZlWDBsMUd2aQ%3D%3DH8BMF2Gm&frm=1&wf=34583bdae23eaddbfc3c93d9e8cfe15d152992&yr=1&bn=l0E4m5MFjQARx0lrfvTkhdQVJDdDKp",
 
     // RANDOM RM
-    "rm1": "https://streaming.sportsnews.id/p/ch1.html"
+    "rm1": "https://streaming.sportsnews.id/p/ch1.html",
+    "rm2": "https://streaming.sportsnews.id/p/ch2.html",
+    "rm3": "https://streaming.sportsnews.id/p/ch3.html",
+    "rm4": "https://streaming.sportsnews.id/p/ch4.html",
+    "rm5": "https://streaming.sportsnews.id/p/ch5.html",
+    "rm6": "https://streaming.sportsnews.id/p/ch6.html",
+    "rm7": "https://streaming.sportsnews.id/p/ch7.html",
+    "rm8": "https://streaming.sportsnews.id/p/ch8.html",
+    "rm9": "https://streaming.sportsnews.id/p/ch9.html",
+    "rm10": "https://streaming.sportsnews.id/p/ch10.html",
+    "rm11": "https://streaming.sportsnews.id/p/ch11.html",
+    "rm12": "https://streaming.sportsnews.id/p/ch12.html",
+    "rm13": "https://streaming.sportsnews.id/p/ch13.html",
+    "rm14": "https://streaming.sportsnews.id/p/ch14.html",
+    "rm15": "https://streaming.sportsnews.id/p/ch15.html",
+    "rm16": "https://streaming.sportsnews.id/p/ch16.html",
+    "rm17": "https://streaming.sportsnews.id/p/ch17.html",
+    "rm18": "https://streaming.sportsnews.id/p/ch18.html",
+    "rm19": "https://streaming.sportsnews.id/p/ch19.html",
+    "rm20": "https://streaming.sportsnews.id/p/ch20.html",
+    "rmpremier1": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX1%2BgpkAJIOrDJgYVIPPVLfThCNlxZuF7D0gw9bQ%2FlH550u3XaLeW%2BFpc5W8rC9QYMGn1wCg8z2uR7fnsQ5lgQW%2FijRZemKDiXx%2BVXerji3e7MR%2FuXZ39N1IOkeeMAZuDl6XQzz%2BhHZ3Dp%2FQkdxEktejLWuBH3e7kLhqNkgygjWGZALk08ahTg457oNqR16vWVZPVLHvyoWAbpL5wd55BTGWEBPbPf54AsCP4mqbAYvf0mbnSYaf%2FZtNp"
   };
 
   document.addEventListener("DOMContentLoaded", function () {
