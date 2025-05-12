@@ -85,7 +85,9 @@
     "daznes3": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2FyQ0FYDkLc5Mj9D6gbsL2YpNieuwivxCOsTMgfM0VhjZ4MQSW4imXYlPg7sbDra%2FiMYRibX0Iy%2BfY96QOwo%2F2E6wgXt2kJW2y7WSSm1CtH6eGo8fdy9rQwGpylaBcghWp%2BXtY28l%2Bbaa0CqmD%2FFLCnq2q%2BRefQIamLNC80VtWjNtgk8v67b30zwxHSZIMuEVAsUqf8KB8mur4bsn7Fa7lFQIo%2BD5ulfalYO3lETEbSxxe9s0h%2FR%2BbY02%2BPHcATWPICEj7KP920jQFax3GAF715ZOHtE%2B1spZNn2EeQKledUIpFYbutWvPS",
     "daznes4": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX19Hpr042VqgYWoKdf7LBuf9e0kpXIV7tfO46HTdUOaf9TH%2B%2Bj2B8zDMsJ34%2FAGHhkbzpzLaeOYQ5n1ipmhkpjCBNSL5up%2BR82JE3UZaL1YGt3T8Gy1jZPf5LDV71Rgvcqs9CnBaQd481nwIl2g79Pzbluc9%2BjT%2FAftLd6fx%2FQuLIGQ6o7gfipJpbAhknQHva6xA7yqyW1FYoLiVdzyrsXnPPe6JzqDAPk1EU0cz0%2Fk6fSheb%2ByzxSTKWGZ5kDlFZVrf5EYrNZai6e%2BzUrtXYIfJGY5OgU8u8arpH4NyN6%2Fs1Y7kmZfJ9qik",
     "daznde1": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2BFKkA46VxoLMpT%2BTWw7JxJ%2FkAjjgZABDKRb%2FaAy8SAn3P9Br9dZjNW9Vc%2B7sDJXrUsLZj5Ak2iudxV3pnweQIQFocn9Ne5roA0eYU7gV3DzKULrKI0aG1OqOBdwa4pCb80ElgU4rJxGSby%2FDicv%2BDcaCve7ppQ%2Ff802Yc%2FmPUhL6OUm0HKk4NTOYLuNkOmciMt8V6vUL4e8haYUiXZhG%2FG9SFqwZrJNIlcc24LhWyLo0Vf%2BTY3mn8YXS2wC0614iL49jvlp0GvP3Lsmo4mChyBxilJHFFIRmez3GCni17QZ3YIjwQRrIA6XApMyactKU0ZGAxU2IBEDw%3D%3D",
-    "daznde2": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX1%2BBUqAj3Hkt7CV6%2BPygwNEaFrxFljdaKETax%2BM0n2UCrGJhvINNnHXuzJn24GQrL5yn4ik2z%2Fyo8s4vBAmNiHFoemsOXvqgD%2FY%3D"
+    "daznde2": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX1%2BBUqAj3Hkt7CV6%2BPygwNEaFrxFljdaKETax%2BM0n2UCrGJhvINNnHXuzJn24GQrL5yn4ik2z%2Fyo8s4vBAmNiHFoemsOXvqgD%2FY%3D",
+
+    "arena1p": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX19SvliCGf56ljrvAyqXc9EYrJR6E8pBpuMAgupkSUbQdqnFbi2F426QYt2iKs7HNHevl%2FbNvOrgfOGXuRuW984971%2FKRLEAOfUdr5t4Y73Hr6FyAQMdeKRxWfPMkoI6is9i6B5lgnH0imIfdd62dQq8acproc0ZdAcGFmhzvSPtzO1Ut9wqjKLaM8m0vQNf07i%2BXWHoUQECrfOzXEhYnUsvP74TakPyyrunlM0f1vY1zv4x9n3VxYy1"
   };
 
   document.addEventListener("DOMContentLoaded", function () {
