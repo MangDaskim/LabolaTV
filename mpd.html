@@ -19,14 +19,18 @@
     </div>
   </div>
 
-  <div id="mainContent" class="w-full max-w-md bg-gray-800 p-6 rounded-2xl shadow-lg hidden">
+<div id="mainContent" class="w-full max-w-md bg-gray-800 p-6 rounded-2xl shadow-lg hidden">
   <div class="w-full max-w-md bg-gray-800 p-6 rounded-2xl shadow-lg">
     <h2 class="text-2xl font-bold mb-4 text-center">Masukkan Data Video</h2>
     <form id="playerForm" class="space-y-4">
       <input type="url" id="mpd" placeholder="MPD URL" required class="w-full px-4 py-2 rounded bg-gray-700 text-white" />
       <input type="text" id="keyid" placeholder="Key ID" required class="w-full px-4 py-2 rounded bg-gray-700 text-white" />
       <input type="text" id="key" placeholder="Key" required class="w-full px-4 py-2 rounded bg-gray-700 text-white" />
-      <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded font-bold">Submit</button>
+
+      <div class="flex space-x-2">
+        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded font-bold">Submit</button>
+        <button type="button" id="resetBtn" class="w-full bg-red-600 hover:bg-red-700 px-4 py-2 rounded font-bold">Reset</button>
+      </div>
     </form>
 
     <!-- Hasil Link -->
@@ -39,40 +43,50 @@
       <p id="copyMessage" class="text-green-400 mt-2 text-sm"></p>
     </div>
   </div>
-  </div>
+</div>
 
-  <script>
-    document.getElementById("playerForm").addEventListener("submit", function (e) {
-      e.preventDefault();
+<script>
+  document.getElementById("playerForm").addEventListener("submit", function (e) {
+    e.preventDefault();
 
-      const data = {
-        mpd: document.getElementById("mpd").value.trim(),
-        keyid: document.getElementById("keyid").value.trim(),
-        key: document.getElementById("key").value.trim()
-      };
+    const data = {
+      mpd: document.getElementById("mpd").value.trim(),
+      keyid: document.getElementById("keyid").value.trim(),
+      key: document.getElementById("key").value.trim()
+    };
 
-      const secret = 'RAHASIA123'; // Harus sama di player.html
-      const ciphertext = CryptoJS.AES.encrypt(JSON.stringify(data), secret).toString();
-      const token = encodeURIComponent(ciphertext);
-      const finalLink = `https://labolatv.pages.dev/player.html?data=${token}`;
+    const secret = 'RAHASIA123';
+    const ciphertext = CryptoJS.AES.encrypt(JSON.stringify(data), secret).toString();
+    const token = encodeURIComponent(ciphertext);
+    const finalLink = `https://labolatv.pages.dev/player.html?data=${token}`;
 
-      // Tampilkan link + tombol copy
-      document.getElementById("playerLink").value = finalLink;
-      document.getElementById("result").classList.remove("hidden");
-    });
+    document.getElementById("playerLink").value = finalLink;
+    document.getElementById("result").classList.remove("hidden");
+  });
 
-    document.getElementById("copyBtn").addEventListener("click", () => {
-  const linkInput = document.getElementById("playerLink");
-  const copyMessage = document.getElementById("copyMessage");
+  document.getElementById("copyBtn").addEventListener("click", () => {
+    const linkInput = document.getElementById("playerLink");
+    const copyMessage = document.getElementById("copyMessage");
 
-  linkInput.select();
-  linkInput.setSelectionRange(0, 99999); // Untuk mobile
-  document.execCommand("copy");
+    linkInput.select();
+    linkInput.setSelectionRange(0, 99999);
+    document.execCommand("copy");
 
-  // Tampilkan pesan berhasil
-  copyMessage.textContent = "✅ Link berhasil disalin!";
-});
-  </script>
+    copyMessage.textContent = "✅ Link berhasil disalin!";
+  });
+
+  document.getElementById("resetBtn").addEventListener("click", () => {
+    // Kosongkan semua input
+    document.getElementById("mpd").value = "";
+    document.getElementById("keyid").value = "";
+    document.getElementById("key").value = "";
+
+    // Sembunyikan hasil dan hapus isinya
+    document.getElementById("playerLink").value = "";
+    document.getElementById("result").classList.add("hidden");
+    document.getElementById("copyMessage").textContent = "";
+  });
+</script>
 <script src="pass.js"></script>
 </body>
 </html>
