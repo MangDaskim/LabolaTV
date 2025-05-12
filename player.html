@@ -39,11 +39,7 @@
       "https://labolatv-player.blogspot.com", // Ganti ini dengan domain kamu yang sah
     ];
 
-    if (window === window.top) {
-      // Dicegah jika dibuka langsung (bukan iframe)
-      document.body.innerHTML = '<div style="color:white;text-align:center;padding:20px">🚫 Halaman ini hanya bisa digunakan di iframe.</div>';
-      throw new Error("Harus lewat iframe");
-    }
+
 
     const ref = document.referrer;
     const allowed = allowedReferrers.some(domain => ref.startsWith(domain));
