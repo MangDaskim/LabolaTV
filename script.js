@@ -142,7 +142,8 @@
     "el6": "https://sportzonline.ps/channels/pt/eleven6.php",
 
     // RANDOM A
-    "a1": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX19ZQ%2Fdj4Eifm3i2qTAj4lXlpNr8RiTqtX6y9mAzYH618Wvm0nAGTH5jFmQD35pkVlp9CUZN5uUQv%2FpEQIIW2ep4guMEfFPs70y7Ncip%2FOZi6d%2BD67t4o151a2MyOTGsb4gHLU1MoI7KB3YpRM3IzCRvhooX4%2B1YcCm6l3oxS9Ar1jGaQg5PjTUpVOrZ9xswrCQauGc6xou9XQtzbWEUUJQmLLqarA8uYNpu%2BgJMRatblpoiGSX%2BLmSApO7ICWZ9X1Yf8EX8Ej%2FT4A%3D%3D"
+    "a1": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX19ZQ%2Fdj4Eifm3i2qTAj4lXlpNr8RiTqtX6y9mAzYH618Wvm0nAGTH5jFmQD35pkVlp9CUZN5uUQv%2FpEQIIW2ep4guMEfFPs70y7Ncip%2FOZi6d%2BD67t4o151a2MyOTGsb4gHLU1MoI7KB3YpRM3IzCRvhooX4%2B1YcCm6l3oxS9Ar1jGaQg5PjTUpVOrZ9xswrCQauGc6xou9XQtzbWEUUJQmLLqarA8uYNpu%2BgJMRatblpoiGSX%2BLmSApO7ICWZ9X1Yf8EX8Ej%2FT4A%3D%3D",
+    "a2": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX19YGDIBkeD2IwgpCnVmKNJGF5YrmZRILpLYA1FvDwlwLxNykH3tv2%2FGFKJwUZJZkSnQEGYmez87LVN%2FkLVHr%2BYQsvqPCif5gMBi4OYDtEQC%2F4b%2F875RFMk%2BNbDN9%2B%2BLlkpxaqkLOe5sFTFgEBbMG%2Bgy1xhC84u8bzNbPCxDiqS9dSRIfje8LqYQ"
   };
 
   document.addEventListener("DOMContentLoaded", function () {
