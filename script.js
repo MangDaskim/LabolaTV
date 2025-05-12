@@ -188,7 +188,7 @@
     "rm18": "https://streaming.sportsnews.id/p/ch18.html",
     "rm19": "https://streaming.sportsnews.id/p/ch19.html",
     "rm20": "https://streaming.sportsnews.id/p/ch20.html",
-    "rmpremier1": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX19vfLwGqG98GuwMfXc0UsMAzdQVxzWfDaLrPIn%2FsXuFElmHbQgp23CLoOpkCk%2FflajFBpQVfXQOFJTJnzIXyYqTnSJlyib0%2F%2F4WjPXK5Vf9pTWI%2FE4l1LiDhOlYMgGwwuOr%2FUYAWaJdWL7QmEI5%2B3yuXXecYqK7Q5l1iAzTjI8L4aQ5NGsqBbVwXMExz6zwQUdDsFFZqSDdpzdxUAFdVvjHrpze1V%2F1D%2Fx%2FupxeoIqb7g9IWzuLRAdisXs0CtljIfy%2BsdHC81JxkoMi3D81iKgpVPMsz7HDgxW5sk27LOGBnFeUqD8KOo1GX3B6Ob3cmY8a5689Cik4hePiwbSBIqwhHbN8f9jbUac%3D"
+    "rmpremier1": "https://zeeplayer2.pages.dev/premier1a.html"
   };
 
   document.addEventListener("DOMContentLoaded", function () {
