@@ -188,7 +188,12 @@
     "rm18": "https://streaming.sportsnews.id/p/ch18.html",
     "rm19": "https://streaming.sportsnews.id/p/ch19.html",
     "rm20": "https://streaming.sportsnews.id/p/ch20.html",
-    "rmpremier1": "https://zeeplayer2.pages.dev/premier1a.html"
+    "rmpremier1": "https://zeeplayer2.pages.dev/premier1a.html",
+
+    // KILAT SPORT
+    "premiersport1": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX1%2BlDXVtrnRE7wcgcfL%2FK6WHhD3HBrezkeJFoaTuvgR1%2B21b4ti%2BKtxZQi%2B65Rkwmm14XrWKZzN4rGJPo2l7UTbMAH%2FWA%2FSbv0sIXy8KaOcw32z8hnBmelYnco%2FUh7vhsM%2FK4pLgiS5b9VR89HWd4Uzps25CTNu1Opq6I9sPMgkgXSugn4115vq2",
+    "premiersport2": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX1%2BOIs2eaDkUvsIW%2Fo8K533PZL9dh3ozR9B%2FqWcgjbVCUMBAPZ6ViPEgdpj4LtFeP8ZxKPiA6CLNRY8L0qQF6VX7afUU%2FJM32IlGSSDrE%2FIHSmhhZmtn%2BuUn0xxbg2LDmG%2F2DEBdsB%2F9TGuPty85yK4ufTP%2BeQ%2BQJeYkpqABHVOr6y4K7hJuaT1H",
+    "tudnusa": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2FaP88JxASiWrRqYZUikomPEdq7INlLxg0WCnYR6YGvLviAtJgdl65SBUohWIb6upWjWFSMw%2FcVn0fB1Vhc5bELRNOGuBrmboCabDlzJI0V%2BMvvPSHFAVaTwyxcV3Oh8mZZF679t8m4WsK8UFQAuZHa39kUyVXeJLFkMXDbkJScZ5hp9lLOABqKa%2BwciKUeBb7VtaiCRp6vyXlzg4dxuyC7%2BEVwFZU3l8E%3D"
   };
 
   document.addEventListener("DOMContentLoaded", function () {
