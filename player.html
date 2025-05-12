@@ -30,27 +30,27 @@
 </head>
 <body>
   <div id="videoContainer">
-    <video id="video" allow="autoplay; encrypted-media" autoplay controls></video>
+    <video id="video" autoplay controls></video>
   </div>
 
 <script>
   // Hapus pembatasan iframe & referrer
-  // const allowedReferrers = [
-  //   "https://labolatv-player.blogspot.com","https://labolatv.pages.dev",
-  // ];
+  const allowedReferrers = [
+  "https://labolatv-player.blogspot.com",
+  ];
 
-  // if (window === window.top) {
-  //   document.body.innerHTML = '<div style="color:white;text-align:center;padding:20px">🚫 Halaman ini hanya bisa digunakan di iframe.</div>';
-  //   throw new Error("Harus lewat iframe");
-  // }
+  if (window === window.top) {
+     document.body.innerHTML = '<div style="color:white;text-align:center;padding:20px">🚫 Halaman ini hanya bisa digunakan di iframe.</div>';
+     throw new Error("Harus lewat iframe");
+   }
 
-  // const ref = document.referrer;
-  // const allowed = allowedReferrers.some(domain => ref.startsWith(domain));
+   const ref = document.referrer;
+   const allowed = allowedReferrers.some(domain => ref.startsWith(domain));
 
-  // if (!allowed) {
-  //   document.body.innerHTML = '<div style="color:white;text-align:center;padding:20px">⚠️ Akses iframe tidak diizinkan dari domain ini.</div>';
-  //   throw new Error("Referrer tidak diizinkan");
-  // }
+   if (!allowed) {
+     document.body.innerHTML = '<div style="color:white;text-align:center;padding:20px">⚠️ Akses iframe tidak diizinkan dari domain ini.</div>';
+     throw new Error("Referrer tidak diizinkan");
+   }
 
   // Inisialisasi Player
   async function initPlayer() {
