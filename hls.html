@@ -30,6 +30,7 @@
 
       <div class="flex items-center justify-between">
         <button type="submit" class="w-full py-2 bg-blue-600 hover:bg-blue-700 rounded">Generate Player Link</button>
+        <button type="button" id="resetBtn" class="w-full py-2 bg-red-600 hover:bg-red-700 rounded">Reset</button>
       </div>
     </form>
 
@@ -74,6 +75,14 @@
       // Tampilkan pesan berhasil disalin
       copyMessage.textContent = "✅ Link berhasil disalin!";
     });
+
+    // Reset form dan hasil
+  document.getElementById("resetBtn").addEventListener("click", function () {
+    document.getElementById("playerForm").reset();
+    document.getElementById("playerLink").value = "";
+    document.getElementById("copyMessage").textContent = "";
+    document.getElementById("result").classList.add("hidden");
+  });
   </script>
   <script src="pass.js"></script>
 </body>
