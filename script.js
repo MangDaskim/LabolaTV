@@ -87,7 +87,8 @@
     "daznde1": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2BFKkA46VxoLMpT%2BTWw7JxJ%2FkAjjgZABDKRb%2FaAy8SAn3P9Br9dZjNW9Vc%2B7sDJXrUsLZj5Ak2iudxV3pnweQIQFocn9Ne5roA0eYU7gV3DzKULrKI0aG1OqOBdwa4pCb80ElgU4rJxGSby%2FDicv%2BDcaCve7ppQ%2Ff802Yc%2FmPUhL6OUm0HKk4NTOYLuNkOmciMt8V6vUL4e8haYUiXZhG%2FG9SFqwZrJNIlcc24LhWyLo0Vf%2BTY3mn8YXS2wC0614iL49jvlp0GvP3Lsmo4mChyBxilJHFFIRmez3GCni17QZ3YIjwQRrIA6XApMyactKU0ZGAxU2IBEDw%3D%3D",
     "daznde2": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX1%2BBUqAj3Hkt7CV6%2BPygwNEaFrxFljdaKETax%2BM0n2UCrGJhvINNnHXuzJn24GQrL5yn4ik2z%2Fyo8s4vBAmNiHFoemsOXvqgD%2FY%3D",
 
-    "arena1p": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX19SvliCGf56ljrvAyqXc9EYrJR6E8pBpuMAgupkSUbQdqnFbi2F426QYt2iKs7HNHevl%2FbNvOrgfOGXuRuW984971%2FKRLEAOfUdr5t4Y73Hr6FyAQMdeKRxWfPMkoI6is9i6B5lgnH0imIfdd62dQq8acproc0ZdAcGFmhzvSPtzO1Ut9wqjKLaM8m0vQNf07i%2BXWHoUQECrfOzXEhYnUsvP74TakPyyrunlM0f1vY1zv4x9n3VxYy1"
+    "arena1p": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX19SvliCGf56ljrvAyqXc9EYrJR6E8pBpuMAgupkSUbQdqnFbi2F426QYt2iKs7HNHevl%2FbNvOrgfOGXuRuW984971%2FKRLEAOfUdr5t4Y73Hr6FyAQMdeKRxWfPMkoI6is9i6B5lgnH0imIfdd62dQq8acproc0ZdAcGFmhzvSPtzO1Ut9wqjKLaM8m0vQNf07i%2BXWHoUQECrfOzXEhYnUsvP74TakPyyrunlM0f1vY1zv4x9n3VxYy1",
+    "arena2p": "https://zeeplayer2.pages.dev/arena2p.html"
   };
 
   document.addEventListener("DOMContentLoaded", function () {
