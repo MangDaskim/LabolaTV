@@ -11,7 +11,7 @@
     <h2 class="text-2xl font-bold text-gray-800">Input Jadwal Pertandingan</h2>
 
     <!-- Form Input -->
-    <div class="space-y-4">
+    <div class="space-y-4" id="formInputs">
       <div>
         <label class="block text-sm font-medium text-gray-700">Nama Tim Kiri</label>
         <input type="text" id="teamLeftName" class="mt-1 w-full border border-gray-300 rounded px-3 py-2" placeholder="Real Valladolid">
@@ -46,9 +46,11 @@
         </div>
       </div>
 
-      <div class="flex gap-3">
+      <div class="flex flex-wrap gap-3">
         <button onclick="addPlayButton()" class="bg-blue-100 text-blue-700 hover:bg-blue-200 px-4 py-2 rounded text-sm">+ Tambah Tombol</button>
         <button onclick="generateCode()" class="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded text-sm">🔧 Buat Kode</button>
+        <button onclick="copyToClipboard()" class="bg-green-600 text-white hover:bg-green-700 px-4 py-2 rounded text-sm">📋 Copy</button>
+        <button onclick="resetForm()" class="bg-red-500 text-white hover:bg-red-600 px-4 py-2 rounded text-sm">🔄 Reset</button>
       </div>
     </div>
 
@@ -123,6 +125,34 @@
 </div>`;
 
       document.getElementById("outputCode").value = htmlOutput.trim();
+    }
+
+    function copyToClipboard() {
+      const output = document.getElementById("outputCode");
+      output.select();
+      output.setSelectionRange(0, 99999); // For mobile
+      document.execCommand("copy");
+      alert("✅ Kode berhasil disalin!");
+    }
+
+    function resetForm() {
+      // Reset semua input
+      document.getElementById("teamLeftName").value = "";
+      document.getElementById("teamLeftLogo").value = "";
+      document.getElementById("teamRightName").value = "";
+      document.getElementById("teamRightLogo").value = "";
+      document.getElementById("startTime").value = "";
+      document.getElementById("startDate").value = "";
+      document.getElementById("outputCode").value = "";
+
+      // Hapus semua tombol Play kecuali yang pertama
+      const container = document.getElementById("buttonsContainer");
+      container.innerHTML = `
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Link Play 1</label>
+          <input type="text" class="playLink mt-1 w-full border border-gray-300 rounded px-3 py-2" placeholder="https://linkplay1.com">
+        </div>`;
+      playButtonCount = 1;
     }
   </script>
 
