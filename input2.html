@@ -7,7 +7,7 @@
 </head>
 <body class="bg-gray-900 text-white min-h-screen py-10">
 
-  <div class="max-w-2xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
+  <div class="bg-gray-800 p-6 rounded-lg shadow-lg max-w-2xl mx-4 lg:mx-auto">
     <h2 class="text-2xl font-bold mb-4">Form Input Pertandingan</h2>
 
     <!-- Waktu & Tanggal -->
@@ -58,6 +58,9 @@
       <button onclick="copyOutput()" class="bg-green-500 px-4 py-2 rounded hover:bg-green-600">Copy</button>
       <button onclick="resetForm()" class="bg-yellow-500 px-4 py-2 rounded hover:bg-yellow-600">Reset</button>
     </div>
+
+    <!-- Notifikasi Copy -->
+    <div id="copy-msg" class="mt-2 text-green-400 text-sm hidden">Hasil HTML berhasil disalin.</div>
 
     <!-- Output -->
     <div class="mt-6">
@@ -126,12 +129,24 @@
       `.trim();
 
       document.getElementById("output").value = html;
+      document.getElementById("copy-msg").classList.add("hidden");
     }
 
     function copyOutput() {
       const output = document.getElementById("output").value;
-      if (!output) return alert("Silakan klik tombol Submit dulu.");
-      navigator.clipboard.writeText(output).then(() => alert("Hasil HTML berhasil disalin!"));
+      const msg = document.getElementById("copy-msg");
+      if (!output) {
+        msg.textContent = "Silakan klik tombol Submit dulu.";
+        msg.classList.remove("text-green-400");
+        msg.classList.add("text-red-400");
+      } else {
+        navigator.clipboard.writeText(output).then(() => {
+          msg.textContent = "Hasil HTML berhasil disalin.";
+          msg.classList.remove("text-red-400");
+          msg.classList.add("text-green-400");
+        });
+      }
+      msg.classList.remove("hidden");
     }
 
     function resetForm() {
@@ -142,6 +157,7 @@
           <button onclick="removePlayButton(this)" class="bg-red-500 px-3 rounded hover:bg-red-600">✕</button>
         </div>`;
       document.getElementById("output").value = "";
+      document.getElementById("copy-msg").classList.add("hidden");
     }
   </script>
 
