@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Jadwal Pertandingan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-start justify-center p-6">
+
+  <div class="w-full max-w-2xl bg-white shadow-lg rounded-lg p-6 space-y-6">
+    <h2 class="text-2xl font-bold text-gray-800">Input Jadwal Pertandingan</h2>
+
+    <!-- Form Input -->
+    <div class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Nama Tim Kiri</label>
+        <input type="text" id="teamLeftName" class="mt-1 w-full border border-gray-300 rounded px-3 py-2" placeholder="Real Valladolid">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Logo Tim Kiri (URL)</label>
+        <input type="text" id="teamLeftLogo" class="mt-1 w-full border border-gray-300 rounded px-3 py-2" placeholder="https://...">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Nama Tim Kanan</label>
+        <input type="text" id="teamRightName" class="mt-1 w-full border border-gray-300 rounded px-3 py-2" placeholder="Girona">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Logo Tim Kanan (URL)</label>
+        <input type="text" id="teamRightLogo" class="mt-1 w-full border border-gray-300 rounded px-3 py-2" placeholder="https://...">
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Jam (HH:MM)</label>
+          <input type="text" id="startTime" class="mt-1 w-full border border-gray-300 rounded px-3 py-2" placeholder="00:00">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Tanggal</label>
+          <input type="date" id="startDate" class="mt-1 w-full border border-gray-300 rounded px-3 py-2">
+        </div>
+      </div>
+
+      <div id="buttonsContainer" class="space-y-2">
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Link Play 1</label>
+          <input type="text" class="playLink mt-1 w-full border border-gray-300 rounded px-3 py-2" placeholder="https://linkplay1.com">
+        </div>
+      </div>
+
+      <div class="flex gap-3">
+        <button onclick="addPlayButton()" class="bg-blue-100 text-blue-700 hover:bg-blue-200 px-4 py-2 rounded text-sm">+ Tambah Tombol</button>
+        <button onclick="generateCode()" class="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded text-sm">🔧 Buat Kode</button>
+      </div>
+    </div>
+
+    <!-- Output HTML -->
+    <div>
+      <label class="block text-sm font-semibold text-gray-700 mb-1">Kode HTML Hasil:</label>
+      <textarea id="outputCode" class="w-full h-64 border border-gray-300 rounded p-3 font-mono text-sm bg-gray-50" readonly></textarea>
+    </div>
+  </div>
+
+  <script>
+    let playButtonCount = 1;
+
+    function addPlayButton() {
+      playButtonCount++;
+      const container = document.getElementById("buttonsContainer");
+      const wrapper = document.createElement("div");
+
+      const label = document.createElement("label");
+      label.className = "block text-sm font-medium text-gray-700";
+      label.textContent = `Link Play ${playButtonCount}`;
+
+      const input = document.createElement("input");
+      input.type = "text";
+      input.className = "playLink mt-1 w-full border border-gray-300 rounded px-3 py-2";
+      input.placeholder = `https://linkplay${playButtonCount}.com`;
+
+      wrapper.appendChild(label);
+      wrapper.appendChild(input);
+      container.appendChild(wrapper);
+    }
+
+    function generateCode() {
+      const teamLeftName = document.getElementById("teamLeftName").value;
+      const teamLeftLogo = document.getElementById("teamLeftLogo").value;
+      const teamRightName = document.getElementById("teamRightName").value;
+      const teamRightLogo = document.getElementById("teamRightLogo").value;
+      const startTime = document.getElementById("startTime").value;
+      const startDate = document.getElementById("startDate").value;
+
+      const playLinks = Array.from(document.querySelectorAll(".playLink")).map((input, index) => {
+        return `<button onclick="window.location.href='${input.value}';" class="play-button">Play ${index + 1}</button>`;
+      }).join("\n");
+
+      const htmlOutput = `
+<div class="match-schedule">
+  <div class="countdown"></div>
+  <table class="schedule-table">
+    <tr>
+      <td>
+        <div class="team-info">
+          <span class="team-name">${teamLeftName}</span>
+          <img src="${teamLeftLogo}" alt="${teamLeftName}" class="team-logo"/>
+        </div>
+      </td>
+      <td class="time-cell">
+        <div class="time" data-start="${startTime}" data-date="${startDate}">${startTime}</div>
+      </td>
+      <td>
+        <div class="team-info">
+          <img src="${teamRightLogo}" alt="${teamRightName}" class="team-logo"/>
+          <span class="team-name">${teamRightName}</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3" class="button-cell">
+        ${playLinks}
+      </td>
+    </tr>
+  </table>
+</div>`;
+
+      document.getElementById("outputCode").value = htmlOutput.trim();
+    }
+  </script>
+
+</body>
+</html>
