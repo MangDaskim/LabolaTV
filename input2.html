@@ -1,87 +1,102 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Form Input Pertandingan</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-900 text-white min-h-screen py-10">
+<body class="bg-gray-900 text-white p-4 sm:p-8">
 
-  <div class="bg-gray-800 p-6 rounded-lg shadow-lg max-w-2xl mx-4 lg:mx-auto">
-    <h2 class="text-2xl font-bold mb-4">Form Input Pertandingan</h2>
+  <div class="max-w-xl mx-auto space-y-4">
+    <h1 class="text-2xl font-bold mb-4">Form Input Pertandingan</h1>
 
-    <!-- Waktu & Tanggal -->
-    <div class="mb-4">
-      <label class="block mb-1">Waktu</label>
-      <input type="time" id="match-time" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: 20:30">
-    </div>
-    <div class="mb-4">
-      <label class="block mb-1">Tanggal</label>
-      <input type="date" id="match-date" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: 2025-05-13">
-    </div>
-
-    <!-- Tim 1 -->
-    <div class="mb-4">
-      <label class="block mb-1">Nama Tim 1</label>
-      <input type="text" id="team1-name" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: Real Valladolid">
-    </div>
-    <div class="mb-4">
-      <label class="block mb-1">Logo Tim 1 (URL)</label>
-      <input type="url" id="team1-logo" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: https://link-logo1.png">
-    </div>
-
-    <!-- Tim 2 -->
-    <div class="mb-4">
-      <label class="block mb-1">Nama Tim 2</label>
-      <input type="text" id="team2-name" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: Girona FC">
-    </div>
-    <div class="mb-4">
-      <label class="block mb-1">Logo Tim 2 (URL)</label>
-      <input type="url" id="team2-logo" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: https://link-logo2.png">
-    </div>
-
-    <!-- Tombol Play -->
-    <div class="mb-4">
-      <label class="block mb-2">Tombol Play</label>
-      <div id="play-buttons" class="space-y-2">
-        <div class="flex gap-2">
-          <input type="url" class="play-url w-full p-2 bg-gray-700 rounded" placeholder="Contoh: https://link-streaming.com">
-          <button onclick="removePlayButton(this)" class="bg-red-500 px-3 rounded hover:bg-red-600">✕</button>
-        </div>
+    <!-- Time & Date -->
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <label>Jam Tayang</label>
+        <input id="match-time" type="time" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: 22:42" />
       </div>
-      <button onclick="addPlayButton()" class="mt-2 bg-blue-500 px-4 py-1 rounded hover:bg-blue-600">+ Tambah Tombol Play</button>
+      <div>
+        <label>Tanggal</label>
+        <input id="match-date" type="date" class="w-full p-2 bg-gray-700 rounded" />
+      </div>
     </div>
 
-    <!-- Tombol Aksi -->
-    <div class="flex flex-wrap gap-4 mt-6">
-      <button onclick="generateHTML()" class="bg-indigo-500 px-4 py-2 rounded hover:bg-indigo-600">Submit</button>
-      <button onclick="copyOutput()" class="bg-green-500 px-4 py-2 rounded hover:bg-green-600">Copy</button>
-      <button onclick="resetForm()" class="bg-yellow-500 px-4 py-2 rounded hover:bg-yellow-600">Reset</button>
+    <!-- Team 1 -->
+    <div class="mb-4 relative">
+      <label class="block mb-1">Nama Tim 1</label>
+      <input type="text" id="team1-name" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: Real Valladolid" oninput="showSuggestions(this, 'team1-name')">
+      <ul id="suggestions-team1-name" class="absolute bg-gray-800 border border-gray-600 mt-1 rounded z-10 w-full hidden"></ul>
+    </div>
+    <div class="mb-4 relative">
+      <label class="block mb-1">Logo Tim 1 (URL)</label>
+      <input type="url" id="team1-logo" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: https://link-logo1.png" oninput="showSuggestions(this, 'team1-logo')">
+      <ul id="suggestions-team1-logo" class="absolute bg-gray-800 border border-gray-600 mt-1 rounded z-10 w-full hidden"></ul>
     </div>
 
-    <!-- Notifikasi Copy -->
-    <div id="copy-msg" class="mt-2 text-green-400 text-sm hidden">Hasil HTML berhasil disalin.</div>
+    <!-- Team 2 -->
+    <div class="mb-4 relative">
+      <label class="block mb-1">Nama Tim 2</label>
+      <input type="text" id="team2-name" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: Girona FC" oninput="showSuggestions(this, 'team2-name')">
+      <ul id="suggestions-team2-name" class="absolute bg-gray-800 border border-gray-600 mt-1 rounded z-10 w-full hidden"></ul>
+    </div>
+    <div class="mb-4 relative">
+      <label class="block mb-1">Logo Tim 2 (URL)</label>
+      <input type="url" id="team2-logo" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: https://link-logo2.png" oninput="showSuggestions(this, 'team2-logo')">
+      <ul id="suggestions-team2-logo" class="absolute bg-gray-800 border border-gray-600 mt-1 rounded z-10 w-full hidden"></ul>
+    </div>
+
+    <!-- Play Buttons -->
+    <div id="play-buttons-container" class="mb-4 space-y-2">
+      <label class="block">Link Play</label>
+      <input type="url" class="play-url w-full p-2 bg-gray-700 rounded" placeholder="Contoh: https://link-play.com" />
+    </div>
+    <button onclick="addPlayButton()" class="bg-blue-700 px-4 py-1 rounded hover:bg-blue-800">Tambah Tombol Play</button>
+
+    <!-- Action Buttons -->
+    <div class="flex gap-2 mt-4">
+      <button onclick="generateHTML()" class="bg-green-600 px-4 py-2 rounded hover:bg-green-700">Submit</button>
+      <button onclick="copyToClipboard()" class="bg-yellow-500 px-4 py-2 rounded hover:bg-yellow-600">Copy</button>
+      <button onclick="resetForm()" class="bg-red-600 px-4 py-2 rounded hover:bg-red-700">Reset</button>
+    </div>
+    <div id="copy-msg" class="text-green-400 hidden text-sm mt-1">✅ HTML berhasil disalin.</div>
 
     <!-- Output -->
-    <div class="mt-6">
-      <label class="block mb-1">Hasil HTML:</label>
-      <textarea id="output" class="w-full h-60 p-2 bg-gray-700 rounded" readonly placeholder="Klik tombol Submit untuk melihat hasil HTML."></textarea>
-    </div>
+    <textarea id="output" rows="10" class="w-full p-2 mt-4 bg-gray-800 text-white rounded" placeholder="Hasil HTML akan muncul di sini..." readonly></textarea>
   </div>
 
   <script>
-    function addPlayButton() {
-      const div = document.createElement("div");
-      div.className = "flex gap-2";
-      div.innerHTML = `
-        <input type="url" class="play-url w-full p-2 bg-gray-700 rounded" placeholder="Contoh: https://link-streaming.com">
-        <button onclick="removePlayButton(this)" class="bg-red-500 px-3 rounded hover:bg-red-600">✕</button>
-      `;
-      document.getElementById("play-buttons").appendChild(div);
+    function saveToLocalStorage(key, value) {
+      let data = JSON.parse(localStorage.getItem(key)) || [];
+      if (!data.includes(value)) {
+        data.push(value);
+        localStorage.setItem(key, JSON.stringify(data));
+      }
     }
 
-    function removePlayButton(btn) {
-      btn.parentElement.remove();
+    function showSuggestions(inputElem, key) {
+      const suggestionsBox = document.getElementById(`suggestions-${key}`);
+      const query = inputElem.value.toLowerCase();
+      const stored = JSON.parse(localStorage.getItem(key)) || [];
+      const filtered = stored.filter(val => val.toLowerCase().includes(query));
+      
+      suggestionsBox.innerHTML = "";
+      if (filtered.length > 0 && query.length > 0) {
+        filtered.forEach(item => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          li.className = "px-3 py-1 hover:bg-gray-700 cursor-pointer";
+          li.onclick = () => {
+            inputElem.value = item;
+            suggestionsBox.classList.add("hidden");
+          };
+          suggestionsBox.appendChild(li);
+        });
+        suggestionsBox.classList.remove("hidden");
+      } else {
+        suggestionsBox.classList.add("hidden");
+      }
     }
 
     function generateHTML() {
@@ -97,6 +112,11 @@
         alert("Semua data wajib diisi, termasuk minimal 1 tombol Play.");
         return;
       }
+
+      saveToLocalStorage("team1-name", team1);
+      saveToLocalStorage("team1-logo", team1Logo);
+      saveToLocalStorage("team2-name", team2);
+      saveToLocalStorage("team2-logo", team2Logo);
 
       let html = `
 <div class="match-container">
@@ -132,32 +152,32 @@
       document.getElementById("copy-msg").classList.add("hidden");
     }
 
-    function copyOutput() {
-      const output = document.getElementById("output").value;
-      const msg = document.getElementById("copy-msg");
-      if (!output) {
-        msg.textContent = "Silakan klik tombol Submit dulu.";
-        msg.classList.remove("text-green-400");
-        msg.classList.add("text-red-400");
-      } else {
-        navigator.clipboard.writeText(output).then(() => {
-          msg.textContent = "Hasil HTML berhasil disalin.";
-          msg.classList.remove("text-red-400");
-          msg.classList.add("text-green-400");
-        });
-      }
-      msg.classList.remove("hidden");
+    function copyToClipboard() {
+      const output = document.getElementById("output");
+      output.select();
+      output.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      document.getElementById("copy-msg").classList.remove("hidden");
     }
 
     function resetForm() {
       document.querySelectorAll("input").forEach(input => input.value = "");
-      document.getElementById("play-buttons").innerHTML = `
-        <div class="flex gap-2">
-          <input type="url" class="play-url w-full p-2 bg-gray-700 rounded" placeholder="Contoh: https://link-streaming.com">
-          <button onclick="removePlayButton(this)" class="bg-red-500 px-3 rounded hover:bg-red-600">✕</button>
-        </div>`;
       document.getElementById("output").value = "";
       document.getElementById("copy-msg").classList.add("hidden");
+
+      // Reset play buttons
+      const container = document.getElementById("play-buttons-container");
+      container.innerHTML = `<label class="block">Link Play</label>
+      <input type="url" class="play-url w-full p-2 bg-gray-700 rounded" placeholder="Contoh: https://link-play.com" />`;
+    }
+
+    function addPlayButton() {
+      const container = document.getElementById("play-buttons-container");
+      const input = document.createElement("input");
+      input.type = "url";
+      input.placeholder = "Contoh: https://link-play.com";
+      input.className = "play-url w-full p-2 bg-gray-700 rounded";
+      container.appendChild(input);
     }
   </script>
 
