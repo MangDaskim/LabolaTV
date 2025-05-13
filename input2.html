@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Input Match</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen py-10">
+
+  <div class="max-w-2xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
+    <h2 class="text-2xl font-bold mb-4">Input Data Pertandingan</h2>
+
+    <!-- Waktu & Tanggal -->
+    <div class="mb-4">
+      <label class="block mb-1">Waktu</label>
+      <input type="time" id="match-time" class="w-full p-2 bg-gray-700 rounded" value="22:42">
+    </div>
+    <div class="mb-4">
+      <label class="block mb-1">Tanggal</label>
+      <input type="date" id="match-date" class="w-full p-2 bg-gray-700 rounded" value="2025-05-13">
+    </div>
+
+    <!-- Tim 1 -->
+    <div class="mb-4">
+      <label class="block mb-1">Nama Tim 1</label>
+      <input type="text" id="team1-name" class="w-full p-2 bg-gray-700 rounded" value="Nama Tim 1">
+    </div>
+    <div class="mb-4">
+      <label class="block mb-1">Logo Tim 1 (URL)</label>
+      <input type="text" id="team1-logo" class="w-full p-2 bg-gray-700 rounded" value="https://cdn.livesoccertv.com/tt/images/teams/spain/logos/real-valladolid.png?q=65&amp;w=100">
+    </div>
+
+    <!-- Tim 2 -->
+    <div class="mb-4">
+      <label class="block mb-1">Nama Tim 2</label>
+      <input type="text" id="team2-name" class="w-full p-2 bg-gray-700 rounded" value="Nama Tim 2">
+    </div>
+    <div class="mb-4">
+      <label class="block mb-1">Logo Tim 2 (URL)</label>
+      <input type="text" id="team2-logo" class="w-full p-2 bg-gray-700 rounded" value="https://cdn.livesoccertv.com/tt/images/teams/spain/logos/girona-fc.png?q=65&amp;w=100">
+    </div>
+
+    <!-- Tombol Play -->
+    <div class="mb-4">
+      <label class="block mb-2">Tombol Play</label>
+      <div id="play-buttons" class="space-y-2">
+        <div class="flex gap-2">
+          <input type="url" class="play-url w-full p-2 bg-gray-700 rounded" placeholder="https://..." value="https://labolatv-player.blogspot.com/#hd2">
+          <button onclick="removePlayButton(this)" class="bg-red-500 px-3 rounded hover:bg-red-600">✕</button>
+        </div>
+      </div>
+      <button onclick="addPlayButton()" class="mt-2 bg-blue-500 px-4 py-1 rounded hover:bg-blue-600">+ Tambah Tombol Play</button>
+    </div>
+
+    <!-- Tombol Action -->
+    <div class="flex gap-4 mt-6">
+      <button onclick="copyOutput()" class="bg-green-500 px-4 py-2 rounded hover:bg-green-600">Copy</button>
+      <button onclick="resetForm()" class="bg-yellow-500 px-4 py-2 rounded hover:bg-yellow-600">Reset</button>
+    </div>
+
+    <!-- Output -->
+    <div class="mt-6">
+      <label class="block mb-1">Hasil HTML:</label>
+      <textarea id="output" class="w-full h-60 p-2 bg-gray-700 rounded" readonly></textarea>
+    </div>
+  </div>
+
+  <script>
+    function addPlayButton() {
+      const div = document.createElement("div");
+      div.className = "flex gap-2";
+      div.innerHTML = `
+        <input type="url" class="play-url w-full p-2 bg-gray-700 rounded" placeholder="https://...">
+        <button onclick="removePlayButton(this)" class="bg-red-500 px-3 rounded hover:bg-red-600">✕</button>
+      `;
+      document.getElementById("play-buttons").appendChild(div);
+    }
+
+    function removePlayButton(btn) {
+      btn.parentElement.remove();
+    }
+
+    function copyOutput() {
+      const time = document.getElementById("match-time").value;
+      const date = document.getElementById("match-date").value;
+      const team1 = document.getElementById("team1-name").value;
+      const team1Logo = document.getElementById("team1-logo").value;
+      const team2 = document.getElementById("team2-name").value;
+      const team2Logo = document.getElementById("team2-logo").value;
+      const playUrls = Array.from(document.getElementsByClassName("play-url")).map(input => input.value);
+
+      let html = `
+<div class="match-container">
+  <div class="match-header">
+    <span class="match-time" data-start="${time}" data-date="${date}">${time}</span>
+    <span class="match-countdown"></span>
+  </div>
+
+  <div class="match-body">
+    <div class="team-row">
+      <div class="team-left">
+        <img src="${team1Logo}" class="team-logo" alt="Team 1" />
+        <span class="team-name">${team1}</span>
+      </div>
+      <button class="watch-button">TONTON</button>
+    </div>
+
+    <div class="team-row">
+      <div class="team-left">
+        <img src="${team2Logo}" class="team-logo" alt="Team 2" />
+        <span class="team-name">${team2}</span>
+      </div>
+    </div>
+
+    <div class="play-buttons">
+      ${playUrls.map((url, i) => `<button onclick="window.location.href='${url}';">Play ${i + 1}</button>`).join("\n      ")}
+    </div>
+  </div>
+</div>
+      `.trim();
+
+      document.getElementById("output").value = html;
+      navigator.clipboard.writeText(html).then(() => alert("Disalin ke clipboard!"));
+    }
+
+    function resetForm() {
+      document.querySelectorAll("input").forEach(input => input.value = "");
+      document.getElementById("play-buttons").innerHTML = `
+        <div class="flex gap-2">
+          <input type="url" class="play-url w-full p-2 bg-gray-700 rounded" placeholder="https://...">
+          <button onclick="removePlayButton(this)" class="bg-red-500 px-3 rounded hover:bg-red-600">✕</button>
+        </div>`;
+      document.getElementById("output").value = "";
+    }
+  </script>
+
+</body>
+</html>
