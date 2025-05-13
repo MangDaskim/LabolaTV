@@ -3,67 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Form Input Pertandingan</title>
+  <title>Form Input Jadwal Bola</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-900 text-white p-4 sm:p-8">
+<body class="bg-gray-900 text-white min-h-screen p-4">
 
-  <div class="max-w-xl mx-auto space-y-4">
-    <h1 class="text-2xl font-bold mb-4">Form Input Pertandingan</h1>
+  <div class="max-w-xl mx-auto space-y-6">
 
-    <!-- Time & Date -->
-    <div class="grid grid-cols-2 gap-4">
+    <h1 class="text-2xl font-bold text-center">Form Input Jadwal Bola</h1>
+
+    <div class="space-y-4 bg-gray-800 p-4 rounded shadow">
+
       <div>
-        <label>Jam Tayang</label>
-        <input id="match-time" type="time" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: 22:42" />
+        <label class="block mb-1">Jam Tayang</label>
+        <input type="time" id="match-time" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: 20:00" />
+      </div>
+
+      <div>
+        <label class="block mb-1">Tanggal</label>
+        <input type="date" id="match-date" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: 2025-05-13" />
+      </div>
+
+      <!-- TIM 1 -->
+      <div>
+        <label class="block mb-1">Nama Tim 1</label>
+        <input type="text" id="team1-name" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: Barcelona" oninput="showSuggestions(this, 'team-names')" />
+        <ul id="suggestions-team1-name" class="bg-gray-800 mt-1 rounded shadow hidden"></ul>
       </div>
       <div>
-        <label>Tanggal</label>
-        <input id="match-date" type="date" class="w-full p-2 bg-gray-700 rounded" />
+        <label class="block mb-1">Logo Tim 1</label>
+        <input type="url" id="team1-logo" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: https://logo.png" oninput="showSuggestions(this, 'team-logos')" />
+        <ul id="suggestions-team1-logo" class="bg-gray-800 mt-1 rounded shadow hidden"></ul>
       </div>
+
+      <!-- TIM 2 -->
+      <div>
+        <label class="block mb-1">Nama Tim 2</label>
+        <input type="text" id="team2-name" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: Real Madrid" oninput="showSuggestions(this, 'team-names')" />
+        <ul id="suggestions-team2-name" class="bg-gray-800 mt-1 rounded shadow hidden"></ul>
+      </div>
+      <div>
+        <label class="block mb-1">Logo Tim 2</label>
+        <input type="url" id="team2-logo" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: https://logo2.png" oninput="showSuggestions(this, 'team-logos')" />
+        <ul id="suggestions-team2-logo" class="bg-gray-800 mt-1 rounded shadow hidden"></ul>
+      </div>
+
+      <!-- PLAY BUTTON -->
+      <div id="play-buttons-container" class="mb-4 space-y-2">
+        <label class="block">Link Play</label>
+        <div class="flex items-center gap-2">
+          <input type="url" class="play-url w-full p-2 bg-gray-700 rounded" placeholder="Contoh: https://link-play.com" />
+          <button onclick="removePlayInput(this)" class="text-red-500 font-bold text-xl">×</button>
+        </div>
+      </div>
+      <button onclick="addPlayButton()" class="bg-blue-700 px-4 py-1 rounded hover:bg-blue-800">Tambah Tombol Play</button>
+
+      <!-- TOMBOL -->
+      <div class="flex gap-2 mt-4">
+        <button onclick="generateHTML()" class="bg-green-600 px-4 py-2 rounded hover:bg-green-700">Submit</button>
+        <button onclick="copyHTML()" class="bg-yellow-600 px-4 py-2 rounded hover:bg-yellow-700">Copy</button>
+        <button onclick="resetForm()" class="bg-red-600 px-4 py-2 rounded hover:bg-red-700">Reset</button>
+      </div>
+
+      <p id="copy-msg" class="text-sm text-green-400 hidden mt-2">HTML berhasil disalin!</p>
     </div>
 
-    <!-- Team 1 -->
-    <div class="mb-4 relative">
-      <label class="block mb-1">Nama Tim 1</label>
-      <input type="text" id="team1-name" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: Real Valladolid" oninput="showSuggestions(this, 'team1-name')">
-      <ul id="suggestions-team1-name" class="absolute bg-gray-800 border border-gray-600 mt-1 rounded z-10 w-full hidden"></ul>
+    <!-- OUTPUT -->
+    <div>
+      <label class="block mb-1 mt-4">Hasil HTML</label>
+      <textarea id="output" rows="12" class="w-full bg-gray-800 p-3 rounded text-sm" readonly></textarea>
     </div>
-    <div class="mb-4 relative">
-      <label class="block mb-1">Logo Tim 1 (URL)</label>
-      <input type="url" id="team1-logo" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: https://link-logo1.png" oninput="showSuggestions(this, 'team1-logo')">
-      <ul id="suggestions-team1-logo" class="absolute bg-gray-800 border border-gray-600 mt-1 rounded z-10 w-full hidden"></ul>
-    </div>
-
-    <!-- Team 2 -->
-    <div class="mb-4 relative">
-      <label class="block mb-1">Nama Tim 2</label>
-      <input type="text" id="team2-name" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: Girona FC" oninput="showSuggestions(this, 'team2-name')">
-      <ul id="suggestions-team2-name" class="absolute bg-gray-800 border border-gray-600 mt-1 rounded z-10 w-full hidden"></ul>
-    </div>
-    <div class="mb-4 relative">
-      <label class="block mb-1">Logo Tim 2 (URL)</label>
-      <input type="url" id="team2-logo" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: https://link-logo2.png" oninput="showSuggestions(this, 'team2-logo')">
-      <ul id="suggestions-team2-logo" class="absolute bg-gray-800 border border-gray-600 mt-1 rounded z-10 w-full hidden"></ul>
-    </div>
-
-    <!-- Play Buttons -->
-    <div id="play-buttons-container" class="mb-4 space-y-2">
-      <label class="block">Link Play</label>
-      <input type="url" class="play-url w-full p-2 bg-gray-700 rounded" placeholder="Contoh: https://link-play.com" />
-    </div>
-    <button onclick="addPlayButton()" class="bg-blue-700 px-4 py-1 rounded hover:bg-blue-800">Tambah Tombol Play</button>
-
-    <!-- Action Buttons -->
-    <div class="flex gap-2 mt-4">
-      <button onclick="generateHTML()" class="bg-green-600 px-4 py-2 rounded hover:bg-green-700">Submit</button>
-      <button onclick="copyToClipboard()" class="bg-yellow-500 px-4 py-2 rounded hover:bg-yellow-600">Copy</button>
-      <button onclick="resetForm()" class="bg-red-600 px-4 py-2 rounded hover:bg-red-700">Reset</button>
-    </div>
-    <div id="copy-msg" class="text-green-400 hidden text-sm mt-1">✅ HTML berhasil disalin.</div>
-
-    <!-- Output -->
-    <textarea id="output" rows="10" class="w-full p-2 mt-4 bg-gray-800 text-white rounded" placeholder="Hasil HTML akan muncul di sini..." readonly></textarea>
   </div>
 
   <script>
@@ -76,11 +85,10 @@
     }
 
     function showSuggestions(inputElem, key) {
-      const suggestionsBox = document.getElementById(`suggestions-${key}`);
+      const suggestionsBox = document.getElementById(`suggestions-${inputElem.id}`);
       const query = inputElem.value.toLowerCase();
       const stored = JSON.parse(localStorage.getItem(key)) || [];
       const filtered = stored.filter(val => val.toLowerCase().includes(query));
-      
       suggestionsBox.innerHTML = "";
       if (filtered.length > 0 && query.length > 0) {
         filtered.forEach(item => {
@@ -113,10 +121,11 @@
         return;
       }
 
-      saveToLocalStorage("team1-name", team1);
-      saveToLocalStorage("team1-logo", team1Logo);
-      saveToLocalStorage("team2-name", team2);
-      saveToLocalStorage("team2-logo", team2Logo);
+      // Gabung semua ke penyimpanan umum
+      saveToLocalStorage("team-names", team1);
+      saveToLocalStorage("team-names", team2);
+      saveToLocalStorage("team-logos", team1Logo);
+      saveToLocalStorage("team-logos", team2Logo);
 
       let html = `
 <div class="match-container">
@@ -152,32 +161,47 @@
       document.getElementById("copy-msg").classList.add("hidden");
     }
 
-    function copyToClipboard() {
+    function addPlayButton() {
+      const container = document.getElementById("play-buttons-container");
+      const div = document.createElement("div");
+      div.className = "flex items-center gap-2";
+      div.innerHTML = `
+        <input type="url" class="play-url w-full p-2 bg-gray-700 rounded" placeholder="Contoh: https://link-play.com" />
+        <button onclick="removePlayInput(this)" class="text-red-500 font-bold text-xl">×</button>
+      `;
+      container.appendChild(div);
+    }
+
+    function removePlayInput(btn) {
+      btn.parentElement.remove();
+    }
+
+    function copyHTML() {
       const output = document.getElementById("output");
       output.select();
-      output.setSelectionRange(0, 99999);
       document.execCommand("copy");
       document.getElementById("copy-msg").classList.remove("hidden");
     }
 
     function resetForm() {
-      document.querySelectorAll("input").forEach(input => input.value = "");
+      document.getElementById("match-time").value = "";
+      document.getElementById("match-date").value = "";
+      document.getElementById("team1-name").value = "";
+      document.getElementById("team1-logo").value = "";
+      document.getElementById("team2-name").value = "";
+      document.getElementById("team2-logo").value = "";
       document.getElementById("output").value = "";
       document.getElementById("copy-msg").classList.add("hidden");
 
-      // Reset play buttons
-      const container = document.getElementById("play-buttons-container");
-      container.innerHTML = `<label class="block">Link Play</label>
-      <input type="url" class="play-url w-full p-2 bg-gray-700 rounded" placeholder="Contoh: https://link-play.com" />`;
-    }
-
-    function addPlayButton() {
-      const container = document.getElementById("play-buttons-container");
-      const input = document.createElement("input");
-      input.type = "url";
-      input.placeholder = "Contoh: https://link-play.com";
-      input.className = "play-url w-full p-2 bg-gray-700 rounded";
-      container.appendChild(input);
+      // Reset tombol play ke 1 input
+      const playContainer = document.getElementById("play-buttons-container");
+      playContainer.innerHTML = `
+        <label class="block">Link Play</label>
+        <div class="flex items-center gap-2">
+          <input type="url" class="play-url w-full p-2 bg-gray-700 rounded" placeholder="Contoh: https://link-play.com" />
+          <button onclick="removePlayInput(this)" class="text-red-500 font-bold text-xl">×</button>
+        </div>
+      `;
     }
   </script>
 
