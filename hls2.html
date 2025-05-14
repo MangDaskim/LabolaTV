@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M3U8 Player - Shaka</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/shaka-player.compiled.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen p-4">
+
+  <div class="w-full max-w-4xl">
+    <h1 class="text-2xl font-bold text-center mb-4">M3U8 Player dengan Shaka</h1>
+
+    <!-- Video Container -->
+    <div class="aspect-w-16 aspect-h-9 bg-black rounded-lg overflow-hidden shadow-lg">
+      <video id="video" class="w-full h-full" autoplay muted controls></video>
+    </div>
+
+    <!-- Form URL -->
+    <div class="mt-4">
+      <form id="form" class="flex flex-col sm:flex-row gap-2">
+        <input id="m3u8-url" type="text" placeholder="Masukkan URL .m3u8" class="flex-1 px-4 py-2 rounded text-black" required>
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-white">Putar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    async function initPlayer(url) {
+      const video = document.getElementById('video');
+      const player = new shaka.Player(video);
+
+      try {
+        await player.load(url);
+        console.log("Video berhasil dimuat:", url);
+      } catch (e) {
+        console.error("Gagal memuat video:", e);
+        alert("Gagal memuat video. Pastikan URL .m3u8 valid dan mendukung CORS.");
+      }
+    }
+
+    // Event listener
+    document.getElementById('form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const url = document.getElementById('m3u8-url').value.trim();
+      if (url) {
+        initPlayer(url);
+      }
+    });
+
+    // Inisialisasi awal dengan contoh URL (opsional)
+    // initPlayer("https://example.com/stream.m3u8");
+  </script>
+
+</body>
+</html>
