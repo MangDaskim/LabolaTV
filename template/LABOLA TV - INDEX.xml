@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:version='2' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+  <head>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+      <b:if cond='data:blog.pageType == &quot;index&quot;'>
+    <title><data:blog.title/></title>
+  <b:else/>
+    <title><data:blog.pageName/> | <data:blog.title/></title>
+  </b:if>
+    <b:include data='blog' name='all-head-content'/>
+    <b:skin><![CDATA[
+      body {
+        font-family: Arial, sans-serif;
+        background: #0f172a;
+        color: #fff;
+        margin: 0;
+        margin-top: 15px;
+      }
+      .match-schedule {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #1e293b;
+        padding: 16px;
+        margin: 10px auto;
+        border-radius: 12px;
+        max-width: 600px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        flex-wrap: wrap;
+      }
+      .team-name-a, .team-name-b {
+        width: 25%;
+        text-align: center;
+        font-weight: bold;
+      }
+      .team-logo {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+      }
+      .time {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+        font-size: 1rem;
+        color: #38bdf8;
+      }
+      .countdown {
+        width: 100%;
+        text-align: center;
+        font-size: 0.9rem;
+        margin-top: 5px;
+        color: #facc15;
+      }
+      .play-buttons {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+      }
+      .play-button {
+        background-color: #10b981;
+        border: none;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 0.9rem;
+      }
+      .play-button:hover {
+        background-color: #059669;
+      }
+
+
+    ]]></b:skin>
+    
+  </head>
+  <body>
+    <b:section class='widget-section' id='widgetSection' name='Widget Elemen' showaddelement='yes'>
+      <b:widget id='HTML5' locked='false' title='' type='HTML'>
+        <b:widget-settings>
+          <b:widget-setting name='content'><![CDATA[<div class="wrapper">
+<div class="media-brand-header">
+  <div class="brand-identity">
+    <div class="brand-name">LABOLA TV</div>
+  </div>
+  <div class="brand-social-links">
+    <a class="social-icon" href="https://t.me/LabolaTV"><img src="https://img.icons8.com/ios-filled/30/ffffff/telegram-app.png" alt="Telegram" /></a>
+    <a class="social-icon" href="https://whatsapp.com/channel/0029VbAyiuCH5JM0I3deM70i"><img src="https://img.icons8.com/ios-filled/30/ffffff/whatsapp.png" alt="Saluran WhatsApp" /></a>
+  </div>
+</div>
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&display=swap');
+
+.wrapper {
+  width: 100%;
+  padding: 0px;
+  display: flex;
+}
+
+.media-brand-header {
+  width: 100%;
+  max-width: 770px;
+  background: linear-gradient(145deg, #0f172a, #1e293b);
+  padding: 20px 35px;
+  margin: 0 auto;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+  flex-wrap: wrap; /* Tambahan agar tidak overflow */
+  gap: 10px; /* Spasi antar elemen di mode wrap */
+}
+
+.media-brand-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+  animation: rotateGradient 15s linear infinite;
+  z-index: 0;
+}
+
+.brand-identity {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 auto; /* Agar bisa menyusut */
+  min-width: 150px;
+}
+
+.brand-name {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: transparent;
+  background: linear-gradient(90deg, #3b82f6 0%, #ec4899 30%, #f59e0b 60%, #10b981 100%);
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  display: inline-block;
+  animation: shine 6s linear infinite, pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes rotateGradient {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.brand-social-links {
+  display: flex;
+  gap: 18px;
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.social-icon:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon img {
+  width: 22px;
+  height: 22px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s;
+}
+
+.social-icon:hover img {
+  transform: scale(1.15);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .media-brand-header {
+    padding: 16px 25px;
+    border-radius: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .brand-name {
+    font-size: 2.2rem;
+  }
+
+  .brand-social-links {
+    gap: 14px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .social-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .media-brand-header {
+    padding: 14px 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .brand-name {
+    font-size: 1.8rem;
+  }
+
+  .brand-social-links {
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .social-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand-name {
+    font-size: 1.6rem;
+  }
+
+  .social-icon {
+    width: 34px;
+    height: 34px;
+  }
+}
+</style>]]></b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+      </b:widget>
+      <b:widget id='HTML6' locked='false' title='' type='HTML'>
+        <b:widget-settings>
+          <b:widget-setting name='content'><![CDATA[<div class="description-container">
+  <h2 class="title">Tentang LABOLA TV</h2>
+  <p class="description">
+    <strong>LABOLA TV</strong> adalah platform yang menyediakan <strong>live streaming pertandingan sepak bola</strong>
+    dari berbagai liga terkenal di dunia. Nikmati pertandingan langsung dari liga-liga favorit Anda seperti
+    <strong>Liga 1, Liga Inggris, Liga Spanyol, UCL</strong>, dan masih banyak lagi liga keren lainnya. 
+    Dengan kualitas streaming yang tinggi dan update real-time, <strong>LABOLA TV</strong> memastikan Anda 
+    tidak akan ketinggalan aksi dari tim kesayangan Anda!
+  </p>
+</div>
+
+<style>
+.description-container {
+  background-color: #1e293b;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 16px;
+  color: #38bdf8; /* Warna biru yang cerah */
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.description strong {
+  color: #facc15; /* Warna kuning untuk penekanan */
+}
+
+@media (max-width: 768px) {
+  .description-container {
+    padding: 16px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}
+</style>]]></b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+      </b:widget>
+    </b:section>
+
+    <div class='container'>
+      <b:section class='main' id='main' showaddelement='yes'>
+        <b:widget id='HTML1' locked='false' title='' type='HTML'>
+          <b:widget-settings>
+            <b:widget-setting name='content'><![CDATA[<div class="match-container">
+  <div class="match-header">
+    <span class="match-time" data-start="23:52" data-date="2025-05-22">23:52</span>
+    <span class="match-countdown"></span>
+  </div>
+
+  <div class="match-body">
+    <div class="team-row">
+      <div class="team-left">
+        <img src="https://cdn.livesoccertv.com/tt/images/teams/england/logos/tottenham-hotspur.png?q=65&w=100" class="team-logo" alt="Team 1" />
+        <span class="team-name">Tottenham</span>
+      </div>
+      <button class="watch-button">TONTON</button>
+    </div>
+
+    <div class="team-row">
+      <div class="team-left">
+        <img src="https://cdn.livesoccertv.com/tt/images/teams/england/logos/manchester-united.png?q=65&w=100" class="team-logo" alt="Team 2" />
+        <span class="team-name">Man United</span>
+      </div>
+    </div>
+
+    <div class="play-buttons">
+      <button onclick="window.location.href='https://labolatv-player.blogspot.com/#tnt1';">Play 1</button>
+      <button onclick="window.location.href='https://labolatv-player.blogspot.com/#bein1';">Play 2</button>
+      <button onclick="window.location.href='https://labolatv-player.blogspot.com/#hd5';">Play 3</button>
+      <button onclick="window.location.href='https://labolatv-player.blogspot.com/#sp5';">Play 4</button>
+      <button onclick="window.location.href='https://labolatv-player.blogspot.com/#br2';">Play 5</button>
+      <button onclick="window.location.href='https://labolatv-player.blogspot.com/#go3s1';">Play 6</button>
+    </div>
+  </div>
+</div>]]></b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+        </b:widget>
+        <b:widget id='HTML8' locked='false' title='' type='HTML'>
+          <b:widget-settings>
+            <b:widget-setting name='content'><![CDATA[<div class="match-container">
+  <div class="match-header">
+    <span class="match-time" data-start="23:10" data-date="2025-05-21">23:10</span>
+    <span class="match-countdown"></span>
+  </div>
+
+  <div class="match-body">
+    <div class="team-row">
+      <div class="team-left">
+        <img src="https://cdn.livesoccertv.com/tt/images/teams/saudi-arabia/logos/al-nasr.png?q=65&w=100" class="team-logo" alt="Team 1" />
+        <span class="team-name">Al Nassr</span>
+      </div>
+      <button class="watch-button">TONTON</button>
+    </div>
+
+    <div class="team-row">
+      <div class="team-left">
+        <img src="https://cdn.livesoccertv.com/tt/images/teams/saudi-arabia/logos/al-khaleej.png?q=65&w=100" class="team-logo" alt="Team 2" />
+        <span class="team-name">Al Khaleej</span>
+      </div>
+    </div>
+
+    <div class="play-buttons">
+      <button onclick="window.location.href='https://labolatv-player.blogspot.com/#hd5';">Play 1</button>
+      <button onclick="window.location.href='https://labolatv-player.blogspot.com/#sp1';">Play 2</button>
+      <button onclick="window.location.href='https://labolatv-player.blogspot.com/#br4';">Play 3</button>
+      <button onclick="window.location.href='https://labolatv-player.blogspot.com/#spotv2';">Play 4</button>
+    </div>
+  </div>
+</div>]]></b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+        </b:widget>
+      </b:section>
+    </div>
+    
+    <b:section class='widget-section' id='widgetSection1' name='Widget Elemen' showaddelement='yes'>
+      <b:widget id='HTML3' locked='false' title='' type='HTML'>
+        <b:widget-settings>
+          <b:widget-setting name='content'><![CDATA[<script>
+function updateMatchCountdowns() {
+  const scheduleTables = document.querySelectorAll(".match-container");
+
+  scheduleTables.forEach(function (table) {
+    const timeEl = table.querySelector(".match-time");
+    const countdownEl = table.querySelector(".match-countdown");
+
+    if (!timeEl || !countdownEl) return;
+
+    const timeStr = timeEl.dataset.start;
+    const dateStr = timeEl.dataset.date;
+    const matchTime = new Date(`${dateStr}T${timeStr}:00`);
+    const now = new Date();
+    const diff = matchTime - now;
+
+    // Jika memiliki class 'ended', tampilkan END dan berhenti di sini
+    if (timeEl.classList.contains("ended")) {
+      timeEl.textContent = "END";
+      countdownEl.style.display = "none";
+      return;
+    }
+
+    // Jika pertandingan sudah dimulai
+    if (diff <= 0) {
+      const elapsed = now - matchTime;
+      const elapsedMinutes = elapsed / (1000 * 60);
+
+      if (elapsedMinutes >= 105) {
+        timeEl.textContent = "END";
+        timeEl.classList.add("ended"); // agar tidak diproses lagi di interval selanjutnya
+        countdownEl.style.display = "none";
+      } else {
+        timeEl.textContent = "LIVE";
+        countdownEl.style.display = "none";
+      }
+
+      return;
+    }
+
+    // Jika pertandingan belum dimulai, tampilkan countdown
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    countdownEl.style.display = "block";
+    countdownEl.innerHTML = `<strong>Mulai Dalam: <font color="#facc15">${hours}j ${minutes}m ${seconds}d</font>`;
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  updateMatchCountdowns();
+  setInterval(updateMatchCountdowns, 1000);
+});
+</script>]]></b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+      </b:widget>
+      <b:widget id='HTML2' locked='false' title='' type='HTML'>
+        <b:widget-settings>
+          <b:widget-setting name='content'><![CDATA[<style>
+.match-container {
+  background-color: #1e293b;
+  color: white;
+  border-radius: 16px;
+  padding: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.match-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.match-time,
+.match-countdown {
+  background-color: #0f172a;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.match-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.team-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.team-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.team-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.team-name {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Tombol TONTON */
+.watch-button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.watch-button:hover {
+  background-color: #2563eb;
+}
+
+.play-buttons {
+  display: none;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.play-buttons button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.play-buttons.show {
+  display: flex;
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+  .match-container {
+    padding: 12px;
+  }
+
+  .team-name {
+    font-size: 13px;
+  }
+
+  .watch-button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .match-time,
+  .match-countdown {
+    font-size: 13px;
+    padding: 4px 10px;
+  }
+}
+</style>
+
+
+<script>
+document.querySelectorAll('.watch-button').forEach(button => {
+  button.addEventListener('click', () => {
+    const matchBlock = button.closest('.match-container');
+    const playButtons = matchBlock.querySelector('.play-buttons');
+    playButtons.classList.toggle('show');
+  });
+});
+</script>]]></b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+      </b:widget>
+      <b:widget id='HTML7' locked='false' title='' type='HTML'>
+        <b:widget-settings>
+          <b:widget-setting name='content'><![CDATA[<script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="332989"></script>
+
+<script>
+    /**
+     * Anti Ad Blocker Code by Fineshop Design
+     * Last Updated: 16:42 12/08/2023 IST
+     * Copyright: [Deo Kumar, Fineshop Design](https://www.fineshopdesign.com)
+     */
+    (function(){const n=document,o=n.head;var t="pointer-events: none; height: 1px; width: 0; opacity: 0; visibility: hidden; position: fixed; bottom: 0;";const a=n.createElement("div"),s=n.createElement("div"),d=n.createElement("ins");a.id="div-gpt-ad-3061307416813-0",a.style=t,s.className="textads banner-ads banner_ads ad-unit ad-zone ad-space adsbox ads",s.style=t,d.className="adsbygoogle",d.style="display: none;";const i={allowed:null,elements:[a,s,d]};this.checkAdsStatus=function(t){const e=n.body;"function"==typeof t&&("boolean"==typeof i.allowed?t(i):(e.appendChild(a),e.appendChild(s),e.appendChild(d),setTimeout(function(){if(0===a.offsetHeight||0===s.offsetHeight||d.firstElementChild)i.allowed=!1,t(i);else{const e=n.createElement("script");e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",e.async=!0,e.crossOrigin="anonymous",e.onload=function(){i.allowed=!0,t(i)},e.onerror=function(){i.allowed=!1,t(i)},o.appendChild(e)}a.remove(),s.remove(),d.remove()},40)))}}).call(this);
+    
+    function antiAdBlockerHandler() {
+      window.checkAdsStatus(function(ads) {
+        if (!ads.allowed) {
+          // Ads are Blocked
+          console.log("%c[ADS]", "color:#d32f2f;", "Blocked");
+    
+          const icon = "<svg style='stroke:none;fill:currentColor!important' viewBox='0 0 24 24'><path d='M12.2 9L10.2 7H13C14.1 7 15 7.9 15 9V11.8L13 9.8V9H12.2M23 9V7H19C17.9 7 17 7.9 17 9V11C17 12.1 17.9 13 19 13H21V15H18.2L20.2 17H21C22.1 17 23 16.1 23 15V13C23 11.9 22.1 11 21 11H19V9H23M22.1 21.5L20.8 22.8L14.4 16.4C14.1 16.7 13.6 17 13 17H9V10.9L7 8.9V17H5V13H3V17H1V9C1 7.9 1.9 7 3 7H5.1L1.1 3L2.4 1.7L22.1 21.5M5 9H3V11H5V9M13 14.9L11 12.9V15H13V14.9Z'/></svg>";
+          const title = "Ad blocker detected!";
+          const message = "<p style='color: white; font-weight: bold;'>We have detected that you are using an ad-blocking plugin in your browser.<br/>Kami telah mendeteksi bahwa Anda menggunakan plugin pemblokiran iklan di browser Anda.<br/>Please use Chrome browser and disable your ad blocker / Gunakan browser Chrome dan matikan pemblokiran iklan Anda.</p>";
+    
+          // Lets create the popup
+          const element = document.createElement("div");
+          element.className = "popSc";
+          element.innerHTML = "<div class='popBo'>" + icon + "<h2>" + title + "</h2><div class='popCo'>" + message + "</div></div>"
+          document.body.appendChild(element);
+        } else {
+          // Ads are allowed;
+          console.log("%c[ADS]", "color:#43a047;", "Allowed");
+        }
+      });
+      document.removeEventListener("DOMContentLoaded", antiAdBlockerHandler);
+    };
+    
+    if (document.readyState === "complete" || document.readyState !== "loading") {
+      antiAdBlockerHandler();
+    } else {
+      document.addEventListener("DOMContentLoaded", antiAdBlockerHandler);
+    }
+</script>
+
+<style>
+        .popSc {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.popBo {
+    background: black;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+}
+.popBo svg {
+    width: 100px;
+    height: 100px;
+    color: red;
+}
+.popBo h2 {
+    color: red;
+}
+</style>]]></b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+      </b:widget>
+    </b:section>
+
+
+  </body>
+</html>
