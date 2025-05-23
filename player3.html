@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Player Video</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/shaka-player.compiled.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <!-- Fluid Player -->
+<link rel="stylesheet" href="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.css" />
+<script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #000;
+    }
+    #videoContainer {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      max-height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="videoContainer">
+    <video id="video" autoplay controls></video>
+  </div>
+
+<script>
+  // Hapus pembatasan iframe & referrer
+  const allowedReferrers = [
+  "https://labolatv-player.blogspot.com",
+  ];
+
+  if (window === window.top) {
+     document.body.innerHTML = '<div style="color:white;text-align:center;padding:20px">🚫 Halaman ini hanya bisa digunakan di iframe.</div>';
+     throw new Error("Harus lewat iframe");
+   }
+
+   const ref = document.referrer;
+   const allowed = allowedReferrers.some(domain => ref.startsWith(domain));
+
+   if (!allowed) {
+     document.body.innerHTML = '<div style="color:white;text-align:center;padding:20px">⚠️ Akses iframe tidak diizinkan dari domain ini.</div>';
+     throw new Error("Referrer tidak diizinkan");
+   }
+
+  // Inisialisasi Player
+  async function initPlayer() {
+    const params = new URLSearchParams(window.location.search);
+    const encryptedData = params.get("data");
+
+    if (!encryptedData) {
+      document.body.innerHTML = '<div style="color:white;text-align:center;padding:20px">❌ Data video tidak ditemukan.</div>';
+      return;
+    }
+
+    try {
+      const secret = 'RAHASIA123'; // Harus sama dengan di index.html
+      const decryptedBytes = CryptoJS.AES.decrypt(decodeURIComponent(encryptedData), secret);
+      const decryptedText = decryptedBytes.toString(CryptoJS.enc.Utf8);
+      const { mpd, keyid, key } = JSON.parse(decryptedText);
+
+      const video = document.getElementById("video");
+      const player = new shaka.Player(video);
+
+      player.configure({
+        drm: {
+          clearKeys: {
+            [keyid]: key
+          }
+        }
+      });
+
+      await player.load(mpd);
+      console.log("✅ Video berhasil dimuat");
+    } catch (error) {
+      console.error("Gagal memuat video:", error);
+      document.body.innerHTML = '<div style="color:white;text-align:center;padding:20px">❌ Gagal memuat video. Periksa data Anda.</div>';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', initPlayer);
+</script>
+</body>
+</html>
