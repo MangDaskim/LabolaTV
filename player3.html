@@ -32,46 +32,70 @@
   </style>
 </head>
 <body>
-  <div id="videoContainer">
-    <video id="video" autoplay controls></video>
-  </div>
+  <!-- VAST Player -->
+<video id="ad-player" width="100%" height="360" controls></video>
+
+<!-- Konten Utama (Shaka Player) -->
+<div id="shaka-container" style="display: none;">
+  <video id="main-player" width="100%" height="360" autoplay controls></video>
+</div>
+
+<!-- Skip Tombol Manual (jaga-jaga) -->
+<button id="skipAd" style="display: none; position: absolute; top: 10px; right: 10px; z-index: 10;">Lewati Iklan</button>
+
 
 <script>
-  // Hapus pembatasan iframe & referrer
-  const allowedReferrers = [
-  "https://labolatv-player.blogspot.com",
-  ];
+  const vastTag = "https://vast.yomeno.xyz/vast?spot_id=1450635";
 
-  if (window === window.top) {
-     document.body.innerHTML = '<div style="color:white;text-align:center;padding:20px">🚫 Halaman ini hanya bisa digunakan di iframe.</div>';
-     throw new Error("Harus lewat iframe");
-   }
+  // Init FluidPlayer untuk iklan
+  const adPlayer = fluidPlayer("ad-player", {
+    layoutControls: {
+      controlBar: true,
+      muted: false,
+      allowDownload: false,
+    },
+    vastOptions: {
+      adList: [{
+        roll: "preRoll",
+        vastTag: vastTag,
+        adText: "Iklan akan segera dimulai"
+      }]
+    }
+  });
 
-   const ref = document.referrer;
-   const allowed = allowedReferrers.some(domain => ref.startsWith(domain));
+  // Event jika iklan selesai
+  document.getElementById("ad-player").addEventListener("ended", () => {
+    lanjutKeVideoUtama();
+  });
 
-   if (!allowed) {
-     document.body.innerHTML = '<div style="color:white;text-align:center;padding:20px">⚠️ Akses iframe tidak diizinkan dari domain ini.</div>';
-     throw new Error("Referrer tidak diizinkan");
-   }
+  // Optional tombol skip manual
+  document.getElementById("skipAd").addEventListener("click", () => {
+    lanjutKeVideoUtama();
+  });
 
-  // Inisialisasi Player
-  async function initPlayer() {
+  function lanjutKeVideoUtama() {
+    document.getElementById("ad-player").style.display = "none";
+    document.getElementById("skipAd").style.display = "none";
+    document.getElementById("shaka-container").style.display = "block";
+    initShakaPlayer();
+  }
+
+  async function initShakaPlayer() {
     const params = new URLSearchParams(window.location.search);
     const encryptedData = params.get("data");
 
     if (!encryptedData) {
-      document.body.innerHTML = '<div style="color:white;text-align:center;padding:20px">❌ Data video tidak ditemukan.</div>';
+      document.body.innerHTML = "<div style='color:red;text-align:center;'>❌ Data video tidak ditemukan.</div>";
       return;
     }
 
     try {
-      const secret = 'RAHASIA123'; // Harus sama dengan di index.html
-      const decryptedBytes = CryptoJS.AES.decrypt(decodeURIComponent(encryptedData), secret);
-      const decryptedText = decryptedBytes.toString(CryptoJS.enc.Utf8);
-      const { mpd, keyid, key } = JSON.parse(decryptedText);
+      const secret = "RAHASIA123";
+      const decrypted = CryptoJS.AES.decrypt(decodeURIComponent(encryptedData), secret);
+      const text = decrypted.toString(CryptoJS.enc.Utf8);
+      const { mpd, keyid, key } = JSON.parse(text);
 
-      const video = document.getElementById("video");
+      const video = document.getElementById("main-player");
       const player = new shaka.Player(video);
 
       player.configure({
@@ -83,14 +107,19 @@
       });
 
       await player.load(mpd);
-      console.log("✅ Video berhasil dimuat");
-    } catch (error) {
-      console.error("Gagal memuat video:", error);
-      document.body.innerHTML = '<div style="color:white;text-align:center;padding:20px">❌ Gagal memuat video. Periksa data Anda.</div>';
+      video.play();
+    } catch (err) {
+      console.error("Error load video:", err);
+      document.body.innerHTML = "<div style='color:red;text-align:center;'>❌ Gagal memuat video utama.</div>";
     }
   }
 
-  document.addEventListener('DOMContentLoaded', initPlayer);
+  document.addEventListener("DOMContentLoaded", () => {
+    // Tampilkan tombol skip manual setelah beberapa detik
+    setTimeout(() => {
+      document.getElementById("skipAd").style.display = "block";
+    }, 8000); // tampil setelah 8 detik (bisa sesuaikan)
+  });
 </script>
 </body>
 </html>
