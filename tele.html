@@ -24,8 +24,8 @@
         </div>
 
         <div>
-          <label class="block font-semibold text-gray-700">Jam Tayang</label>
-          <input type="time" id="jam" required class="w-full px-4 py-2 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+          <label class="block font-semibold text-gray-700">Jam Tayang (opsional)</label>
+          <input type="time" id="jam" class="w-full px-4 py-2 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" />
         </div>
       </div>
 
@@ -62,7 +62,7 @@
         <div id="${id}" class="border border-indigo-200 p-4 rounded-lg bg-indigo-50 relative">
           <button type="button" onclick="hapusPertandingan('${id}')" class="absolute top-2 right-2 text-red-600 hover:text-red-800 text-xl font-bold">×</button>
           <h3 class="text-lg font-semibold text-indigo-700 mb-2">Pertandingan ${pertandinganCount}</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
               <label class="block text-sm font-medium text-gray-700">Tim 1</label>
               <input list="timList" type="text" name="tim1-${pertandinganCount}" required onblur="simpanTim(this.value)" oninput="showSuggestion(this)" onfocus="showSuggestion(this)" class="tim-input w-full px-4 py-2 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" autocomplete="off" />
@@ -72,6 +72,10 @@
               <label class="block text-sm font-medium text-gray-700">Tim 2</label>
               <input list="timList" type="text" name="tim2-${pertandinganCount}" required onblur="simpanTim(this.value)" oninput="showSuggestion(this)" onfocus="showSuggestion(this)" class="tim-input w-full px-4 py-2 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" autocomplete="off" />
               <div class="suggestion-list bg-white border border-indigo-300 rounded mt-1 max-h-40 overflow-auto hidden"></div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Jam Pertandingan (opsional)</label>
+              <input type="time" name="jamPertandingan-${pertandinganCount}" class="w-full px-4 py-2 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" />
             </div>
           </div>
         </div>
@@ -161,57 +165,109 @@
       updateLigaDatalist();
     };
 
-    const form = document.getElementById("jadwalForm");
-    const outputDiv = document.getElementById("output");
-    const templateResult = document.getElementById("templateResult");
+    // Fungsi untuk format tanggal menjadi "Minggu, 25 Mei 2025"
+    function formatTanggal(tanggalISO) {
+      if (!tanggalISO) return "";
+      const hariNama = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+      const bulanNama = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
+      const tgl = new Date(tanggalISO + "T00:00:00");
+      const hari = hariNama[tgl.getDay()];
+      const tanggal = tgl.getDate();
+      const bulan = bulanNama[tgl.getMonth()];
+      const tahun = tgl.getFullYear();
 
-      const liga = document.getElementById("liga").value;
-      const tanggal = document.getElementById("tanggal").value;
-      const jam = document.getElementById("jam").value;
+      return `${hari}, ${tanggal} ${bulan} ${tahun}`;
+    }
 
-      if (!liga || !tanggal || !jam) {
-        alert("Liga, Tanggal, dan Jam wajib diisi!");
+    function buatTemplate() {
+      const liga = document.getElementById("liga").value.trim();
+      const tanggalInput = document.getElementById("tanggal").value;
+      if (!liga || !tanggalInput) {
+        alert("Harap isi Nama Liga dan Tanggal!");
+        return;
+      }
+      const tanggal = formatTanggal(tanggalInput);
+
+      // Ambil semua pertandingan
+      const pertandinganElems = document.querySelectorAll("#pertandinganContainer > div");
+      if (pertandinganElems.length === 0) {
+        alert("Harap tambahkan minimal satu pertandingan!");
         return;
       }
 
-      const pertandinganEls = document.querySelectorAll("#pertandinganContainer > div");
-      if (pertandinganEls.length === 0) {
-        alert("Minimal satu pertandingan harus diisi!");
+      // Kumpulkan data pertandingan
+      let pertandinganData = [];
+      pertandinganElems.forEach(div => {
+        const tim1 = div.querySelector(`input[name^="tim1"]`).value.trim();
+        const tim2 = div.querySelector(`input[name^="tim2"]`).value.trim();
+        const jamPertandingan = div.querySelector(`input[name^="jamPertandingan"]`).value;
+
+        if (!tim1 || !tim2) {
+          // Skip jika ada yang kosong
+          return;
+        }
+        pertandinganData.push({ tim1, tim2, jam: jamPertandingan || null });
+      });
+
+      if (pertandinganData.length === 0) {
+        alert("Harap isi data pertandingan dengan lengkap!");
         return;
       }
 
-      let hasil = `*JADWAL LIGA ${liga.toUpperCase()}*\n`;
-      hasil += `📅 ${tanggal} 🕒 ${jam}\n\n`;
-
-      pertandinganEls.forEach(div => {
-        const tim1 = div.querySelector("input[name^='tim1']").value;
-        const tim2 = div.querySelector("input[name^='tim2']").value;
-        hasil += `⚽️ ${tim1} VS ${tim2}\n`;
+      // Kelompokkan berdasarkan jam
+      // Gunakan objek dengan key jam, value array pertandingan
+      const groupByJam = {};
+      pertandinganData.forEach(match => {
+        const key = match.jam || "noTime";
+        if (!groupByJam[key]) groupByJam[key] = [];
+        groupByJam[key].push(match);
       });
 
-      templateResult.textContent = hasil;
-      outputDiv.classList.remove("hidden");
-    });
+      // Buat string template
+      let hasil = `🏆 **${liga}**\n📅 **${tanggal}**\n\n`;
 
-    function copyText() {
-      const text = templateResult.textContent;
-      navigator.clipboard.writeText(text).then(() => {
-        alert("Template berhasil disalin ke clipboard!");
-      }).catch(() => {
-        alert("Gagal menyalin teks.");
+      // Sort jam secara ascending, dengan "noTime" di paling akhir
+      const jamKeys = Object.keys(groupByJam).filter(k => k !== "noTime").sort();
+      if (groupByJam["noTime"]) jamKeys.push("noTime");
+
+      jamKeys.forEach(jam => {
+        if (jam !== "noTime") {
+          hasil += `🕒 **${jam}**\n`;
+        }
+        groupByJam[jam].forEach(match => {
+          hasil += `⚽️ ${match.tim1} VS ${match.tim2}\n`;
+        });
+        hasil += "\n";
       });
+
+      // Tampilkan hasil
+      document.getElementById("templateResult").textContent = hasil.trim();
+      document.getElementById("output").classList.remove("hidden");
     }
 
     function resetForm() {
       pertandinganCount = 0;
       document.getElementById("pertandinganContainer").innerHTML = "";
       tambahPertandingan();
-      outputDiv.classList.add("hidden");
-      templateResult.textContent = "";
+      document.getElementById("output").classList.add("hidden");
+      document.getElementById("templateResult").textContent = "";
     }
+
+    function copyText() {
+      const text = document.getElementById("templateResult").textContent;
+      if (!text) return alert("Tidak ada teks untuk disalin.");
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Template berhasil disalin!");
+      }, () => {
+        alert("Gagal menyalin template.");
+      });
+    }
+
+    document.getElementById("jadwalForm").addEventListener("submit", e => {
+      e.preventDefault();
+      buatTemplate();
+    });
   </script>
 </body>
 </html>
