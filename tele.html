@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Form Jadwal Liga</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-blue-100 via-indigo-100 to-purple-100 min-h-screen flex items-center justify-center p-4">
+  <div class="w-full max-w-2xl bg-white shadow-2xl rounded-2xl p-6 space-y-6">
+    <h1 class="text-3xl font-bold text-center text-indigo-700">Form Jadwal Liga</h1>
+    
+    <form id="jadwalForm" class="space-y-4">
+      <div>
+        <label class="block font-semibold text-gray-700">Nama Liga</label>
+        <input type="text" id="liga" list="ligaList" required onblur="simpanLiga(this.value)" class="w-full px-4 py-2 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+        <datalist id="ligaList"></datalist>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block font-semibold text-gray-700">Tanggal</label>
+          <input type="date" id="tanggal" required class="w-full px-4 py-2 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+        </div>
+
+        <div>
+          <label class="block font-semibold text-gray-700">Jam Tayang</label>
+          <input type="time" id="jam" required class="w-full px-4 py-2 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" />
+        </div>
+      </div>
+
+      <div id="pertandinganContainer" class="space-y-4"></div>
+
+      <button type="button" onclick="tambahPertandingan()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold">
+        + Tambah Pertandingan
+      </button>
+
+      <div class="flex items-center justify-between mt-4">
+        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg font-semibold">Buat Template</button>
+        <button type="reset" onclick="resetForm()" class="bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded-lg font-semibold">Reset</button>
+      </div>
+    </form>
+
+    <div id="output" class="hidden bg-gray-50 border border-dashed border-indigo-300 p-4 rounded-xl mt-4">
+      <h2 class="text-lg font-semibold text-indigo-700 mb-2">🎯 Template Telegram:</h2>
+      <pre id="templateResult" class="whitespace-pre-wrap text-gray-800 font-mono"></pre>
+      <button onclick="copyText()" class="mt-3 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm">Copy Template</button>
+    </div>
+  </div>
+
+  <script>
+    let pertandinganCount = 0;
+    const teamHistory = JSON.parse(localStorage.getItem("timHistory") || "[]");
+    const ligaHistory = JSON.parse(localStorage.getItem("ligaHistory") || "[]");
+
+    function tambahPertandingan() {
+      pertandinganCount++;
+      const container = document.getElementById("pertandinganContainer");
+      const id = `pertandingan-${pertandinganCount}`;
+
+      const html = `
+        <div id="${id}" class="border border-indigo-200 p-4 rounded-lg bg-indigo-50 relative">
+          <button type="button" onclick="hapusPertandingan('${id}')" class="absolute top-2 right-2 text-red-600 hover:text-red-800 text-xl font-bold">×</button>
+          <h3 class="text-lg font-semibold text-indigo-700 mb-2">Pertandingan ${pertandinganCount}</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Tim 1</label>
+              <input list="timList" type="text" name="tim1-${pertandinganCount}" required onblur="simpanTim(this.value)" oninput="showSuggestion(this)" onfocus="showSuggestion(this)" class="tim-input w-full px-4 py-2 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" autocomplete="off" />
+              <div class="suggestion-list bg-white border border-indigo-300 rounded mt-1 max-h-40 overflow-auto hidden"></div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Tim 2</label>
+              <input list="timList" type="text" name="tim2-${pertandinganCount}" required onblur="simpanTim(this.value)" oninput="showSuggestion(this)" onfocus="showSuggestion(this)" class="tim-input w-full px-4 py-2 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" autocomplete="off" />
+              <div class="suggestion-list bg-white border border-indigo-300 rounded mt-1 max-h-40 overflow-auto hidden"></div>
+            </div>
+          </div>
+        </div>
+      `;
+      container.insertAdjacentHTML("beforeend", html);
+      updateTimDatalist();
+    }
+
+    function hapusPertandingan(id) {
+      const el = document.getElementById(id);
+      if (el) el.remove();
+    }
+
+    function simpanTim(namaTim) {
+      if (!namaTim.trim()) return;
+      if (!teamHistory.includes(namaTim)) {
+        teamHistory.push(namaTim);
+        localStorage.setItem("timHistory", JSON.stringify(teamHistory));
+        updateTimDatalist();
+      }
+    }
+
+    function simpanLiga(namaLiga) {
+      if (!namaLiga.trim()) return;
+      if (!ligaHistory.includes(namaLiga)) {
+        ligaHistory.push(namaLiga);
+        localStorage.setItem("ligaHistory", JSON.stringify(ligaHistory));
+        updateLigaDatalist();
+      }
+    }
+
+    function updateTimDatalist() {
+      let datalist = document.getElementById("timList");
+      if (!datalist) {
+        datalist = document.createElement("datalist");
+        datalist.id = "timList";
+        document.body.appendChild(datalist);
+      }
+      datalist.innerHTML = teamHistory.map(tim => `<option value="${tim}">`).join("");
+    }
+
+    function updateLigaDatalist() {
+      const ligaList = document.getElementById("ligaList");
+      ligaList.innerHTML = ligaHistory.map(liga => `<option value="${liga}">`).join("");
+    }
+
+    function showSuggestion(inputElem) {
+      const container = inputElem.nextElementSibling;
+      const val = inputElem.value.toLowerCase().trim();
+
+      if (!val) {
+        container.classList.add("hidden");
+        container.innerHTML = "";
+        return;
+      }
+
+      const filtered = teamHistory.filter(tim => tim.toLowerCase().includes(val));
+
+      if (filtered.length === 0) {
+        container.classList.add("hidden");
+        container.innerHTML = "";
+        return;
+      }
+
+      container.innerHTML = filtered.map(tim => `<div class="px-3 py-1 cursor-pointer hover:bg-indigo-100" onclick="selectSuggestion(this, '${inputElem.name}')">${tim}</div>`).join("");
+      container.classList.remove("hidden");
+    }
+
+    function selectSuggestion(el, inputName) {
+      const input = document.querySelector(`input[name="${inputName}"]`);
+      if (input) {
+        input.value = el.textContent;
+        input.focus();
+      }
+      el.parentElement.classList.add("hidden");
+    }
+
+    document.addEventListener("click", (e) => {
+      if (!e.target.classList.contains("tim-input") && !e.target.closest(".suggestion-list")) {
+        document.querySelectorAll(".suggestion-list").forEach(s => s.classList.add("hidden"));
+      }
+    });
+
+    window.onload = () => {
+      tambahPertandingan();
+      updateTimDatalist();
+      updateLigaDatalist();
+    };
+
+    const form = document.getElementById("jadwalForm");
+    const outputDiv = document.getElementById("output");
+    const templateResult = document.getElementById("templateResult");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const liga = document.getElementById("liga").value;
+      const tanggal = document.getElementById("tanggal").value;
+      const jam = document.getElementById("jam").value;
+
+      if (!liga || !tanggal || !jam) {
+        alert("Liga, Tanggal, dan Jam wajib diisi!");
+        return;
+      }
+
+      const pertandinganEls = document.querySelectorAll("#pertandinganContainer > div");
+      if (pertandinganEls.length === 0) {
+        alert("Minimal satu pertandingan harus diisi!");
+        return;
+      }
+
+      let hasil = `*JADWAL LIGA ${liga.toUpperCase()}*\n`;
+      hasil += `📅 ${tanggal} 🕒 ${jam}\n\n`;
+
+      pertandinganEls.forEach(div => {
+        const tim1 = div.querySelector("input[name^='tim1']").value;
+        const tim2 = div.querySelector("input[name^='tim2']").value;
+        hasil += `⚽️ ${tim1} VS ${tim2}\n`;
+      });
+
+      templateResult.textContent = hasil;
+      outputDiv.classList.remove("hidden");
+    });
+
+    function copyText() {
+      const text = templateResult.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Template berhasil disalin ke clipboard!");
+      }).catch(() => {
+        alert("Gagal menyalin teks.");
+      });
+    }
+
+    function resetForm() {
+      pertandinganCount = 0;
+      document.getElementById("pertandinganContainer").innerHTML = "";
+      tambahPertandingan();
+      outputDiv.classList.add("hidden");
+      templateResult.textContent = "";
+    }
+  </script>
+</body>
+</html>
