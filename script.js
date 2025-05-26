@@ -200,11 +200,11 @@
     "go3s3": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX1%2BKGpR0LokFFZmaCQMjoIbR9efTpLqP3gObwFNMq39Tmxvzqc2YY9%2BYRmpgWjyASlDga2BRnIRE%2FqKKLiFRHwBdfnPEH3YB2Yx5hPoZBaVEPS8q5IqF6tIGZ%2FKc5VuRaWZm8EJqfDRNdg%3D%3D",
 
     // SSC
-    "ssc1": "https://labolatv.pages.dev/ssc/ssc1",
-    "ssc2": "https://labolatv.pages.dev/ssc/ssc2",
-    "ssc3": "https://labolatv.pages.dev/ssc/ssc3",
-    "ssc4": "https://labolatv.pages.dev/ssc/ssc4",
-    "ssc5": "https://labolatv.pages.dev/ssc/ssc5",
+    "ssc1": "https://labolatv.pages.dev/ch/ssc1",
+    "ssc2": "https://labolatv.pages.dev/ch/ssc2",
+    "ssc3": "https://labolatv.pages.dev/ch/ssc3",
+    "ssc4": "https://labolatv.pages.dev/ch/ssc4",
+    "ssc5": "https://labolatv.pages.dev/ch/ssc5",
   };
 
   document.addEventListener("DOMContentLoaded", function () {
