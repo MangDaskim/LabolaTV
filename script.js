@@ -218,7 +218,7 @@
             src="${iframeURL}" 
             allow="encrypted-media; autoplay"
             width="100%" 
-            height="100%" 
+            height="360" 
             margin: 0 auto;
             frameborder="0" 
             allowfullscreen
