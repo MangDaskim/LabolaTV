@@ -219,6 +219,7 @@
             allow="encrypted-media; autoplay"
             width="100%" 
             height="360" 
+            margin: 0 auto;
             frameborder="0" 
             allowfullscreen
             style="border-radius: 10px; max-width: 100%;">
