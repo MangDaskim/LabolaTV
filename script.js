@@ -197,7 +197,7 @@
 
     // go3s
     "go3s1": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX18gVZdoHPxfUvDgCD3NF53AvjxOBp8kWkEgATOI92hHG1p%2BPR3aog83Wg1V1C89NGpOendlXiz2njeKxddXRm%2BHmLO3TEh8rD%2BPv85V%2F6zY5tNCmam2ggbpIuMVS4Jzu9yWW8aDYDYVaA%3D%3D",
-    "go3s3": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX1%2BKGpR0LokFFZmaCQMjoIbR9efTpLqP3gObwFNMq39Tmxvzqc2YY9%2BYRmpgWjyASlDga2BRnIRE%2FqKKLiFRHwBdfnPEH3YB2Yx5hPoZBaVEPS8q5IqF6tIGZ%2FKc5VuRaWZm8EJqfDRNdg%3D%3D"
+    "go3s3": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX1%2BKGpR0LokFFZmaCQMjoIbR9efTpLqP3gObwFNMq39Tmxvzqc2YY9%2BYRmpgWjyASlDga2BRnIRE%2FqKKLiFRHwBdfnPEH3YB2Yx5hPoZBaVEPS8q5IqF6tIGZ%2FKc5VuRaWZm8EJqfDRNdg%3D%3D",
 
     // SSC
     "ssc1": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX199yzDJaqmotIIoQYDDmME%2FL5uL%2BeRnboz1p9K48s0T8Kob4cpKb0GlmW5exT8feCCZD3YGuRS6nqDnJv8QbYkqNWigHpaYayTwK1lbv4KgQfxxuvUiShu1x9UkwaDYuzsAIItPtd0O6dmF%2Bde5MHAetJ6vgzoTfl2r8PvJnj1Lz24BYaShki2d%2F0xE3wN1GEL6lKuTjgbOZ6C%2FvyhFs6IoMCgWov0ww3mbUSF%2BxuIejdlpKNXKQSnKVg5YfN8Ua3blxsoV8Yq%2FAw%3D%3D"
