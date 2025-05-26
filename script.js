@@ -18,7 +18,7 @@
     "tnt1a": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX18Xsl0aEcwIAhPe4LDx88LKxgrdp7D1ZzgaoOJ5o1PnqK%2FSwD7Jw7F4WIrxdmapfDY1%2FjvanIoZ3KjXfzUhRuhSX8jF9jLNpKcDe8uMM4X7sYPMnRO17R3Xm00d5CF6hwxjp%2BztqXNJk5WDvIZ1Pklbd%2BeYmtTMcGuVASor8yV6EPrn6NS4mENA",
 
     // SPOTV
-    "spotv1": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX19z4ESH3ZGehKw%2Fqk0NadHP4k%2FNDeCSJp3yR%2FyiaD%2FjS5nKuOoMS1sCyBHdav8P7KWnj0CHKe9ef30jL0sCBnREQ1ecbKWSLtCOVkDipop4hYiis7QZN%2F9PbrK830UQEYEmpJu6ewsG2KvVH0KINmpVyoDoVqTin5J17mlMCuGVnzmgHoNp6MVdKgy9gCI2bxu0LuP5E9qyM0L2EUWMbOg8RACyaTDQSZqUYLQYcL4psv99g7ZFfipD",
+    "spotv1": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX18BM2m70Xw0KDcXnE0dDs0cfzgfSyQG794P2yJRW3dSLmg1FfDvSWnhQIfnytosfGytIa5eUv5OlV4UgD6Yf62XJhVd5PudctTKmOs8T4lJvO5NjhAATd4jvNZEGbzOrEBgMfLoGc7AQZf5v4Ol9bYIWUCZkvs3WMrpT8lnkIdxmchicbK8aik4Fj0%2BXybEDRJRPzOnMeu%2F42lEk3IVBbwWwEE2SmZdr2207%2FzrdZRbQ1k97anO00YG",
     "spotv2": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX18%2BO2q3j0dKeLQp1tNkJn%2B8bgvoAw43Bv9G%2BWWZZ8jOpFJvZnWj6Hr1zERIKPr95HRGf4GjyXQJSjBanPErRWFHa5C87sgttfl0uZi4jf6MmfY5FZEaK55k%2BgCE8z19Rd4hZu3Jsj386JHZTa%2BTDBNDJNjPyxnvUPqkuHGGJH5h5BhTe3W%2Fpg5%2BUMD7ziot5U1mWL6sjLpsKCLG9wmv1zroB4j2Vw4DO%2BpteCsNpNHvHkED%2BqGF4fak",
 
     // ESPN
