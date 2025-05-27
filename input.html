@@ -48,6 +48,13 @@
         <ul id="suggestions-team2-logo" class="bg-gray-800 mt-1 rounded shadow hidden"></ul>
       </div>
 
+      <!-- Nama Liga -->
+      <div class="mb-4 relative">
+  <label for="league-name" class="block mb-1 font-semibold">Nama Liga</label>
+  <input type="text" id="league-name" oninput="showSuggestions(this, 'league-names')" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: Liga 1 Indonesia" />
+  <ul id="suggestions-league-name" class="bg-gray-800 mt-1 rounded shadow hidden"></ul>
+</div>
+
       <!-- PLAY BUTTONS -->
       <div id="play-buttons-container" class="mb-4 space-y-2">
         <label class="block mb-2 font-semibold">Link Play & Label</label>
@@ -115,6 +122,9 @@
       const team1Logo = document.getElementById("team1-logo").value;
       const team2 = document.getElementById("team2-name").value;
       const team2Logo = document.getElementById("team2-logo").value;
+      const leagueName = document.getElementById("league-name").value;
+saveToLocalStorage("league-names", leagueName);
+
 
       // Ambil semua play URLs dan labels
       const playRows = document.querySelectorAll("#play-buttons-container .play-row");
@@ -166,6 +176,8 @@
       </div>
     </div>
 
+    <div class="league-name-banner">${leagueName}</div>
+
     <div class="play-buttons">
       ${playButtonsData.map((btn, i) => {
         let labelText = `Play ${i + 1}`;
@@ -211,6 +223,7 @@
       document.getElementById("team1-logo").value = "";
       document.getElementById("team2-name").value = "";
       document.getElementById("team2-logo").value = "";
+      document.getElementById("league-name").value = "";
 
       // Reset play buttons, hanya sisakan 1 baris kosong
       const container = document.getElementById("play-buttons-container");
