@@ -205,6 +205,18 @@
     "ssc3": "https://labolatv.pages.dev/ch/ssc3",
     "ssc4": "https://labolatv.pages.dev/ch/ssc4",
     "ssc5": "https://labolatv.pages.dev/ch/ssc5",
+
+    // varzhes
+    "varzhes": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX19grGHwPVfYh92Zj1VBsSIcegFNflNuv%2Bs0HbTMsQ%2FfiPJeK5A4tid9t%2B%2Fdbem3gNtJbx%2Bvda5H4sD6%2Fby8YnYZ%2FsFqiueX3YXKvGSmBTvJ%2BnTJXzudvVvq",
+
+    // MUTV
+    "mutv": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX1%2FO3fPeOyS4FLcAw1heN3S%2BwkPffzh%2FlNY7VuejY79tCcF0QROreig1gaQ3TK42UyFVm2HG6%2FsYh%2BTQxXrlC4r7EGyDUMdWzsfqLFlcxw7P8FFlAyDQIwzx2XXt1A96%2FzKHdQ0ZQPgrv28%2Byky1wKc7x8bOGw2vmC6T7DpwWttlU47z2VU%2BVfTnB2HwVlzFAH2XJawFuI3UXQ%3D%3D",
+
+    // Persiana
+    "persiana1": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX18XyxrvhOwToWTCE4jLIm0GL817eyO0u%2B0J%2BFlSKdS6Di5ijEpoj2Zq1I09lhgKA4RJA8eUpcc20TrZTlGCKRu8eAFlRF%2BBYMo%3D",
+
+    // tv4l2
+    "tv4l2": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2Fge5GXG8D4Ht3ggQUV3YahvqsaESPE%2F04PeJ2NpFdKegEKXBaUZCwoin0OXPRsZ%2BRS1hrQgMcoGuhfnyVwq8wgoMZmcXFEk00n6bPXCYK9bATtGCODVrJ%2Bhtx3tfOxK67SmT3Y%2BjHoPMDIXS1USYy%2BIk8JwUrQbfa0v1YkV8XyC9hvQ1gq%2BJb%2BdwfVKX%2FBmK2IfcoutN1AOrOoh35Eobh%2B%2FVYZWIiHYkPGfP%2FgST6%2FwlzsFV6wo2Fdh2XnxgXqFovWtewxIVZMuQ%3D%3D"
   };
 
   document.addEventListener("DOMContentLoaded", function () {
