@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    :root {
+     --font: "Raleway", sans-serif;
+     --background-color: #222;
+     --background-color-header: #121212;
+     --color-text: #fff;
+     --color-text-header: #fff;
+     --color-green: #01d099;
+     --color-red: #f64e60;
+     --color-yellow: #ffa800;
+     --primary-font-size: 11px !important;
+     --secondary-font-size: 19px !important;
+     --header-font-size: 20px !important;
+     --header-text-transform: uppercase;
+     --header-link-text-transform: none;
+     --border-bottom: 0.5px solid var(--background-color-header);
+     --primary-padding: 3px 3px;
+     --primary-line-height: 40px !important;
+     --secondary-padding: .3rem;
+     --button-info-font-size: 9px;
+     --button-info-line-height: 20px;
+     --toolbar-font-size: var(--header-font-size);
+     --modale-background-overlay: rgba(0,0,0,0.4);
+     --modale-close-size: 28px;
+     --modale-score-size: 36px;
+     --modale-teams-size: 13px;
+     --standings-team-form-font-size: 13px;
+     --standings-team-form-line-height: 19px;
+     --flags-size: 16px;
+     --teams-logo-size: 37px !important;
+     --teams-logo-modal-size: 90%;
+     --teams-logo-block-modal-size: 85px;
+     --teams-logo-block-radius-modal: 5px;
+     --teams-logo-block-background-modal: var(--background-color-header);
+ }
+ </style>
+
+<body>
+    <div id="wg-api-football-games" data-host="v3.football.api-sports.io" data-key="8f89922a05236e68a46e5c0744ac94f7"
+        data-date=""
+        data-league=""
+            data-season=""
+                data-theme="dark"
+                data-refresh="15"
+                data-show-toolbar="true"
+                data-show-errors="false"
+                data-show-logos="true"
+                data-modal-game="true"
+                data-modal-standings="true"
+                data-modal-show-logos="true">
+    </div>
+    <script type="module" src="https://widgets.api-sports.io/2.0.3/widgets.js">
+    </script>
+
+    <script>
+        function waitForElement(selector, callback) {
+            var checkExist = setInterval(function () {
+                if (document.querySelector(selector)) {
+                    clearInterval(checkExist);
+                    callback();
+                }
+            }, 100);
+        }
+
+        waitForElement(`#wg-football-games`, () => {
+            const elementFootballGame = document.getElementById('wg-api-football-game');
+            elementFootballGame.removeAttribute('data-host');
+            elementFootballGame.removeAttribute('data-key');
+            const element = document.querySelector('[data-select="finished"]')
+            element.click()
+        })
+    </script>
+
+</body>
+
+</html>
