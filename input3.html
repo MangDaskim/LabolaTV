@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Form Input Jadwal Bola</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-4">
+
+  <div class="max-w-xl mx-auto space-y-6">
+
+    <h1 class="text-2xl font-bold text-center">Form Input Jadwal Bola</h1>
+
+    <div class="space-y-4 bg-gray-800 p-4 rounded shadow">
+
+      <div>
+        <label class="block mb-1">Jam Tayang</label>
+        <input type="time" id="match-time" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: 20:00" />
+      </div>
+
+      <div>
+        <label class="block mb-1">Tanggal</label>
+        <input type="date" id="match-date" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: 2025-05-13" />
+      </div>
+
+      <!-- TIM 1 -->
+      <div>
+        <label class="block mb-1">Nama Tim 1</label>
+        <input type="text" id="team1-name" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: Barcelona" oninput="showSuggestions(this, 'team-names')" />
+        <ul id="suggestions-team1-name" class="bg-gray-800 mt-1 rounded shadow hidden"></ul>
+      </div>
+      <div>
+        <label class="block mb-1">Logo Tim 1</label>
+        <input type="url" id="team1-logo" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: https://logo.png" oninput="showSuggestions(this, 'team-logos')" />
+        <ul id="suggestions-team1-logo" class="bg-gray-800 mt-1 rounded shadow hidden"></ul>
+      </div>
+
+      <!-- TIM 2 -->
+      <div>
+        <label class="block mb-1">Nama Tim 2</label>
+        <input type="text" id="team2-name" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: Real Madrid" oninput="showSuggestions(this, 'team-names')" />
+        <ul id="suggestions-team2-name" class="bg-gray-800 mt-1 rounded shadow hidden"></ul>
+      </div>
+      <div>
+        <label class="block mb-1">Logo Tim 2</label>
+        <input type="url" id="team2-logo" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: https://logo2.png" oninput="showSuggestions(this, 'team-logos')" />
+        <ul id="suggestions-team2-logo" class="bg-gray-800 mt-1 rounded shadow hidden"></ul>
+      </div>
+
+      <!-- Nama Liga -->
+      <div class="mb-4 relative">
+  <label for="league-name" class="block mb-1 font-semibold">Nama Liga</label>
+  <input type="text" id="league-name" oninput="showSuggestions(this, 'league-names')" class="w-full p-2 bg-gray-700 rounded" placeholder="Contoh: Liga 1 Indonesia" />
+  <ul id="suggestions-league-name" class="absolute bg-gray-800 rounded w-full z-10 hidden text-sm text-white"></ul>
+</div>
+
+      <!-- PLAY BUTTONS -->
+      <div id="play-buttons-container" class="mb-4 space-y-2">
+        <label class="block mb-2 font-semibold">Link Play & Label</label>
+        <div class="flex items-center gap-2 play-row">
+          <input type="url" class="play-url w-2/3 p-2 bg-gray-700 rounded" placeholder="Contoh: https://link-play.com" />
+          <input type="text" class="play-label w-1/3 p-2 bg-gray-700 rounded" placeholder="Label tombol (opsional)" />
+          <button onclick="removePlayInput(this)" class="text-red-500 font-bold text-xl">×</button>
+        </div>
+      </div>
+      <button onclick="addPlayButton()" class="bg-blue-700 px-4 py-1 rounded hover:bg-blue-800">Tambah Tombol Play</button>
+
+      <!-- TOMBOL -->
+      <div class="flex gap-2 mt-4">
+        <button onclick="generateHTML()" class="bg-green-600 px-4 py-2 rounded hover:bg-green-700">Submit</button>
+        <button onclick="copyHTML()" class="bg-yellow-600 px-4 py-2 rounded hover:bg-yellow-700">Copy</button>
+        <button onclick="resetForm()" class="bg-red-600 px-4 py-2 rounded hover:bg-red-700">Reset</button>
+      </div>
+
+      <p id="copy-msg" class="text-sm text-green-400 hidden mt-2">✅ HTML berhasil disalin!</p>
+    </div>
+
+    <!-- OUTPUT -->
+    <div>
+      <label class="block mb-1 mt-4">Hasil HTML</label>
+      <textarea id="output" rows="12" class="w-full bg-gray-800 p-3 rounded text-sm" readonly></textarea>
+    </div>
+  </div>
+
+  <script>
+    function saveToLocalStorage(key, value) {
+      let data = JSON.parse(localStorage.getItem(key)) || [];
+      if (!data.includes(value)) {
+        data.push(value);
+        localStorage.setItem(key, JSON.stringify(data));
+      }
+    }
+
+    function showSuggestions(inputElem, key) {
+      const suggestionsBox = document.getElementById(`suggestions-${inputElem.id}`);
+      const query = inputElem.value.toLowerCase();
+      const stored = JSON.parse(localStorage.getItem(key)) || [];
+      const filtered = stored.filter(val => val.toLowerCase().includes(query));
+      suggestionsBox.innerHTML = "";
+      if (filtered.length > 0 && query.length > 0) {
+        filtered.forEach(item => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          li.className = "px-3 py-1 hover:bg-gray-700 cursor-pointer";
+          li.onclick = () => {
+            inputElem.value = item;
+            suggestionsBox.classList.add("hidden");
+          };
+          suggestionsBox.appendChild(li);
+        });
+        suggestionsBox.classList.remove("hidden");
+      } else {
+        suggestionsBox.classList.add("hidden");
+      }
+    }
+
+    function generateHTML() {
+      const time = document.getElementById("match-time").value;
+      const date = document.getElementById("match-date").value;
+      const team1 = document.getElementById("team1-name").value;
+      const team1Logo = document.getElementById("team1-logo").value;
+      const team2 = document.getElementById("team2-name").value;
+      const team2Logo = document.getElementById("team2-logo").value;
+      const leagueName = document.getElementById("league-name").value;
+saveToLocalStorage("league-names", leagueName);
+
+
+      // Ambil semua play URLs dan labels
+      const playRows = document.querySelectorAll("#play-buttons-container .play-row");
+      const playButtonsData = [];
+
+      playRows.forEach(row => {
+        const urlInput = row.querySelector(".play-url");
+        const labelInput = row.querySelector(".play-label");
+        if (urlInput && urlInput.value.trim() !== "") {
+          playButtonsData.push({
+            url: urlInput.value.trim(),
+            label: labelInput ? labelInput.value.trim() : ""
+          });
+        }
+      });
+
+      if (!time || !date || !team1 || !team1Logo || !team2 || !team2Logo || playButtonsData.length === 0) {
+        alert("Semua data wajib diisi, termasuk minimal 1 tombol Play dengan URL.");
+        return;
+      }
+
+      saveToLocalStorage("team-names", team1);
+      saveToLocalStorage("team-names", team2);
+      saveToLocalStorage("team-logos", team1Logo);
+      saveToLocalStorage("team-logos", team2Logo);
+
+      let html = `
+<!--- ${team1} VS ${team2} --->
+
+<div class="match-container">
+  <div class="match-header">
+    <span class="match-time" data-start="${time}" data-date="${date}">${time}</span>
+    <span class="match-countdown"></span>
+  </div>
+
+  <div class="match-body">
+    <div class="team-row">
+      <div class="team-left">
+        <img src="${team1Logo}" class="team-logo" alt="${team1}" />
+        <span class="team-name">${team1}</span>
+      </div>
+      <button class="watch-button">TONTON</button>
+    </div>
+
+    <div class="team-row">
+      <div class="team-left">
+        <img src="${team2Logo}" class="team-logo" alt="${team2}" />
+        <span class="team-name">${team2}</span>
+      </div>
+    </div>
+
+    <div class="text-center font-semibold text-white text-lg mb-2">${leagueName}</div>
+
+    <div class="play-buttons">
+      ${playButtonsData.map((btn, i) => {
+        let labelText = `Play ${i + 1}`;
+        if (btn.label) labelText += ` (${btn.label})`;
+        return `<button onclick="window.location.href='${btn.url}';">${labelText}</button>`;
+      }).join("\n      ")}
+    </div>
+  </div>
+</div>
+      `.trim();
+
+      document.getElementById("output").value = html;
+      document.getElementById("copy-msg").classList.add("hidden");
+    }
+
+    function addPlayButton() {
+      const container = document.getElementById("play-buttons-container");
+      const div = document.createElement("div");
+      div.className = "flex items-center gap-2 play-row";
+      div.innerHTML = `
+        <input type="url" class="play-url w-2/3 p-2 bg-gray-700 rounded" placeholder="Contoh: https://link-play.com" />
+        <input type="text" class="play-label w-1/3 p-2 bg-gray-700 rounded" placeholder="Label tombol (opsional)" />
+        <button onclick="removePlayInput(this)" class="text-red-500 font-bold text-xl">×</button>
+      `;
+      container.appendChild(div);
+    }
+
+    function removePlayInput(btn) {
+      btn.parentElement.remove();
+    }
+
+    function copyHTML() {
+      const output = document.getElementById("output");
+      output.select();
+      document.execCommand("copy");
+      document.getElementById("copy-msg").classList.remove("hidden");
+    }
+
+    function resetForm() {
+      document.getElementById("match-time").value = "";
+      document.getElementById("match-date").value = "";
+      document.getElementById("team1-name").value = "";
+      document.getElementById("team1-logo").value = "";
+      document.getElementById("team2-name").value = "";
+      document.getElementById("team2-logo").value = "";
+      document.getElementById("league-name").value = "";
+
+      // Reset play buttons, hanya sisakan 1 baris kosong
+      const container = document.getElementById("play-buttons-container");
+      container.innerHTML = `
+        <label class="block mb-2 font-semibold">Link Play & Label</label>
+        <div class="flex items-center gap-2 play-row">
+          <input type="url" class="play-url w-2/3 p-2 bg-gray-700 rounded" placeholder="Contoh: https://link-play.com" />
+          <input type="text" class="play-label w-1/3 p-2 bg-gray-700 rounded" placeholder="Label tombol (opsional)" />
+          <button onclick="removePlayInput(this)" class="text-red-500 font-bold text-xl">×</button>
+        </div>
+      `;
+      document.getElementById("output").value = "";
+      document.getElementById("copy-msg").classList.add("hidden");
+    }
+  </script>
+
+</body>
+</html>
