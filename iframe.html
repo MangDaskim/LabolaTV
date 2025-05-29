@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Input Link Iframe</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body class="bg-gray-800 text-white flex items-center justify-center h-screen my-8">
+
+  <!-- Form Password -->
+  <div id="loginSection" class="fixed inset-0 flex items-center justify-center bg-gray-900 z-50">
+    <div class="bg-gray-800 p-6 rounded shadow-md w-full max-w-sm text-center">
+      <h2 class="text-xl font-bold mb-4">🔒 Masukkan Password</h2>
+      <input type="password" id="passwordInput" placeholder="Password..." class="w-full p-2 rounded bg-gray-700 text-white mb-4">
+      <button onclick="checkPassword()" class="w-full bg-blue-600 hover:bg-blue-700 py-2 rounded">Masuk</button>
+      <p id="errorMsg" class="text-red-500 text-sm mt-2 hidden">❌ Password salah</p>
+    </div>
+  </div>
+
+  <!-- Form Input Iframe -->
+  <div id="mainContent" class="w-full max-w-xl p-6 bg-gray-900 rounded-md shadow-lg max-w-sm hidden">
+    <h1 class="text-xl text-center font-bold mb-6">Masukkan Link Iframe</h1>
+    <form id="iframeForm" class="space-y-4">
+      <div class="space-y-2">
+        <label for="iframeLink" class="block">Link Iframe:</label>
+        <input type="url" id="iframeLink" class="w-full p-2 rounded bg-gray-700 text-white" placeholder="Contoh: https://contoh.com/embed/..." required />
+      </div>
+
+      <div class="flex items-center justify-between gap-2">
+        <button type="submit" class="w-full py-2 bg-blue-600 hover:bg-blue-700 rounded">Generate Link</button>
+        <button type="button" id="resetBtn" class="w-full py-2 bg-red-600 hover:bg-red-700 rounded">Reset</button>
+      </div>
+    </form>
+
+    <div id="result" class="mt-6 hidden">
+      <p class="text-center">Link Iframe Anda:</p>
+      <div class="flex space-x-2">
+        <input type="text" id="playerLink" readonly class="flex-1 p-2 rounded bg-gray-700 text-white" />
+        <button id="copyBtn" class="bg-green-600 hover:bg-green-700 p-2 rounded">Copy</button>
+      </div>
+      <p id="copyMessage" class="text-green-400 mt-2 text-sm"></p>
+    </div>
+  </div>
+
+  <script>
+    const secret = 'RAHASIA123';
+
+    document.getElementById("iframeForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const iframeURL = document.getElementById("iframeLink").value.trim();
+      const data = { iframe: iframeURL };
+
+      const ciphertext = CryptoJS.AES.encrypt(JSON.stringify(data), secret).toString();
+      const token = encodeURIComponent(ciphertext);
+
+      const playerLink = `https://labolatv.pages.dev/iframeplayer.html?data=${token}`;
+      document.getElementById("playerLink").value = playerLink;
+      document.getElementById("result").classList.remove("hidden");
+    });
+
+    document.getElementById("copyBtn").addEventListener("click", function () {
+      const linkInput = document.getElementById("playerLink");
+      linkInput.select();
+      document.execCommand("copy");
+      document.getElementById("copyMessage").textContent = "✅ Link berhasil disalin!";
+    });
+
+    document.getElementById("resetBtn").addEventListener("click", function () {
+      document.getElementById("iframeForm").reset();
+      document.getElementById("playerLink").value = "";
+      document.getElementById("copyMessage").textContent = "";
+      document.getElementById("result").classList.add("hidden");
+    });
+
+    function checkPassword() {
+      const input = document.getElementById("passwordInput").value;
+      if (input === "123456") {
+        document.getElementById("loginSection").classList.add("hidden");
+        document.getElementById("mainContent").classList.remove("hidden");
+      } else {
+        document.getElementById("errorMsg").classList.remove("hidden");
+      }
+    }
+  </script>
+</body>
+</html>
