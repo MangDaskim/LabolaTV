@@ -144,7 +144,7 @@
 
     // RANDOM A
     "a1": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX19ZQ%2Fdj4Eifm3i2qTAj4lXlpNr8RiTqtX6y9mAzYH618Wvm0nAGTH5jFmQD35pkVlp9CUZN5uUQv%2FpEQIIW2ep4guMEfFPs70y7Ncip%2FOZi6d%2BD67t4o151a2MyOTGsb4gHLU1MoI7KB3YpRM3IzCRvhooX4%2B1YcCm6l3oxS9Ar1jGaQg5PjTUpVOrZ9xswrCQauGc6xou9XQtzbWEUUJQmLLqarA8uYNpu%2BgJMRatblpoiGSX%2BLmSApO7ICWZ9X1Yf8EX8Ej%2FT4A%3D%3D",
-    "a2": "https://hls.uouetrq19.com/live/sd-6MsDBFWc7ukR3Sq59H.m3u8?txSecret=2979df083efcd83324ecee85dcccd58f&txTime=6832DB27",
+    "a2": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX181Ress1VNtoYjfc6Qm5nSyKA0vNzSGJlmzNLTxmMUvWTZYCYirCv5wVknmSpXLWPmlOj5IUOJ3FzYfvOUafFpNxC148AQmpias%2BHijRiUHV5aTabtjXB6%2FEG3GKHla3lhSHzLLqs0X6MY8ef8wJ%2FHjkGyVoVHt9QOx9%2FDkVFJjk7nnnnjyKFcH",
     "a3": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX18tAzuHPp%2BUAemNDHXn698IzLsgdbDthpVNAaRTsxYk1pfr2gedsV%2F0iQqh8MR6jrMGozjyFDjtZBevekxYbnLHBsZyrBSN5j1A9VNUhRpSzTxu9S8CWx3WA%2Fo6TdgftZHwW8Cv2xOIu2Y559Yg6tSKO0YQ8CIrKoo%3D",
     "a4": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX191O8MY94BybE4%2BxHQm%2BC7m4ek8pWScGExLX2lvnPyhxwUgjCd5PZ6etC2hSXT1fS0VIbrb%2FK8QAUfwSdTvCuwTvy%2BAnvie3%2FhIdTZRM4xjDnUv5OhQk5Rug5OBQWUyCRMLfq6LP8r9OVGN4V0Jsl4ZsEKmGZTFwTM%3D",
     "a5": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX1%2B3pvXjjipKMdTSc%2B0DOyunFttW4LZJ7dYft7yN3ksgSQ9%2FPnnV%2F%2BW0hdrYMRYZb2K9i2TXvN72KsueTq8DYHE%2F5rWfXSAZDINCzE%2FN9VD25jwChwoQKxrfxT3v823cLHZWNKIKn5ULlyiUgZStcqafCyKFf1JVcPY%3D",
