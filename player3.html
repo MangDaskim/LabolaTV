@@ -3,13 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Player Video</title>
+  <title>Iframe Player</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/shaka-player.compiled.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-  <!-- Fluid Player -->
-<link rel="stylesheet" href="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.css" />
-<script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
   <style>
     html, body {
       margin: 0;
@@ -17,109 +13,68 @@
       height: 100%;
       background-color: #000;
     }
-    #videoContainer {
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    video {
+    iframe {
       width: 100%;
       height: 100%;
-      max-height: 100vh;
+      border: none;
     }
   </style>
 </head>
 <body>
-  <!-- VAST Player -->
-<video id="ad-player" width="100%" height="360" controls></video>
 
-<!-- Konten Utama (Shaka Player) -->
-<div id="shaka-container" style="display: none;">
-  <video id="main-player" width="100%" height="360" autoplay controls></video>
-</div>
+  <!-- Script Iklan (opsional) -->
+  <script type='text/javascript' src='//pl26725330.profitableratecpm.com/e9/02/56/e9025607430481543c6edb78d5a8358a.js'></script>
 
-<!-- Skip Tombol Manual (jaga-jaga) -->
-<button id="skipAd" style="display: none; position: absolute; top: 10px; right: 10px; z-index: 10;">Lewati Iklan</button>
+  <script>
+    // Batasi akses hanya lewat iframe dan domain tertentu
+    const allowedReferrers = [
+      "https://labolatv-player.blogspot.com",
+      "https://neobolatv-player.blogspot.com"
+    ];
 
-
-<script>
-  const vastTag = "https://vast.yomeno.xyz/vast?spot_id=1450635";
-
-  // Init FluidPlayer untuk iklan
-  const adPlayer = fluidPlayer("ad-player", {
-    layoutControls: {
-      controlBar: true,
-      muted: false,
-      allowDownload: false,
-    },
-    vastOptions: {
-      adList: [{
-        roll: "preRoll",
-        vastTag: vastTag,
-        adText: "Iklan akan segera dimulai"
-      }]
-    }
-  });
-
-  // Event jika iklan selesai
-  document.getElementById("ad-player").addEventListener("ended", () => {
-    lanjutKeVideoUtama();
-  });
-
-  // Optional tombol skip manual
-  document.getElementById("skipAd").addEventListener("click", () => {
-    lanjutKeVideoUtama();
-  });
-
-  function lanjutKeVideoUtama() {
-    document.getElementById("ad-player").style.display = "none";
-    document.getElementById("skipAd").style.display = "none";
-    document.getElementById("shaka-container").style.display = "block";
-    initShakaPlayer();
-  }
-
-  async function initShakaPlayer() {
-    const params = new URLSearchParams(window.location.search);
-    const encryptedData = params.get("data");
-
-    if (!encryptedData) {
-      document.body.innerHTML = "<div style='color:red;text-align:center;'>❌ Data video tidak ditemukan.</div>";
-      return;
+    if (window === window.top) {
+      document.body.innerHTML = '<div style="color:white;text-align:center;padding:20px">🚫 Halaman ini hanya bisa digunakan di iframe.</div>';
+      throw new Error("Harus lewat iframe");
     }
 
-    try {
-      const secret = "RAHASIA123";
-      const decrypted = CryptoJS.AES.decrypt(decodeURIComponent(encryptedData), secret);
-      const text = decrypted.toString(CryptoJS.enc.Utf8);
-      const { mpd, keyid, key } = JSON.parse(text);
+    const ref = document.referrer;
+    const allowed = allowedReferrers.some(domain => ref.startsWith(domain));
 
-      const video = document.getElementById("main-player");
-      const player = new shaka.Player(video);
+    if (!allowed) {
+      document.body.innerHTML = '<div style="color:white;text-align:center;padding:20px">⚠️ Akses iframe tidak diizinkan dari domain ini.</div>';
+      throw new Error("Referrer tidak diizinkan");
+    }
 
-      player.configure({
-        drm: {
-          clearKeys: {
-            [keyid]: key
-          }
+    // Proses dekripsi dan tampilkan iframe
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const encryptedData = params.get("data");
+
+      if (!encryptedData) {
+        document.body.innerHTML = '<div style="color:white;text-align:center;padding:20px">❌ Data tidak ditemukan.</div>';
+        return;
+      }
+
+      try {
+        const secret = 'RAHASIA123'; // sama dengan di form
+        const decryptedBytes = CryptoJS.AES.decrypt(decodeURIComponent(encryptedData), secret);
+        const decryptedText = decryptedBytes.toString(CryptoJS.enc.Utf8);
+        const { iframe } = JSON.parse(decryptedText);
+
+        if (!iframe || !iframe.startsWith("http")) {
+          throw new Error("Link iframe tidak valid.");
         }
-      });
 
-      await player.load(mpd);
-      video.play();
-    } catch (err) {
-      console.error("Error load video:", err);
-      document.body.innerHTML = "<div style='color:red;text-align:center;'>❌ Gagal memuat video utama.</div>";
-    }
-  }
+        const iframeElement = document.createElement("iframe");
+        iframeElement.src = iframe;
+        document.body.appendChild(iframeElement);
 
-  document.addEventListener("DOMContentLoaded", () => {
-    // Tampilkan tombol skip manual setelah beberapa detik
-    setTimeout(() => {
-      document.getElementById("skipAd").style.display = "block";
-    }, 8000); // tampil setelah 8 detik (bisa sesuaikan)
-  });
-</script>
+      } catch (error) {
+        console.error("Gagal menampilkan iframe:", error);
+        document.body.innerHTML = '<div style="color:white;text-align:center;padding:20px">❌ Gagal menampilkan konten. Link mungkin salah atau terenkripsi dengan buruk.</div>';
+      }
+    });
+  </script>
+
 </body>
 </html>
