@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upload Gambar ke Cloudinary</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+  <div class="bg-white rounded-2xl shadow-lg p-6 max-w-md w-full space-y-4">
+    <h2 class="text-xl font-semibold text-center text-gray-700">Upload Gambar ke Cloudinary</h2>
+
+    <!-- Tabs -->
+    <div class="flex justify-center gap-2 mb-4">
+      <button id="tabFile" class="tab-button px-4 py-2 rounded-md bg-blue-700 text-white">Upload File</button>
+      <button id="tabURL" class="tab-button px-4 py-2 rounded-md bg-gray-200 text-gray-800">Upload via URL</button>
+    </div>
+
+    <!-- Upload File Section -->
+    <div id="uploadFileSection">
+      <input type="file" id="fileInput" accept="image/*"
+        class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4
+        file:rounded-full file:border-0 file:text-sm file:font-semibold
+        file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
+
+      <div id="previewFile" class="w-full aspect-video bg-gray-100 flex items-center justify-center rounded-lg overflow-hidden mt-2">
+        <span class="text-sm text-gray-400">Preview gambar akan muncul di sini</span>
+      </div>
+
+      <button onclick="uploadFile()" class="w-full bg-blue-600 text-white py-2 mt-3 rounded-lg font-medium hover:bg-blue-700 transition">
+        Upload
+      </button>
+
+      <button onclick="resetForm()" class="w-full bg-gray-300 text-gray-800 py-2 mt-2 rounded-lg font-medium hover:bg-gray-400 transition">
+        Reset
+      </button>
+    </div>
+
+    <!-- Upload via URL Section -->
+    <div id="uploadUrlSection" class="hidden">
+      <input type="url" id="urlInput" placeholder="https://example.com/image.jpg"
+        class="w-full border px-3 py-2 rounded-lg text-sm text-gray-700" />
+
+      <div id="previewURL" class="w-full aspect-video bg-gray-100 flex items-center justify-center rounded-lg overflow-hidden mt-2">
+        <span class="text-sm text-gray-400">Preview URL akan muncul di sini</span>
+      </div>
+
+      <button onclick="uploadViaURL()" class="w-full bg-blue-600 text-white py-2 mt-3 rounded-lg font-medium hover:bg-blue-700 transition">
+        Upload
+      </button>
+
+      <button onclick="resetForm()" class="w-full bg-gray-300 text-gray-800 py-2 mt-2 rounded-lg font-medium hover:bg-gray-400 transition">
+        Reset
+      </button>
+
+    </div>
+
+    <div id="uploadStatus" class="text-sm text-center mt-2 text-gray-600 space-y-2"></div>
+  </div>
+
+  <script>
+    const tabFile = document.getElementById("tabFile");
+    const tabURL = document.getElementById("tabURL");
+    const uploadFileSection = document.getElementById("uploadFileSection");
+    const uploadUrlSection = document.getElementById("uploadUrlSection");
+
+    tabFile.onclick = () => {
+  tabFile.classList.add("bg-blue-700", "text-white");
+  tabFile.classList.remove("bg-gray-200", "text-gray-800");
+  
+  tabURL.classList.remove("bg-blue-700", "text-white");
+  tabURL.classList.add("bg-gray-200", "text-gray-800");
+
+  uploadFileSection.classList.remove("hidden");
+  uploadUrlSection.classList.add("hidden");
+  document.getElementById("uploadStatus").innerHTML = '';
+};
+
+tabURL.onclick = () => {
+  tabURL.classList.add("bg-blue-700", "text-white");
+  tabURL.classList.remove("bg-gray-200", "text-gray-800");
+
+  tabFile.classList.remove("bg-blue-700", "text-white");
+  tabFile.classList.add("bg-gray-200", "text-gray-800");
+
+  uploadUrlSection.classList.remove("hidden");
+  uploadFileSection.classList.add("hidden");
+  document.getElementById("uploadStatus").innerHTML = '';
+};
+
+
+    // File Upload Preview
+    const fileInput = document.getElementById("fileInput");
+    const previewFile = document.getElementById("previewFile");
+    fileInput.addEventListener("change", () => {
+      const file = fileInput.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = e => {
+          previewFile.innerHTML = `<img src="${e.target.result}" class="w-full h-auto object-contain" />`;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // URL Preview
+    const urlInput = document.getElementById("urlInput");
+    const previewURL = document.getElementById("previewURL");
+    urlInput.addEventListener("input", () => {
+      const url = urlInput.value;
+      if (url) {
+        previewURL.innerHTML = `<img src="${url}" class="w-full h-auto object-contain" onerror="this.src=''" />`;
+      }
+    });
+
+    async function uploadFile() {
+      const file = fileInput.files[0];
+      if (!file) return alert("Pilih file terlebih dahulu");
+
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("upload_preset", "imageAffiliate");
+
+      showLoading();
+      try {
+        const res = await fetch("https://api.cloudinary.com/v1_1/dsxpzveux/image/upload", {
+          method: "POST",
+          body: formData
+        });
+        const data = await res.json();
+        showResult(data.secure_url);
+      } catch (err) {
+        showError();
+      }
+    }
+
+    async function uploadViaURL() {
+      const url = urlInput.value;
+      if (!url) return alert("Masukkan URL gambar terlebih dahulu");
+
+      const formData = new FormData();
+      formData.append("file", url);
+      formData.append("upload_preset", "imageAffiliate");
+
+      showLoading();
+      try {
+        const res = await fetch("https://api.cloudinary.com/v1_1/dsxpzveux/image/upload", {
+          method: "POST",
+          body: formData
+        });
+        const data = await res.json();
+        showResult(data.secure_url);
+      } catch (err) {
+        showError();
+      }
+    }
+
+    function showLoading() {
+      document.getElementById("uploadStatus").innerHTML = 'Mengupload...';
+    }
+
+    function showResult(url) {
+      document.getElementById("uploadStatus").innerHTML = `
+        <p class="text-green-600 font-medium">Upload berhasil!</p>
+        <input id="imageUrl" type="text" readonly class="w-full text-sm border px-3 py-2 rounded-lg text-gray-700" value="${url}" />
+        <button onclick="copyToClipboard()" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Copy Link</button>
+        <p id="copyMessage" class="text-green-500 text-sm hidden">Berhasil disalin!</p>
+      `;
+    }
+
+    function showError() {
+      document.getElementById("uploadStatus").innerHTML = `<p class="text-red-600">Gagal upload. Coba lagi.</p>`;
+    }
+
+    function copyToClipboard() {
+      const imageUrl = document.getElementById("imageUrl");
+      const copyMessage = document.getElementById("copyMessage");
+      navigator.clipboard.writeText(imageUrl.value).then(() => {
+        copyMessage.classList.remove("hidden");
+      });
+    }
+
+    function resetForm() {
+  // Reset tab ke Upload File
+  tabFile.click();
+
+  // Reset input file
+  fileInput.value = "";
+  previewFile.innerHTML = `<span class="text-sm text-gray-400">Preview gambar akan muncul di sini</span>`;
+
+  // Reset input URL
+  urlInput.value = "";
+  previewURL.innerHTML = `<span class="text-sm text-gray-400">Preview URL akan muncul di sini</span>`;
+
+  // Hapus status upload
+  document.getElementById("uploadStatus").innerHTML = "";
+}
+
+function resetForm() {
+  if (!uploadFileSection.classList.contains("hidden")) {
+    // Tab Upload File aktif, reset input file dan preview
+    fileInput.value = "";
+    previewFile.innerHTML = `<span class="text-sm text-gray-400">Preview gambar akan muncul di sini</span>`;
+  } else {
+    // Tab Upload via URL aktif, reset input URL dan preview
+    urlInput.value = "";
+    previewURL.innerHTML = `<span class="text-sm text-gray-400">Preview URL akan muncul di sini</span>`;
+  }
+
+  // Hapus status upload dan pesan copy
+  document.getElementById("uploadStatus").innerHTML = "";
+  const copyMsg = document.getElementById("copyMessage");
+  if (copyMsg) copyMsg.classList.add("hidden");
+}
+  </script>
+</body>
+</html>
