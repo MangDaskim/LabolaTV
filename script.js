@@ -105,7 +105,7 @@
     "arena1cro": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2FpfLFm0KBZwurlgtDRd8DC6QBEDaRHMy%2FlPjA6PPrUW%2Fh9BU7oe2DKGlfCqCCsFrdl0JwMwPLWLlVyLZIeNwHmzQJVtkkI8%2F0oPS9A%2FJzjM9vDEuO8B9Q2dHLIl5Pem%2Bv%2BXltRAmdFhsU3%2FzvqUcm1vmCbq8qDEjF%2BdlymuY2I7MQkqpJaYCYho%2Bga1D2IPQ75b767X8dCpcfDNyGjD%2BW0%2BBmgHAeYAxenCnEEt%2FrIRAYB1BhflOc8",
 
     // HD
-    "hd1": "https://sportzonline.si/channels/hd/hd1.php",
+    "hd1": "https://labolatv.pages.dev/player3?data=U2FsdGVkX19izac5M0PXnNu0z1XkwYy9W%2BKOKgEIGgwv53HKOfQKngd6gnw3jZM%2FctpdMkGeJzPEaAMknUqkhnta53j6mXBHv8DM8XDDG20%3D",
     "hd2": "https://sportzonline.si/channels/hd/hd2.php",
     "hd3": "https://sportzonline.si/channels/hd/hd3.php",
     "hd4": "https://sportzonline.si/channels/hd/hd4.php",
