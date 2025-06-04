@@ -217,7 +217,9 @@
     "persiana1": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX18XyxrvhOwToWTCE4jLIm0GL817eyO0u%2B0J%2BFlSKdS6Di5ijEpoj2Zq1I09lhgKA4RJA8eUpcc20TrZTlGCKRu8eAFlRF%2BBYMo%3D",
 
     // tv4l2
-    "tv4l2": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2Fge5GXG8D4Ht3ggQUV3YahvqsaESPE%2F04PeJ2NpFdKegEKXBaUZCwoin0OXPRsZ%2BRS1hrQgMcoGuhfnyVwq8wgoMZmcXFEk00n6bPXCYK9bATtGCODVrJ%2Bhtx3tfOxK67SmT3Y%2BjHoPMDIXS1USYy%2BIk8JwUrQbfa0v1YkV8XyC9hvQ1gq%2BJb%2BdwfVKX%2FBmK2IfcoutN1AOrOoh35Eobh%2B%2FVYZWIiHYkPGfP%2FgST6%2FwlzsFV6wo2Fdh2XnxgXqFovWtewxIVZMuQ%3D%3D"
+    "tv4l2": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2Fge5GXG8D4Ht3ggQUV3YahvqsaESPE%2F04PeJ2NpFdKegEKXBaUZCwoin0OXPRsZ%2BRS1hrQgMcoGuhfnyVwq8wgoMZmcXFEk00n6bPXCYK9bATtGCODVrJ%2Bhtx3tfOxK67SmT3Y%2BjHoPMDIXS1USYy%2BIk8JwUrQbfa0v1YkV8XyC9hvQ1gq%2BJb%2BdwfVKX%2FBmK2IfcoutN1AOrOoh35Eobh%2B%2FVYZWIiHYkPGfP%2FgST6%2FwlzsFV6wo2Fdh2XnxgXqFovWtewxIVZMuQ%3D%3D",
+
+    "al": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX1%2Fuu6ilfcQdFiTv8aI%2BLGtQbncOivjShMXXZxSvVem3OdamK3JCI%2BHzmx5VYEN%2FouUuRGKSLPmg6kGJEh3pARIaLQzZzqFCEpr0JxG1e8dp6nlUq%2B7TJ4FPhjMZ%2F1bqb5VE4ncaXQ3p2DU%2FniTrBy880oHhISPPM7oQ0FXQ2cZKqY0YQgAvxNpH"
   };
 
   document.addEventListener("DOMContentLoaded", function () {
