@@ -217,7 +217,13 @@
     "persiana1": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX18XyxrvhOwToWTCE4jLIm0GL817eyO0u%2B0J%2BFlSKdS6Di5ijEpoj2Zq1I09lhgKA4RJA8eUpcc20TrZTlGCKRu8eAFlRF%2BBYMo%3D",
 
     // tv4l2
-    "tv4l2": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2Fge5GXG8D4Ht3ggQUV3YahvqsaESPE%2F04PeJ2NpFdKegEKXBaUZCwoin0OXPRsZ%2BRS1hrQgMcoGuhfnyVwq8wgoMZmcXFEk00n6bPXCYK9bATtGCODVrJ%2Bhtx3tfOxK67SmT3Y%2BjHoPMDIXS1USYy%2BIk8JwUrQbfa0v1YkV8XyC9hvQ1gq%2BJb%2BdwfVKX%2FBmK2IfcoutN1AOrOoh35Eobh%2B%2FVYZWIiHYkPGfP%2FgST6%2FwlzsFV6wo2Fdh2XnxgXqFovWtewxIVZMuQ%3D%3D"
+    "tv4l2": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2Fge5GXG8D4Ht3ggQUV3YahvqsaESPE%2F04PeJ2NpFdKegEKXBaUZCwoin0OXPRsZ%2BRS1hrQgMcoGuhfnyVwq8wgoMZmcXFEk00n6bPXCYK9bATtGCODVrJ%2Bhtx3tfOxK67SmT3Y%2BjHoPMDIXS1USYy%2BIk8JwUrQbfa0v1YkV8XyC9hvQ1gq%2BJb%2BdwfVKX%2FBmK2IfcoutN1AOrOoh35Eobh%2B%2FVYZWIiHYkPGfP%2FgST6%2FwlzsFV6wo2Fdh2XnxgXqFovWtewxIVZMuQ%3D%3D",
+
+    //FOX
+    "foxsport": "https://labolatv.pages.dev/player3?data=U2FsdGVkX1%2BuHVfgoe6TX6SNkKJjVYIyDVk8%2FfpGbjtLx3aE6G7ZkfVZrK2zBB8cA7eadPO2bT7tMSz8jvQottfx9vn6zUfFZs0frNLB%2FIw%3D",
+    "fox1": "https://labolatv.pages.dev/player3?data=U2FsdGVkX1816mM07C12uX%2B%2BlQ9k%2BuCq2l70kiljvLXgmokx7H4nJPYpxHD0A2EtH3RyudVAdBeGGv3a6zawDg4nClsGKEshhvDv9Dta5ck%3D",
+    "fox2": "https://labolatv.pages.dev/player3?data=U2FsdGVkX1%2BdB%2FG3w3%2BB4CGcGW5r9Ufk%2FoZDtRAJCKxO4NNqtTD98Qn%2B7Urdh0AX%2F49xceeTn%2FmC3r6yyGXs%2FZyEq4MycMnC%2B2iRPKo7DxI%3D",
+    "fox3": "https://labolatv.pages.dev/player3?data=U2FsdGVkX19TFMYZQ7%2FQ8Fst5J9AIJNC%2B5krgXZCdgj0Od%2FDV8dYbaHvwvNE2GVP0d%2Fo0NVwYgA3%2Fo%2FuybEwp2QuZ2zP4VIyV8IglizB1Ns%3D"
   };
 
   document.addEventListener("DOMContentLoaded", function () {
