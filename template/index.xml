@@ -1,0 +1,1306 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:version='2' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+  <head>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+      <b:if cond='data:blog.pageType == &quot;index&quot;'>
+    <title><data:blog.title/></title>
+  <b:else/>
+    <title><data:blog.pageName/> | <data:blog.title/></title>
+  </b:if>
+    <b:include data='blog' name='all-head-content'/>
+    <b:skin><![CDATA[
+      body {
+        font-family: Arial, sans-serif;
+        background: #0f172a;
+        color: #fff;
+        margin: 0;
+        margin-top: 15px;
+      }
+      .match-schedule {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #1e293b;
+        padding: 16px;
+        margin: 10px auto;
+        border-radius: 12px;
+        max-width: 600px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        flex-wrap: wrap;
+      }
+      .team-name-a, .team-name-b {
+        width: 25%;
+        text-align: center;
+        font-weight: bold;
+      }
+      .team-logo {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+      }
+      .time {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+        font-size: 1rem;
+        color: #38bdf8;
+      }
+      .countdown {
+        width: 100%;
+        text-align: center;
+        font-size: 0.9rem;
+        margin-top: 5px;
+        color: #facc15;
+      }
+      .play-buttons {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+      }
+      .play-button {
+        background-color: #10b981;
+        border: none;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 0.9rem;
+      }
+      .play-button:hover {
+        background-color: #059669;
+      }
+
+
+    ]]></b:skin>
+    
+    <link href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' rel='stylesheet'/>
+    
+  </head>
+  <body>
+    <b:section class='widget-section' id='widgetSection' name='Header' showaddelement='yes'>
+      <b:widget id='HTML5' locked='false' title='' type='HTML'>
+        <b:widget-settings>
+          <b:widget-setting name='content'><![CDATA[<div class="wrapper">
+<div class="media-brand-header">
+  <div class="brand-identity">
+    <div class="brand-name">LIGABOLA STREAM</div>
+  </div>
+  <div class="brand-social-links">
+    <a class="social-icon" href="https://t.me/BolaLigaStream"><img src="https://img.icons8.com/ios-filled/30/ffffff/telegram-app.png" alt="Telegram" /></a>
+    <a class="social-icon" href="https://whatsapp.com/channel/0029Vb5jwIJKGGG8MTvylG0q"><img src="https://img.icons8.com/ios-filled/30/ffffff/whatsapp.png" alt="WhatsApp" /></a>
+  </div>
+</div>
+</div>
+
+<div class="description-container">
+  <h2 class="title">TENTANG LIGABOLA STREAM</h2>
+  <p class="description">
+    <strong>LIGABOLA STREAM</strong> adalah platform yang menyediakan <strong>live streaming pertandingan sepak bola</strong>
+    dari berbagai liga terkenal di dunia. Nikmati pertandingan langsung dari liga-liga favorit Anda seperti
+    <strong>Liga 1, Liga Inggris, Liga Spanyol, UCL</strong>, dan masih banyak lagi liga keren lainnya. 
+    Dengan kualitas streaming yang tinggi dan update real-time, <strong>LIGABOLA STREAM</strong> memastikan Anda 
+    tidak akan ketinggalan aksi dari tim kesayangan Anda!
+  </p>
+</div>]]></b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+      </b:widget>
+      <b:widget id='HTML20' locked='false' title='Iklan Adsterra - Native Banner' type='HTML' version='1'>
+        <b:widget-settings>
+          <b:widget-setting name='content'><![CDATA[<div style="max-width: 800px; margin: 0 auto; background-color: #1e293b; border-radius: 8px; padding: 10px;">
+
+<!--- Script Iklan Taruh di Bawah --->
+<script async="async" data-cfasync="false" src="//pl26831058.profitableratecpm.com/5687c89ac6b716dd03ad0ef084d42772/invoke.js"></script>
+<div id="container-5687c89ac6b716dd03ad0ef084d42772"></div>
+
+</div>]]></b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title hidden'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+      </b:widget>
+    </b:section>
+    
+    <b:section class='judul-event-lainnya' id='JudulEventLainnya' name='Iklan Adsterra - Popunder' showaddelement='no'>
+      <b:widget id='HTML6' locked='false' title='Iklan Adsterra - Popunder' type='HTML' version='1'>
+        <b:widget-settings>
+          <b:widget-setting name='content'><![CDATA[<script type='text/javascript' src='//pl26830577.profitableratecpm.com/1f/0e/59/1f0e596b871987ee1ee9f20cc298ae59.js'></script>]]></b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+      <!-- only display title if it's non-empty -->
+      <b:if cond='data:title != &quot;&quot;'>
+        <h2 class='title hidden'><data:title/></h2>
+      </b:if>
+      <div class='widget-content'>
+        <data:content/>
+      </div>
+
+      <b:include name='quickedit'/>
+    </b:includable>
+      </b:widget>
+    </b:section>
+
+
+    <div class='container'>
+      <b:section class='main' id='main' name='Jadwal Pertandingan Bola' showaddelement='yes'>
+        <b:widget id='HTML66' locked='false' title='JUDUL EVENT FOOTBALL' type='HTML' version='1'>
+          <b:widget-settings>
+            <b:widget-setting name='content'><![CDATA[<div class="event-live-header">
+          <div class="glow-circle"></div>
+          <h1>LIVE FOOTBALL MATCH</h1>
+          <div class="glow-circle"></div>
+        </div>]]></b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+      <!-- only display title if it's non-empty -->
+      <b:if cond='data:title != &quot;&quot;'>
+        <h2 class='title hidden'><data:title/></h2>
+      </b:if>
+      <div class='widget-content'>
+        <data:content/>
+      </div>
+
+      <b:include name='quickedit'/>
+    </b:includable>
+        </b:widget>
+        <b:widget id='HTML14' locked='false' title='Index (JANGAN DIHAPUS)' type='HTML' version='1'>
+          <b:widget-settings>
+            <b:widget-setting name='content'><![CDATA[<div class="jadwal-container" id="jadwal-container"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+<script>
+const customDomain = "neobolatv"; // Ganti ini sesuai keinginanmu
+const playerHost = `${customDomain}-player.blogspot.com`;
+  
+
+  const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTFBeFaj1e0S-Ghi-7WDdVBs3IiBWwMqyf--lgwH469XXJMl5YOfIv3Qx5cdnzxW7GGFMpZNIYBR6On/pub?output=csv';
+
+  function togglePlayLinks(btn) {
+    const playLinks = btn.nextElementSibling;
+    playLinks.classList.toggle("hidden");
+  }
+
+function updateStatus() {
+  const pertandinganEls = document.querySelectorAll(".pertandingan");
+  pertandinganEls.forEach(el => {
+    const dateStr = el.getAttribute("data-jadwal");
+    const statusEl = el.querySelector(".live-status");
+    const tombolTonton = el.querySelector(".btn-tonton");
+    const waktu = new Date(dateStr);
+    const sekarang = new Date();
+
+    const selisihMs = waktu - sekarang; // waktu pertandingan - sekarang
+    const selisihMenit = (sekarang - waktu) / (1000 * 60); // sekarang - waktu pertandingan
+
+    // Atur status
+    if (selisihMenit >= 0 && selisihMenit <= 115) {
+      statusEl.textContent = "LIVE 🔴";
+      if (tombolTonton) tombolTonton.style.display = 'block'; // Tampilkan saat LIVE
+    } else if (selisihMenit > 115) {
+      statusEl.textContent = "END";
+      if (tombolTonton) tombolTonton.style.display = 'none'; // Sembunyikan setelah selesai
+    } else if (selisihMs > 0) {
+      // Belum mulai
+      const selisihHari = Math.floor(selisihMs / (1000 * 60 * 60 * 24));
+      const jam = Math.floor((selisihMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const menit = Math.floor((selisihMs % (1000 * 60 * 60)) / (1000 * 60));
+      const detik = Math.floor((selisihMs % (1000 * 60)) / 1000);
+
+      if (selisihHari >= 1) {
+        statusEl.textContent = `${selisihHari} Hari Lagi`;
+      } else {
+        statusEl.textContent = `${jam}j ${menit}m ${detik}d`;
+      }
+
+      // Tampilkan tombol jika kurang dari 5 jam
+      if (selisihMs <= 5 * 60 * 60 * 1000) {
+        if (tombolTonton) tombolTonton.style.display = 'block';
+      } else {
+        if (tombolTonton) tombolTonton.style.display = 'none';
+      }
+    }
+  });
+}
+
+function renderPertandingan(data) {
+  const container = document.getElementById("jadwal-container");
+  container.innerHTML = "";
+
+  const sorted = data
+    .filter(row => row.Tanggal)
+    .map(row => {
+      let jam = "";
+
+      if (row.Jam instanceof Date) {
+        const h = row.Jam.getHours().toString().padStart(2, '0');
+        const m = row.Jam.getMinutes().toString().padStart(2, '0');
+        jam = `${h}:${m}`;
+      } else if (typeof row.Jam === "string") {
+        jam = row.Jam.trim().padStart(5, '0');
+        if (!jam.includes(":")) jam += ":00";
+      } else {
+        jam = "00:00";
+      }
+
+      const tanggal = (row.Tanggal || "").trim();
+      const datetime = new Date(`${tanggal}T${jam}:00`);
+
+      return { ...row, datetime, Jam: jam };
+    })
+    .sort((a, b) => a.datetime - b.datetime);
+
+  // Grouping by Liga
+  const groupedByLiga = {};
+  sorted.forEach(item => {
+    const liga = item.Liga || 'LIGA';
+    if (!groupedByLiga[liga]) groupedByLiga[liga] = [];
+    groupedByLiga[liga].push(item);
+  });
+
+  // Render grouped
+  Object.keys(groupedByLiga).forEach(liga => {
+    const ligaGroup = groupedByLiga[liga];
+    ligaGroup.forEach(item => {
+      const fullDate = `${item.Tanggal}T${item.Jam}:00`;
+      const tanggal = new Date(fullDate);
+      const hari = tanggal.toLocaleDateString("id-ID", { weekday: 'long' });
+      const tglFormat = tanggal.toLocaleDateString("id-ID", { day: 'numeric', month: 'long', year: 'numeric' });
+      const jamFormat = tanggal.toLocaleTimeString("id-ID", { hour: '2-digit', minute: '2-digit' });
+
+      const playList = (item['Play Links'] || "").split(",").map(p => {
+        const match = p.match(/(Play \d+)\s*\(([^)]+)\)/);
+        if (match) {
+          const label = match[1];
+          let url = match[2].trim();
+if (url.startsWith("#")) {
+  const hash = url.substring(1);
+  url = `https://${playerHost}/#${hash}`;
+}
+return `<button onclick="window.location.href='${url}'">${label}</button>`;
+        }
+        return '';
+      }).join("");
+
+      const html = `
+        <div class="pertandingan" data-jadwal="${fullDate}">
+          <div class="liga">${item.Liga || 'LIGA'}</div>
+          <div class="tim-container">
+            <div class="tim">
+              <img src="${item['Logo 1 URL'] || ''}">
+              <div>${item['Tim 1'] || '-'}</div>
+            </div>
+            <div class="info-tengah">
+              <p>${hari}, ${tglFormat}</p>
+              <p class="jam">${jamFormat} WIB</p>
+              <p class="live-status"></p>
+            </div>
+            <div class="tim">
+              <img src="${item['Logo 2 URL'] || ''}">
+              <div>${item['Tim 2'] || '-'}</div>
+            </div>
+          </div>
+          <button class="btn-tonton" style="display: none;" onclick="togglePlayLinks(this)">Tonton Sekarang</button>
+          <div class="play-links hidden">
+            ${playList}
+          </div>
+        </div>`;
+      container.insertAdjacentHTML('beforeend', html);
+    });
+  });
+
+  updateStatus();
+}
+
+  Papa.parse(SHEET_URL, {
+    download: true,
+    header: true,
+    complete: function(results) {
+      renderPertandingan(results.data);
+    }
+  });
+
+  setInterval(updateStatus, 1000);
+</script>
+
+
+<style>
+.jadwal-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .pertandingan {
+    background-color: #1f2937;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .pertandingan .liga {
+    text-align: center;
+    font-size: 12px;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+
+  .tim-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .tim {
+    flex: 1;
+    text-align: center;
+  }
+
+.tim img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.tim img:hover {
+  transform: scale(1.1) translateY(-4px);
+  filter: brightness(1.1);
+}
+
+  .info-tengah {
+    flex: 1;
+    text-align: center;
+  }
+
+  .info-tengah p {
+    margin: 4px 0;
+  }
+
+  .info-tengah .jam {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .live-status {
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .btn-tonton {
+    width: 30%;
+    background-color: #22c55e;
+    color: white;
+    padding: 10px;
+    margin: 0 auto;
+    display: block;
+    border: none;
+    border-radius: 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .btn-tonton:hover {
+    background-color: #16a34a;
+  }
+
+  .play-links {
+    margin-top: 10px;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .play-links a {
+    background-color: #334155;
+    color: white;
+    padding: 6px 12px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+
+  .play-links a:hover {
+    background-color: #475569;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+.play-links button {
+  background-color: #2563eb;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  margin: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.play-links button:hover {
+  background-color: #1d4ed8;
+}
+
+.judul-liga {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    border-left: 5px solid #007bff;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    color: #1e293b;
+  }
+
+
+@media (max-width: 600px) {
+  .btn-tonton {
+    width: 60%;
+  }
+
+  .jam {
+    font-size: 15px !important;
+  }
+
+  .info-tengah {
+    font-size: 10px !important;
+  }
+
+  .tim {
+    font-size: 12px !important;
+  }
+}
+</style>]]></b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title hidden'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+        </b:widget>
+      </b:section>
+    </div>
+    
+    <b:section class='widget-section' id='widgetSection1' name='Widget Elemen' showaddelement='yes'>
+      <b:widget id='HTML17' locked='false' title='Jadwal Pertandingan' type='HTML' version='1'>
+        <b:widget-settings>
+          <b:widget-setting name='content'><![CDATA[<div class="container-jadwal">
+    <div class="header-jadwal">JADWAL PERTANDINGAN HARI INI - 24 JAM</div>
+    <div class="iframe-wrapper">
+      <iframe src="https://labolatv.pages.dev/api/v1/fixtures/schedules-games" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <style>
+   .container-jadwal {
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+      background-color: #334155;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      border: 1px solid #475569;
+    }
+
+    .header-jadwal {
+      background-color: #0f172a;
+      padding: 16px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      border-bottom: 1px solid #475569;
+    }
+
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 ratio */
+      height: 0;
+    }
+
+    .iframe-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    @media (max-width: 600px) {
+      .iframe-wrapper {
+        position: static;
+        padding-bottom: 0;
+        height: 500px;
+      }
+
+      .iframe-wrapper iframe {
+        position: static;
+        width: 100%;
+        height: 100%;
+      }
+
+      .header-jadwal {
+        font-size: 16px;
+        padding: 12px;
+      }
+    }
+  </style>]]></b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title hidden'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+      </b:widget>
+      <b:widget id='HTML15' locked='false' title='Footer' type='HTML' version='1'>
+        <b:widget-settings>
+          <b:widget-setting name='content'><![CDATA[<!-- Footer -->
+<div class="wrapper">
+<div class="media-brand-header">
+    <div class="footer-container">
+      <div class="footer-title">LIGABOLA STREAM</div>
+      <div class="footer-description">
+        Nonton Live Streaming Bola Gratis dari berbagai liga dunia. Kapan saja, di mana saja.
+      </div>
+      <div class="footer-bottom">
+        © 2025 LIGABOLA STREAM — Semua hak dilindungi. <br />
+        Disclaimer: LIGABOLA STREAM hanya menyediakan link streaming dari pihak ketiga dan tidak menyimpan konten di server.
+      </div>
+    </div>
+</div>
+</div>]]></b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title hidden'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+      </b:widget>
+      <b:widget id='HTML3' locked='false' title='JANGAN DIHAPUS' type='HTML' version='1'>
+        <b:widget-settings>
+          <b:widget-setting name='content'><![CDATA[<script>
+function updateMatchCountdowns() {
+  const scheduleTables = document.querySelectorAll(".match-container");
+
+  scheduleTables.forEach(function (table) {
+    const timeEl = table.querySelector(".match-time");
+    const countdownEl = table.querySelector(".match-countdown");
+
+    if (!timeEl || !countdownEl) return;
+
+    const timeStr = timeEl.dataset.start;
+    const dateStr = timeEl.dataset.date;
+    const matchTime = new Date(`${dateStr}T${timeStr}:00`);
+    const now = new Date();
+    const diff = matchTime - now;
+
+    // Jika memiliki class 'ended', tampilkan END dan berhenti di sini
+    if (timeEl.classList.contains("ended")) {
+      timeEl.textContent = "END";
+      countdownEl.style.display = "none";
+      return;
+    }
+
+    // Jika pertandingan sudah dimulai
+    if (diff <= 0) {
+      const elapsed = now - matchTime;
+      const elapsedMinutes = elapsed / (1000 * 60);
+
+      if (elapsedMinutes >= 115) {
+        timeEl.textContent = "END";
+        timeEl.classList.add("ended");
+        countdownEl.style.display = "none";
+      } else {
+        timeEl.textContent = "LIVE";
+        countdownEl.style.display = "none";
+      }
+
+      return;
+    }
+
+    // Format hari dan waktu
+    const hari = matchTime.toLocaleDateString('id-ID', { weekday: 'long' });
+    const jam = matchTime.getHours().toString().padStart(2, '0');
+    const menit = matchTime.getMinutes().toString().padStart(2, '0');
+    const jamMenit = `${jam}:${menit}`;
+
+    // Tampilkan waktu dan hari
+    timeEl.textContent = `📅 ${hari} 🕒 ${jamMenit} WIB`;
+
+    // Tampilkan countdown dengan tambahan hari jika lebih dari 24 jam
+    let countdownText = "";
+    if (diff > 86400000) {
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      countdownText = `<strong><font color="#facc15">${days}h ${hours}j ${minutes}m ${seconds}d</font></strong>`;
+    } else {
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      countdownText = `<strong><font color="#facc15">${hours}j ${minutes}m ${seconds}d</font></strong>`;
+    }
+
+    countdownEl.style.display = "block";
+    countdownEl.innerHTML = countdownText;
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  updateMatchCountdowns();
+  setInterval(updateMatchCountdowns, 1000);
+});
+</script>]]></b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title hidden'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+      </b:widget>
+      <b:widget id='HTML2' locked='false' title='Style CSS' type='HTML' version='1'>
+        <b:widget-settings>
+          <b:widget-setting name='content'><![CDATA[<style>
+.description-container {
+  background-color: #1e293b;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 16px;
+  color: #38bdf8; /* Warna biru yang cerah */
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.description strong {
+  color: #facc15; /* Warna kuning untuk penekanan */
+}
+
+@media (max-width: 600px) {
+  .description-container {
+    padding: 16px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}
+</style>
+
+<style>
+.match-container {
+  background-color: #1e293b;
+  color: white;
+  border-radius: 16px;
+  padding: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.match-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.match-time,
+.match-countdown {
+  background-color: #0f172a;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.match-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.team-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.team-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.team-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.team-name {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Tombol TONTON */
+.watch-button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.watch-button:hover {
+  background-color: #2563eb;
+}
+
+.play-buttons {
+  display: none;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.play-buttons button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.play-buttons.show {
+  display: flex;
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+  .match-container {
+    padding: 12px;
+  }
+
+  .team-name {
+    font-size: 13px;
+  }
+
+  .watch-button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .match-time,
+  .match-countdown {
+    font-size: 13px;
+    padding: 4px 10px;
+  }
+}
+
+.event-live-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+  gap: 12px;
+  padding: 20px 0;
+  background-color: #0f172a;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  margin-bottom: 20px;
+  animation: pulseGlow 2s infinite;
+}
+
+.event-live-header h1 {
+  font-size: 28px;
+  font-weight: 900;
+  background: linear-gradient(90deg, #f43f5e, #f97316, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+  letter-spacing: 1px;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.glow-circle {
+  width: 12px;
+  height: 12px;
+  background-color: #3b82f6;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #3b82f6, 0 0 24px #3b82f6;
+  animation: blink 1.2s infinite alternate;
+}
+
+@keyframes blink {
+  from { opacity: 1; }
+  to { opacity: 0.3; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.6); }
+}
+
+@media (max-width: 600px) {
+  .event-live-header h1 {
+    font-size: 20px;
+  }
+}
+</style>
+
+  <style>
+    footer {
+      background-color: #1f2937;
+      padding: 40px 20px 20px;
+    }
+
+    .footer-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .footer-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .footer-description {
+      font-size: 14px;
+      color: #9ca3af;
+      margin-bottom: 20px;
+    }
+
+    .footer-bottom {
+      font-size: 12px;
+      color: #6b7280;
+      border-top: 1px solid #374151;
+      padding-top: 15px;
+    }
+  </style>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&display=swap');
+
+.wrapper {
+  width: 100%;
+  padding: 0px;
+  display: flex;
+}
+
+.media-brand-header {
+  width: 100%;
+  max-width: 770px;
+  background: linear-gradient(145deg, #0f172a, #1e293b);
+  padding: 20px 35px;
+  margin: 0 auto;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+  flex-wrap: wrap; /* Tambahan agar tidak overflow */
+  gap: 10px; /* Spasi antar elemen di mode wrap */
+}
+
+.media-brand-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+  animation: rotateGradient 15s linear infinite;
+  z-index: 0;
+}
+
+.brand-identity {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 auto; /* Agar bisa menyusut */
+  min-width: 150px;
+}
+
+.brand-name {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: transparent;
+  background: linear-gradient(90deg, #3b82f6 0%, #ec4899 30%, #f59e0b 60%, #10b981 100%);
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  display: inline-block;
+  animation: shine 6s linear infinite, pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes rotateGradient {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.brand-social-links {
+  display: flex;
+  gap: 18px;
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.social-icon:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon img {
+  width: 22px;
+  height: 22px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s;
+}
+
+.social-icon:hover img {
+  transform: scale(1.15);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .media-brand-header {
+    padding: 16px 25px;
+    border-radius: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .brand-name {
+    font-size: 2.2rem;
+  }
+
+  .brand-social-links {
+    gap: 14px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .social-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .media-brand-header {
+    padding: 14px 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .brand-name {
+    font-size: 1.8rem;
+  }
+
+  .brand-social-links {
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .social-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand-name {
+    font-size: 1.6rem;
+  }
+
+  .social-icon {
+    width: 34px;
+    height: 34px;
+  }
+}
+</style>
+
+<style>
+  .league-name-banner {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(to right, #4f46e5, #8b5cf6);
+    color: white;
+    padding: 4px 12px;
+    margin: 16px auto;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    max-width: fit-content;
+  }
+
+  .league-name-banner img {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    filter: brightness(0) invert(1); /* ubah warna jadi putih */
+    vertical-align: middle;
+  }
+</style>
+
+
+<script>
+document.querySelectorAll('.watch-button').forEach(button => {
+  button.addEventListener('click', () => {
+    const matchBlock = button.closest('.match-container');
+    const playButtons = matchBlock.querySelector('.play-buttons');
+    playButtons.classList.toggle('show');
+  });
+});
+</script>]]></b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title hidden'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+      </b:widget>
+      <b:widget id='HTML7' locked='false' title='Anti Adblock' type='HTML' version='1'>
+        <b:widget-settings>
+          <b:widget-setting name='content'><![CDATA[<script>
+    /**
+     * Anti Ad Blocker Code by Fineshop Design
+     * Last Updated: 16:42 12/08/2023 IST
+     * Copyright: [Deo Kumar, Fineshop Design](https://www.fineshopdesign.com)
+     */
+    (function(){const n=document,o=n.head;var t="pointer-events: none; height: 1px; width: 0; opacity: 0; visibility: hidden; position: fixed; bottom: 0;";const a=n.createElement("div"),s=n.createElement("div"),d=n.createElement("ins");a.id="div-gpt-ad-3061307416813-0",a.style=t,s.className="textads banner-ads banner_ads ad-unit ad-zone ad-space adsbox ads",s.style=t,d.className="adsbygoogle",d.style="display: none;";const i={allowed:null,elements:[a,s,d]};this.checkAdsStatus=function(t){const e=n.body;"function"==typeof t&&("boolean"==typeof i.allowed?t(i):(e.appendChild(a),e.appendChild(s),e.appendChild(d),setTimeout(function(){if(0===a.offsetHeight||0===s.offsetHeight||d.firstElementChild)i.allowed=!1,t(i);else{const e=n.createElement("script");e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",e.async=!0,e.crossOrigin="anonymous",e.onload=function(){i.allowed=!0,t(i)},e.onerror=function(){i.allowed=!1,t(i)},o.appendChild(e)}a.remove(),s.remove(),d.remove()},40)))}}).call(this);
+    
+    function antiAdBlockerHandler() {
+      window.checkAdsStatus(function(ads) {
+        if (!ads.allowed) {
+          // Ads are Blocked
+          console.log("%c[ADS]", "color:#d32f2f;", "Blocked");
+    
+          const icon = "<svg style='stroke:none;fill:currentColor!important' viewBox='0 0 24 24'><path d='M12.2 9L10.2 7H13C14.1 7 15 7.9 15 9V11.8L13 9.8V9H12.2M23 9V7H19C17.9 7 17 7.9 17 9V11C17 12.1 17.9 13 19 13H21V15H18.2L20.2 17H21C22.1 17 23 16.1 23 15V13C23 11.9 22.1 11 21 11H19V9H23M22.1 21.5L20.8 22.8L14.4 16.4C14.1 16.7 13.6 17 13 17H9V10.9L7 8.9V17H5V13H3V17H1V9C1 7.9 1.9 7 3 7H5.1L1.1 3L2.4 1.7L22.1 21.5M5 9H3V11H5V9M13 14.9L11 12.9V15H13V14.9Z'/></svg>";
+          const title = "Ad blocker detected!";
+          const message = "<p style='color: white; font-weight: bold;'>We have detected that you are using an ad-blocking plugin in your browser.<br/>Kami telah mendeteksi bahwa Anda menggunakan plugin pemblokiran iklan di browser Anda.<br/>Please use Chrome browser and disable your ad blocker / Gunakan browser Chrome dan matikan pemblokiran iklan Anda.</p>";
+    
+          // Lets create the popup
+          const element = document.createElement("div");
+          element.className = "popSc";
+          element.innerHTML = "<div class='popBo'>" + icon + "<h2>" + title + "</h2><div class='popCo'>" + message + "</div></div>"
+          document.body.appendChild(element);
+        } else {
+          // Ads are allowed;
+          console.log("%c[ADS]", "color:#43a047;", "Allowed");
+        }
+      });
+      document.removeEventListener("DOMContentLoaded", antiAdBlockerHandler);
+    };
+    
+    if (document.readyState === "complete" || document.readyState !== "loading") {
+      antiAdBlockerHandler();
+    } else {
+      document.addEventListener("DOMContentLoaded", antiAdBlockerHandler);
+    }
+</script>
+
+<style>
+        .popSc {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.popBo {
+    background: black;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+}
+.popBo svg {
+    width: 100px;
+    height: 100px;
+    color: red;
+}
+.popBo h2 {
+    color: red;
+}
+</style>]]></b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title hidden'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+      </b:widget>
+      <b:widget id='HTML19' locked='false' title='Statistik Blog' type='HTML' version='1'>
+        <b:widget-settings>
+          <b:widget-setting name='content'><![CDATA[<!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4954438,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?4954438&amp;101" alt="" border="0" /></a></noscript>
+<!-- Histats.com  END  -->]]></b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title hidden'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+      </b:widget>
+    </b:section>
+
+
+  </body>
+</html>
