@@ -192,10 +192,10 @@
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 
 <script>
-const customDomain = "labolatv"; // Ganti ini sesuai keinginanmu
+const customDomain = "neobolatv"; // Ganti ini sesuai keinginanmu
 const playerHost = `${customDomain}-player.blogspot.com`;
 
-  const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTFBeFaj1e0S-Ghi-7WDdVBs3IiBWwMqyf--lgwH469XXJMl5YOfIv3Qx5cdnzxW7GGFMpZNIYBR6On/pub?output=csv';
+  const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTMmjqVOp08ggsZw8k5NlmiD2v557pwNfEW3lVdLJp07K7EBLnVxDNhIBvwXN3h4jn86S4uyspCOBWq/pub?output=csv';
 
   function togglePlayLinks(btn) {
     const playLinks = btn.nextElementSibling;
@@ -298,7 +298,7 @@ const playList = (item['Play Links'] || "").split(",").map(p => {
       const hash = url.substring(1);
       url = `https://${playerHost}/#${hash}`;
     }
-    return `<button onclick="window.location.href='${url}'">${label}</button>`;
+    return `<button onclick="window.location.href='${url}' rel='noreferrer'">${label}</button>`;
   }
   return '';
 }).join("");
