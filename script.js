@@ -207,6 +207,7 @@
     "ssc3": "https://labolatv.pages.dev/ch/ssc3",
     "ssc4": "https://labolatv.pages.dev/ch/ssc4",
     "ssc5": "https://labolatv.pages.dev/ch/ssc5",
+    "sscn": "https://labolatv.pages.dev/player3?data=U2FsdGVkX19qecwJ02v2GRpfsdq2X3tA7BQJYhg2LvOYdnjFa6JmhQ%2BLeJFQ4EwIVcbVSoWSTk9fHe0nymau3UxYugfyW01NfDTJZmwLeFk%3D",
 
     // varzhes
     "varzhes": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX19grGHwPVfYh92Zj1VBsSIcegFNflNuv%2Bs0HbTMsQ%2FfiPJeK5A4tid9t%2B%2Fdbem3gNtJbx%2Bvda5H4sD6%2Fby8YnYZ%2FsFqiueX3YXKvGSmBTvJ%2BnTJXzudvVvq",
