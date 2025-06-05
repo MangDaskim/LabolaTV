@@ -192,9 +192,8 @@
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 
 <script>
-const customDomain = "neobolatv"; // Ganti ini sesuai keinginanmu
+const customDomain = "labolatv"; // Ganti ini sesuai keinginanmu
 const playerHost = `${customDomain}-player.blogspot.com`;
-  
 
   const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTFBeFaj1e0S-Ghi-7WDdVBs3IiBWwMqyf--lgwH469XXJMl5YOfIv3Qx5cdnzxW7GGFMpZNIYBR6On/pub?output=csv';
 
@@ -290,19 +289,19 @@ function renderPertandingan(data) {
       const tglFormat = tanggal.toLocaleDateString("id-ID", { day: 'numeric', month: 'long', year: 'numeric' });
       const jamFormat = tanggal.toLocaleTimeString("id-ID", { hour: '2-digit', minute: '2-digit' });
 
-      const playList = (item['Play Links'] || "").split(",").map(p => {
-        const match = p.match(/(Play \d+)\s*\(([^)]+)\)/);
-        if (match) {
-          const label = match[1];
-          let url = match[2].trim();
-if (url.startsWith("#")) {
-  const hash = url.substring(1);
-  url = `https://${playerHost}/#${hash}`;
-}
-return `<button onclick="window.location.href='${url}'">${label}</button>`;
-        }
-        return '';
-      }).join("");
+const playList = (item['Play Links'] || "").split(",").map(p => {
+  const match = p.match(/(.+?)\s*\(([^)]+)\)/);
+  if (match) {
+    const label = match[1].trim(); // Bebas: Play, IOS, dst.
+    let url = match[2].trim();
+    if (url.startsWith("#")) {
+      const hash = url.substring(1);
+      url = `https://${playerHost}/#${hash}`;
+    }
+    return `<button onclick="window.location.href='${url}'">${label}</button>`;
+  }
+  return '';
+}).join("");
 
       const html = `
         <div class="pertandingan" data-jadwal="${fullDate}">
