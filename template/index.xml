@@ -215,7 +215,7 @@ function updateStatus() {
     const selisihMenit = (sekarang - waktu) / (1000 * 60); // sekarang - waktu pertandingan
 
     // Atur status
-    if (selisihMenit >= 0 && selisihMenit <= 115) {
+    if (selisihMenit >= 0 && selisihMenit <= 130) {
       statusEl.textContent = "LIVE 🔴";
       if (tombolTonton) tombolTonton.style.display = 'block'; // Tampilkan saat LIVE
     } else if (selisihMenit > 115) {
@@ -298,7 +298,7 @@ const playList = (item['Play Links'] || "").split(",").map(p => {
       const hash = url.substring(1);
       url = `https://${playerHost}/#${hash}`;
     }
-    return `<button onclick="window.location.href='${url}' rel='noreferrer'">${label}</button>`;
+    return `<a href="${url}" rel="noreferrer">${label}</a>`;
   }
   return '';
 }).join("");
