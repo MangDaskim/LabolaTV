@@ -1,6 +1,6 @@
   const playerList = {
     // BEIN SPORTS
-    "bein1": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX194pSW%2BhpKfwQ1sGdKbrIFDkVqy1KlNWURu%2BIRKSwMYPTN17%2FtpjkkRlaeM60hjn5FQ%2B1CE86iLE64hDyTWXUHFA%2BvoR4bylgE%3D",
+    "bein1": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX1%2BOxxgcmJdTGgZLCpoHzZ4Gq0MktC%2BvgM%2F39AB89Ev6paZ1%2FJZtcY9xH7HX4im2Gr%2FK04axB%2F8v8RLEkkG3%2FJ5gNjcxkO%2BnCwU%3D",
     "bein1a": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX1%2FVJjGN%2B6eICdiUkNm5pZRDMnBPqK12%2BLIu8wvgA0nfP6ge8SzmhvvYVimIEiTI%2BmMvvyiU%2Fpt2NPecVK%2FuGHw4%2FoCmOeBo%2BkQ%3D",
     "bein2": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX18QWUtObbfEkAWsTSWPMGOB2rFXskPHZos03UMdRIFWNCpAS%2F%2Fj7Y2uct2I05G8GmCJvALi37pdXPlr%2FuJrCgquNlpgDT%2BI3z0%3D",
     "bein3b": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX18g%2FVVidJrcTIPQ%2BqpxtAzvllIuC%2BPP2rgOB7l3saR3ViZTCQhE9HW6n06mpOFz5AZiLGvUfvfZXEulrQbR4ARhFyEDaGhJcSBWxNJFHZVpUaIsppoa%2Fdto0AaXHzIvsnbugKwLvyTN%2B2VYq7d8Z%2F9W8bGAwLpyC%2B2JLxZoxQQOj4G5DEhWIJ2f5K3yU8jN9wPnchNWsi1AD6LXn1hmkTaVAy3IJkJRZ%2BW1N0PdoH9xyLm%2FCHgEFp%2F%2F",
