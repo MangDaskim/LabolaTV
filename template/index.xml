@@ -146,7 +146,7 @@
     <b:section class='judul-event-lainnya' id='JudulEventLainnya' name='Iklan Adsterra - Popunder' showaddelement='no'>
       <b:widget id='HTML6' locked='false' title='Iklan Adsterra - Popunder' type='HTML' version='1'>
         <b:widget-settings>
-          <b:widget-setting name='content'><![CDATA[<script type='text/javascript' src='//pl26830577.profitableratecpm.com/1f/0e/59/1f0e596b871987ee1ee9f20cc298ae59.js'></script>]]></b:widget-setting>
+          <b:widget-setting name='content'/>
         </b:widget-settings>
         <b:includable id='main'>
       <!-- only display title if it's non-empty -->
@@ -165,6 +165,137 @@
 
     <div class='container'>
       <b:section class='main' id='main' name='Jadwal Pertandingan Bola' showaddelement='yes'>
+        <b:widget id='HTML1' locked='false' title='LIVE EVENT LAINNYA (JANGAN DIHAPUS)' type='HTML' version='1'>
+          <b:widget-settings>
+            <b:widget-setting name='content'><![CDATA[<div class="container" id="motogp-container"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script>
+const _0x6a92ce=_0x546b;(function(_0x292242,_0x374615){const _0x42aca5=_0x546b,_0x2b41d1=_0x292242();while(!![]){try{const _0x532aef=-parseInt(_0x42aca5(0xf5))/0x1+-parseInt(_0x42aca5(0x10f))/0x2+-parseInt(_0x42aca5(0x10d))/0x3*(parseInt(_0x42aca5(0xfd))/0x4)+-parseInt(_0x42aca5(0x10a))/0x5*(parseInt(_0x42aca5(0xe4))/0x6)+-parseInt(_0x42aca5(0x111))/0x7*(parseInt(_0x42aca5(0xf3))/0x8)+-parseInt(_0x42aca5(0x107))/0x9*(-parseInt(_0x42aca5(0xf2))/0xa)+parseInt(_0x42aca5(0xe6))/0xb*(parseInt(_0x42aca5(0xdc))/0xc);if(_0x532aef===_0x374615)break;else _0x2b41d1['push'](_0x2b41d1['shift']());}catch(_0x6a4654){_0x2b41d1['push'](_0x2b41d1['shift']());}}}(_0x135e,0x286ee));const sheetUrl=_0x6a92ce(0xed),basePlayerURL=_0x6a92ce(0xf6),hariIndo=[_0x6a92ce(0xea),_0x6a92ce(0xda),_0x6a92ce(0x109),_0x6a92ce(0x103),'Kamis',_0x6a92ce(0xe7),_0x6a92ce(0xde)],bulanIndo=[_0x6a92ce(0xf4),_0x6a92ce(0x108),'Maret','April','Mei',_0x6a92ce(0x10b),_0x6a92ce(0xee),_0x6a92ce(0x113),'September',_0x6a92ce(0x10c),_0x6a92ce(0xe3),_0x6a92ce(0xe1)];function _0x546b(_0x2abd62,_0x5d9f3e){const _0x135ec6=_0x135e();return _0x546b=function(_0x546b49,_0x2feb29){_0x546b49=_0x546b49-0xda;let _0x532f4d=_0x135ec6[_0x546b49];return _0x532f4d;},_0x546b(_0x2abd62,_0x5d9f3e);}function formatTanggalIndo(_0x487cb1){const _0x523c33=_0x6a92ce,_0x429b5b=new Date(_0x487cb1),_0x294a90=hariIndo[_0x429b5b[_0x523c33(0xe2)]()],_0x2ce52d=_0x429b5b[_0x523c33(0xe8)]()['toString']()['padStart'](0x2,'0'),_0x54b5c3=bulanIndo[_0x429b5b[_0x523c33(0x100)]()],_0x5b0dd5=_0x429b5b[_0x523c33(0xdd)]();return _0x294a90+',\x20'+_0x2ce52d+'\x20'+_0x54b5c3+'\x20'+_0x5b0dd5;}Papa[_0x6a92ce(0xfc)](sheetUrl,{'download':!![],'header':!![],'complete':function(_0x51c72e){const _0x3e11e4=_0x6a92ce,_0x42f53b=_0x51c72e['data'],_0x5397a7=document['getElementById'](_0x3e11e4(0xfa)),_0xcd11dd={};_0x42f53b['forEach'](_0x29f9a7=>{const _0x27914e=_0x3e11e4,_0x5a9ea2=_0x29f9a7[_0x27914e(0xf8)];!_0xcd11dd[_0x5a9ea2]&&(_0xcd11dd[_0x5a9ea2]=[]),_0xcd11dd[_0x5a9ea2][_0x27914e(0x112)](_0x29f9a7);});for(const _0x1fdb50 in _0xcd11dd){const _0x44c0ab=document[_0x3e11e4(0x104)](_0x3e11e4(0x102));_0x44c0ab[_0x3e11e4(0xe0)]['add'](_0x3e11e4(0xdb));const _0x288b24=_0x3e11e4(0x105)+_0x1fdb50[_0x3e11e4(0xe9)]()+_0x3e11e4(0xec);_0x44c0ab[_0x3e11e4(0x106)]+=_0x288b24,_0xcd11dd[_0x1fdb50][_0x3e11e4(0xf1)](_0x25b1c8=>{const _0x1508a9=_0x3e11e4,_0x3399fd=formatTanggalIndo(_0x25b1c8['Tanggal']),_0x9df015=_0x25b1c8['Play\x20Links'][_0x1508a9(0xdf)](',')[_0x1508a9(0xff)](_0x48f1e4=>{const _0x4cd45a=_0x1508a9,[_0x4852e6,_0x51e1f0]=_0x48f1e4['split']('('),_0x4e852c=_0x51e1f0[_0x4cd45a(0xfe)](')','')[_0x4cd45a(0xe5)](),_0x5cb253=''+basePlayerURL+_0x4e852c;return _0x4cd45a(0xfb)+_0x5cb253+'\x22>'+_0x4852e6[_0x4cd45a(0xe5)]()+_0x4cd45a(0x10e);})[_0x1508a9(0xf0)](''),_0x3202fb='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22'+_0x25b1c8[_0x1508a9(0xef)]+_0x1508a9(0xeb)+_0x25b1c8['Nama\x20Event']+_0x1508a9(0xf7)+_0x25b1c8['Nama\x20Event']+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22event-place\x22><i>'+_0x25b1c8['Tempat\x20Event']+_0x1508a9(0x101)+_0x9df015+_0x1508a9(0x110);_0x44c0ab['innerHTML']+=_0x3202fb;}),_0x5397a7[_0x3e11e4(0xf9)](_0x44c0ab);}}});function _0x135e(){const _0x558835=['Senin','event-group','12pYXtLz','getFullYear','Sabtu','split','classList','Desember','getDay','November','150kFdAYM','trim','4734367VmHNuB','Jumat','getDate','toUpperCase','Minggu','\x22\x20alt=\x22','</h1>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22glow-circle\x22></div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','https://docs.google.com/spreadsheets/d/e/2PACX-1vQMvnfsUx6byMEAu16-kA00bOl2AfvTIxa8LzkV2opUEwTg-Lhb8lu-QQkeShr4fJCNv2bh6yuemZHH/pub?output=csv','Juli','Logo\x20Event','join','forEach','1935410cjYnLu','8OnuIOJ','Januari','67613YHBSgt','https://neobolatv-player.blogspot.com','\x22\x20class=\x22event-logo\x22\x20/>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card-content\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22live-label\x22><strong>🔴\x20LIVE\x20NOW</strong></div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22event-title\x22>','Nama\x20Event','appendChild','motogp-container','<a\x20href=\x22','parse','3364pdykNr','replace','map','getMonth','</i></div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22play-buttonss\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','div','Rabu','createElement','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22event-live-header\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22glow-circle\x22></div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h1>LIVE\x20','innerHTML','9jFhlDI','Februari','Selasa','28305SoJPnG','Juni','Oktober','129PNLQIO','</a>','100964eSCkNB','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','1137787ZmdQDW','push','Agustus'];_0x135e=function(){return _0x558835;};return _0x135e();}
+  </script>
+
+<style>
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: #1f2937;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .event-logo {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      border-radius: 50%;
+      border: 2px solid #374151;
+      margin-bottom: 10px;
+    }
+
+    .live-label {
+      font-weight: bold;
+      color: red;
+      font-size: 14px;
+      animation: blink 1s infinite;
+      margin-bottom: 6px;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .event-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .event-place,
+    .event-date {
+      font-size: 14px;
+      color: #d1d5db;
+      margin: 4px 0;
+    }
+
+    .play-buttonss {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .play-buttonss a {
+      background-color: #2563eb;
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+
+    .play-buttonss a:hover {
+      background-color: #1d4ed8;
+    }
+
+    /* =================== Tampilan PC =================== */
+    @media (min-width: 768px) {
+      .card {
+        flex-direction: row;
+        align-items: stretch;
+        text-align: left;
+        gap: 20px;
+      }
+
+      .event-logo {
+        width: 150px;
+        height: 150px;
+        margin: 0;
+      }
+
+      .card-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .event-title {
+        font-size: 24px;
+      }
+
+      .event-place,
+      .event-date {
+        font-size: 16px;
+      }
+
+      .play-buttonss {
+        justify-content: flex-start;
+      }
+    }
+  </style>]]></b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title hidden'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+        </b:widget>
         <b:widget id='HTML66' locked='false' title='JUDUL EVENT FOOTBALL' type='HTML' version='1'>
           <b:widget-settings>
             <b:widget-setting name='content'><![CDATA[<div class="event-live-header">
@@ -192,156 +323,7 @@
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 
 <script>
-const customDomain = "neobolatv"; // Ganti ini sesuai keinginanmu
-const playerHost = `${customDomain}-player.blogspot.com`;
-
-  const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTMmjqVOp08ggsZw8k5NlmiD2v557pwNfEW3lVdLJp07K7EBLnVxDNhIBvwXN3h4jn86S4uyspCOBWq/pub?output=csv';
-
-  function togglePlayLinks(btn) {
-    const playLinks = btn.nextElementSibling;
-    playLinks.classList.toggle("hidden");
-  }
-
-function updateStatus() {
-  const pertandinganEls = document.querySelectorAll(".pertandingan");
-  pertandinganEls.forEach(el => {
-    const dateStr = el.getAttribute("data-jadwal");
-    const statusEl = el.querySelector(".live-status");
-    const tombolTonton = el.querySelector(".btn-tonton");
-    const waktu = new Date(dateStr);
-    const sekarang = new Date();
-
-    const selisihMs = waktu - sekarang; // waktu pertandingan - sekarang
-    const selisihMenit = (sekarang - waktu) / (1000 * 60); // sekarang - waktu pertandingan
-
-    // Atur status
-    if (selisihMenit >= 0 && selisihMenit <= 130) {
-      statusEl.textContent = "LIVE 🔴";
-      if (tombolTonton) tombolTonton.style.display = 'block'; // Tampilkan saat LIVE
-    } else if (selisihMenit > 115) {
-      statusEl.textContent = "END";
-      if (tombolTonton) tombolTonton.style.display = 'none'; // Sembunyikan setelah selesai
-    } else if (selisihMs > 0) {
-      // Belum mulai
-      const selisihHari = Math.floor(selisihMs / (1000 * 60 * 60 * 24));
-      const jam = Math.floor((selisihMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const menit = Math.floor((selisihMs % (1000 * 60 * 60)) / (1000 * 60));
-      const detik = Math.floor((selisihMs % (1000 * 60)) / 1000);
-
-      if (selisihHari >= 1) {
-        statusEl.textContent = `${selisihHari} Hari Lagi`;
-      } else {
-        statusEl.textContent = `${jam}j ${menit}m ${detik}d`;
-      }
-
-      // Tampilkan tombol jika kurang dari 5 jam
-      if (selisihMs <= 5 * 60 * 60 * 1000) {
-        if (tombolTonton) tombolTonton.style.display = 'block';
-      } else {
-        if (tombolTonton) tombolTonton.style.display = 'none';
-      }
-    }
-  });
-}
-
-function renderPertandingan(data) {
-  const container = document.getElementById("jadwal-container");
-  container.innerHTML = "";
-
-  const sorted = data
-    .filter(row => row.Tanggal)
-    .map(row => {
-      let jam = "";
-
-      if (row.Jam instanceof Date) {
-        const h = row.Jam.getHours().toString().padStart(2, '0');
-        const m = row.Jam.getMinutes().toString().padStart(2, '0');
-        jam = `${h}:${m}`;
-      } else if (typeof row.Jam === "string") {
-        jam = row.Jam.trim().padStart(5, '0');
-        if (!jam.includes(":")) jam += ":00";
-      } else {
-        jam = "00:00";
-      }
-
-      const tanggal = (row.Tanggal || "").trim();
-      const datetime = new Date(`${tanggal}T${jam}:00`);
-
-      return { ...row, datetime, Jam: jam };
-    })
-    .sort((a, b) => a.datetime - b.datetime);
-
-  // Grouping by Liga
-  const groupedByLiga = {};
-  sorted.forEach(item => {
-    const liga = item.Liga || 'LIGA';
-    if (!groupedByLiga[liga]) groupedByLiga[liga] = [];
-    groupedByLiga[liga].push(item);
-  });
-
-  // Render grouped
-  Object.keys(groupedByLiga).forEach(liga => {
-    const ligaGroup = groupedByLiga[liga];
-    ligaGroup.forEach(item => {
-      const fullDate = `${item.Tanggal}T${item.Jam}:00`;
-      const tanggal = new Date(fullDate);
-      const hari = tanggal.toLocaleDateString("id-ID", { weekday: 'long' });
-      const tglFormat = tanggal.toLocaleDateString("id-ID", { day: 'numeric', month: 'long', year: 'numeric' });
-      const jamFormat = tanggal.toLocaleTimeString("id-ID", { hour: '2-digit', minute: '2-digit' });
-
-const playList = (item['Play Links'] || "").split(",").map(p => {
-  const match = p.match(/(.+?)\s*\(([^)]+)\)/);
-  if (match) {
-    const label = match[1].trim(); // Bebas: Play, IOS, dst.
-    let url = match[2].trim();
-    if (url.startsWith("#")) {
-      const hash = url.substring(1);
-      url = `https://${playerHost}/#${hash}`;
-    }
-    return `<a href="${url}" rel="noreferrer">${label}</a>`;
-  }
-  return '';
-}).join("");
-
-      const html = `
-        <div class="pertandingan" data-jadwal="${fullDate}">
-          <div class="liga">${item.Liga || 'LIGA'}</div>
-          <div class="tim-container">
-            <div class="tim">
-              <img src="${item['Logo 1 URL'] || ''}">
-              <div>${item['Tim 1'] || '-'}</div>
-            </div>
-            <div class="info-tengah">
-              <p>${hari}, ${tglFormat}</p>
-              <p class="jam">${jamFormat} WIB</p>
-              <p class="live-status"></p>
-            </div>
-            <div class="tim">
-              <img src="${item['Logo 2 URL'] || ''}">
-              <div>${item['Tim 2'] || '-'}</div>
-            </div>
-          </div>
-          <button class="btn-tonton" style="display: none;" onclick="togglePlayLinks(this)">Tonton Sekarang</button>
-          <div class="play-links hidden">
-            ${playList}
-          </div>
-        </div>`;
-      container.insertAdjacentHTML('beforeend', html);
-    });
-  });
-
-  updateStatus();
-}
-
-  Papa.parse(SHEET_URL, {
-    download: true,
-    header: true,
-    complete: function(results) {
-      renderPertandingan(results.data);
-    }
-  });
-
-  setInterval(updateStatus, 1000);
+const _0x3aaed0=_0x1941;function _0x1941(_0xea25bb,_0x496803){const _0x4850bb=_0x4850();return _0x1941=function(_0x1941af,_0x141b66){_0x1941af=_0x1941af-0x7b;let _0x2c0847=_0x4850bb[_0x1941af];return _0x2c0847;},_0x1941(_0xea25bb,_0x496803);}function _0x4850(){const _0x110602=['30lwINni','Jam','long','6124544lMRpBe','parse','querySelector','substring','floor','style','20fYlUkX','toString','2736419ktWzbQ','https://','LIVE\x20🔴','display','forEach','beforeend','getAttribute','data-status','.btn-tonton','END','getMinutes','\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22pertandingan\x22\x20data-jadwal=\x22','map','LIGA','id-ID','classList','querySelectorAll','20mDGbMC','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>','block','innerHTML','includes','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22liga\x22>','-player.blogspot.com','2437299XbqxzU',':00','Liga','padStart','data','getHours','11LJZLiJ','toLocaleDateString','Tim\x201','none','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>','sort','trim','Status','16823256BFMRPj','Tanggal','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info-tengah\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p>','match','Logo\x201\x20URL','string','Play\x20Links','6VKKhzx','\x22\x20data-status=\x22','insertAdjacentHTML','953752fhNSLh','222374VuVwnM','data-jadwal','\x20WIB</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22live-status\x22></p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22tim\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22','datetime','21795gDIBFE','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22btn-tonton\x22\x20style=\x22display:\x20none;\x22\x20onclick=\x22togglePlayLinks(this)\x22>Tonton\x20Sekarang</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22play-links\x20hidden\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','textContent','split','2-digit','Logo\x202\x20URL','toggle','\x22\x20rel=\x22noreferrer\x22>','startsWith'];_0x4850=function(){return _0x110602;};return _0x4850();}(function(_0x522796,_0x519402){const _0x564cc7=_0x1941,_0x49e023=_0x522796();while(!![]){try{const _0x34ea36=-parseInt(_0x564cc7(0xa6))/0x1+-parseInt(_0x564cc7(0xa7))/0x2*(-parseInt(_0x564cc7(0xb4))/0x3)+-parseInt(_0x564cc7(0x87))/0x4*(parseInt(_0x564cc7(0xab))/0x5)+-parseInt(_0x564cc7(0xa3))/0x6*(-parseInt(_0x564cc7(0xbf))/0x7)+-parseInt(_0x564cc7(0xb7))/0x8+parseInt(_0x564cc7(0x8e))/0x9*(-parseInt(_0x564cc7(0xbd))/0xa)+-parseInt(_0x564cc7(0x94))/0xb*(-parseInt(_0x564cc7(0x9c))/0xc);if(_0x34ea36===_0x519402)break;else _0x49e023['push'](_0x49e023['shift']());}catch(_0x4396fe){_0x49e023['push'](_0x49e023['shift']());}}}(_0x4850,0x97da4));const customDomain='bolabiji2',playerHost=customDomain+_0x3aaed0(0x8d),SHEET_URL='https://docs.google.com/spreadsheets/d/e/2PACX-1vTFBeFaj1e0S-Ghi-7WDdVBs3IiBWwMqyf--lgwH469XXJMl5YOfIv3Qx5cdnzxW7GGFMpZNIYBR6On/pub?output=csv';function togglePlayLinks(_0x170849){const _0x248cc4=_0x3aaed0,_0x47f9ed=_0x170849['nextElementSibling'];_0x47f9ed[_0x248cc4(0x85)][_0x248cc4(0xb1)]('hidden');}function updateStatus(){const _0x468efd=_0x3aaed0,_0x4ce2f3=document[_0x468efd(0x86)]('.pertandingan');_0x4ce2f3['forEach'](_0x12d488=>{const _0x3d4226=_0x468efd,_0x53249c=_0x12d488[_0x3d4226(0x7c)](_0x3d4226(0xa8)),_0xa9ddd1=_0x12d488[_0x3d4226(0x7c)](_0x3d4226(0x7d)),_0x2cdf5c=_0x12d488[_0x3d4226(0xb9)]('.live-status'),_0x328c70=_0x12d488[_0x3d4226(0xb9)](_0x3d4226(0x7e)),_0x598954=new Date(_0x53249c),_0x1ba1fb=new Date(),_0x3c1f23=_0x598954-_0x1ba1fb,_0x1a707b=(_0x1ba1fb-_0x598954)/(0x3e8*0x3c);if(_0xa9ddd1===_0x3d4226(0x7f)){_0x2cdf5c[_0x3d4226(0xad)]=_0x3d4226(0x7f);if(_0x328c70)_0x328c70[_0x3d4226(0xbc)]['display']='none';return;}if(_0x1a707b>=0x0&&_0x1a707b<=0xb4){_0x2cdf5c[_0x3d4226(0xad)]=_0x3d4226(0xc1);if(_0x328c70)_0x328c70[_0x3d4226(0xbc)][_0x3d4226(0xc2)]=_0x3d4226(0x89);}else{if(_0x1a707b>0xb4){_0x2cdf5c[_0x3d4226(0xad)]=_0x3d4226(0x7f);if(_0x328c70)_0x328c70['style']['display']='none';}else{if(_0x3c1f23>0x0){const _0x37abef=Math['floor'](_0x3c1f23/(0x3e8*0x3c*0x3c*0x18)),_0x163480=Math[_0x3d4226(0xbb)](_0x3c1f23%(0x3e8*0x3c*0x3c*0x18)/(0x3e8*0x3c*0x3c)),_0x1a6416=Math['floor'](_0x3c1f23%(0x3e8*0x3c*0x3c)/(0x3e8*0x3c)),_0x13a4cd=Math[_0x3d4226(0xbb)](_0x3c1f23%(0x3e8*0x3c)/0x3e8);_0x37abef>=0x1?_0x2cdf5c[_0x3d4226(0xad)]=_0x37abef+'\x20Hari\x20Lagi':_0x2cdf5c['textContent']=_0x163480+'j\x20'+_0x1a6416+'m\x20'+_0x13a4cd+'d';if(_0x3c1f23<=0x5*0x3c*0x3c*0x3e8){if(_0x328c70)_0x328c70[_0x3d4226(0xbc)][_0x3d4226(0xc2)]=_0x3d4226(0x89);}else{if(_0x328c70)_0x328c70['style'][_0x3d4226(0xc2)]=_0x3d4226(0x97);}}}}});}function renderPertandingan(_0x28366e){const _0x2c0222=_0x3aaed0,_0x4c594d=document['getElementById']('jadwal-container');_0x4c594d[_0x2c0222(0x8a)]='';const _0x1379be=_0x28366e['filter'](_0x8f2d7e=>_0x8f2d7e['Tanggal'])[_0x2c0222(0x82)](_0x2e8ef7=>{const _0x5ba7e6=_0x2c0222;let _0x2075f1='';if(_0x2e8ef7[_0x5ba7e6(0xb5)]instanceof Date){const _0xf32d50=_0x2e8ef7[_0x5ba7e6(0xb5)][_0x5ba7e6(0x93)]()[_0x5ba7e6(0xbe)]()['padStart'](0x2,'0'),_0x41c942=_0x2e8ef7[_0x5ba7e6(0xb5)][_0x5ba7e6(0x80)]()[_0x5ba7e6(0xbe)]()[_0x5ba7e6(0x91)](0x2,'0');_0x2075f1=_0xf32d50+':'+_0x41c942;}else{if(typeof _0x2e8ef7[_0x5ba7e6(0xb5)]===_0x5ba7e6(0xa1)){_0x2075f1=_0x2e8ef7[_0x5ba7e6(0xb5)][_0x5ba7e6(0x9a)]()[_0x5ba7e6(0x91)](0x5,'0');if(!_0x2075f1[_0x5ba7e6(0x8b)](':'))_0x2075f1+=':00';}else _0x2075f1='00:00';}const _0x500ba0=(_0x2e8ef7['Tanggal']||'')['trim'](),_0x17e97a=new Date(_0x500ba0+'T'+_0x2075f1+_0x5ba7e6(0x8f));return{..._0x2e8ef7,'datetime':_0x17e97a,'Jam':_0x2075f1};})[_0x2c0222(0x99)]((_0x1af66b,_0x172277)=>_0x1af66b[_0x2c0222(0xaa)]-_0x172277[_0x2c0222(0xaa)]),_0x35e60b={};_0x1379be[_0x2c0222(0xc3)](_0x5707a0=>{const _0xbea350=_0x5707a0['Liga']||'LIGA';if(!_0x35e60b[_0xbea350])_0x35e60b[_0xbea350]=[];_0x35e60b[_0xbea350]['push'](_0x5707a0);}),Object['keys'](_0x35e60b)[_0x2c0222(0xc3)](_0x3c4ce9=>{const _0x2a05f6=_0x35e60b[_0x3c4ce9];_0x2a05f6['forEach'](_0x55b97f=>{const _0xc3ab6e=_0x1941,_0x21c0bf=_0x55b97f[_0xc3ab6e(0x9d)]+'T'+_0x55b97f[_0xc3ab6e(0xb5)]+_0xc3ab6e(0x8f),_0x1ade96=new Date(_0x21c0bf),_0x4159c6=_0x1ade96[_0xc3ab6e(0x95)]('id-ID',{'weekday':_0xc3ab6e(0xb6)}),_0x1d6440=_0x1ade96[_0xc3ab6e(0x95)](_0xc3ab6e(0x84),{'day':'numeric','month':_0xc3ab6e(0xb6),'year':'numeric'}),_0x3873ee=_0x1ade96['toLocaleTimeString']('id-ID',{'hour':_0xc3ab6e(0xaf),'minute':_0xc3ab6e(0xaf)}),_0xf227b4=(_0x55b97f[_0xc3ab6e(0x9b)]||'')[_0xc3ab6e(0x9a)](),_0x436a1d=(_0x55b97f[_0xc3ab6e(0xa2)]||'')[_0xc3ab6e(0xae)](',')[_0xc3ab6e(0x82)](_0x6ca396=>{const _0x489c73=_0xc3ab6e,_0x803aef=_0x6ca396[_0x489c73(0x9f)](/(.+?)\s*\(([^)]+)\)/);if(_0x803aef){const _0x4df431=_0x803aef[0x1][_0x489c73(0x9a)]();let _0x4fa4a4=_0x803aef[0x2][_0x489c73(0x9a)]();if(_0x4fa4a4[_0x489c73(0xb3)]('#')){const _0x589a0b=_0x4fa4a4[_0x489c73(0xba)](0x1);_0x4fa4a4=_0x489c73(0xc0)+playerHost+'/#'+_0x589a0b;}return'<a\x20href=\x22'+_0x4fa4a4+_0x489c73(0xb2)+_0x4df431+'</a>';}return'';})['join'](''),_0x28d56a=_0xc3ab6e(0x81)+_0x21c0bf+_0xc3ab6e(0xa4)+_0xf227b4+_0xc3ab6e(0x8c)+(_0x55b97f[_0xc3ab6e(0x90)]||_0xc3ab6e(0x83))+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22tim-container\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22tim\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22'+(_0x55b97f[_0xc3ab6e(0xa0)]||'')+'\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>'+(_0x55b97f[_0xc3ab6e(0x96)]||'-')+_0xc3ab6e(0x9e)+_0x4159c6+',\x20'+_0x1d6440+'</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22jam\x22>'+_0x3873ee+_0xc3ab6e(0xa9)+(_0x55b97f[_0xc3ab6e(0xb0)]||'')+_0xc3ab6e(0x98)+(_0x55b97f['Tim\x202']||'-')+_0xc3ab6e(0xac)+_0x436a1d+_0xc3ab6e(0x88);_0x4c594d[_0xc3ab6e(0xa5)](_0xc3ab6e(0x7b),_0x28d56a);});}),updateStatus();}Papa[_0x3aaed0(0xb8)](SHEET_URL,{'download':!![],'header':!![],'complete':function(_0x3d3a16){const _0x441a3a=_0x3aaed0;renderPertandingan(_0x3d3a16[_0x441a3a(0x92)]);}}),setInterval(updateStatus,0x3e8);
 </script>
 
 
