@@ -227,7 +227,10 @@
     "fox2": "https://labolatv.pages.dev/player3?data=U2FsdGVkX1%2BdB%2FG3w3%2BB4CGcGW5r9Ufk%2FoZDtRAJCKxO4NNqtTD98Qn%2B7Urdh0AX%2F49xceeTn%2FmC3r6yyGXs%2FZyEq4MycMnC%2B2iRPKo7DxI%3D",
     "fox3": "https://labolatv.pages.dev/player3?data=U2FsdGVkX19TFMYZQ7%2FQ8Fst5J9AIJNC%2B5krgXZCdgj0Od%2FDV8dYbaHvwvNE2GVP0d%2Fo0NVwYgA3%2Fo%2FuybEwp2QuZ2zP4VIyV8IglizB1Ns%3D",
     "hrt2": "https://labolatv.pages.dev/player3?data=U2FsdGVkX1%2FU9B%2FCOHob%2BEWyNrR6Fsx%2F%2FhhX18%2FPLNal9vQNRVrMjcCJDlVklD9N9ZqxlB0hlu5HX0MCltX17PSNM%2F6A7OtGRyOTT8mIUlk%3D",
-    "espn1ned": "https://labolatv.pages.dev/player3?data=U2FsdGVkX1%2B%2FbPgGrSXt2ta%2B3NvU5j8xnBbVj5RhX5%2FzfOy9FA5Oou3qm5gTl0mrMesfMOSBTGxirsh5Irxu6dOgRC%2BZyDbqE%2B6Nn01O%2BKQ%3D"
+    "espn1ned": "https://labolatv.pages.dev/player3?data=U2FsdGVkX1%2B%2FbPgGrSXt2ta%2B3NvU5j8xnBbVj5RhX5%2FzfOy9FA5Oou3qm5gTl0mrMesfMOSBTGxirsh5Irxu6dOgRC%2BZyDbqE%2B6Nn01O%2BKQ%3D",
+
+    // KL
+    "kl1": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX19hfougGLKVklwrY%2BDVKXGQ7Y%2F3R5onmu412L6TPOd5cD1JWeBNZHM3LXsThhXbPkcM5YHc6qQ6uqulVWtGZIJavW8J92ZBbfZyDqMvoaW2SyveE4liC864o%2BL8Hv%2FVGzVwjT5v%2FNrBs19Kn6kiVmEk5f6pLMsoYCvtA53wOB2WnC7dR%2FBOg1An"
   };
 
   document.addEventListener("DOMContentLoaded", function () {
