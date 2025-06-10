@@ -230,7 +230,10 @@
     "espn1ned": "https://labolatv.pages.dev/player3?data=U2FsdGVkX1%2B%2FbPgGrSXt2ta%2B3NvU5j8xnBbVj5RhX5%2FzfOy9FA5Oou3qm5gTl0mrMesfMOSBTGxirsh5Irxu6dOgRC%2BZyDbqE%2B6Nn01O%2BKQ%3D",
 
     // KL
-    "kl1": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX19hfougGLKVklwrY%2BDVKXGQ7Y%2F3R5onmu412L6TPOd5cD1JWeBNZHM3LXsThhXbPkcM5YHc6qQ6uqulVWtGZIJavW8J92ZBbfZyDqMvoaW2SyveE4liC864o%2BL8Hv%2FVGzVwjT5v%2FNrBs19Kn6kiVmEk5f6pLMsoYCvtA53wOB2WnC7dR%2FBOg1An"
+    "kl1": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX19hfougGLKVklwrY%2BDVKXGQ7Y%2F3R5onmu412L6TPOd5cD1JWeBNZHM3LXsThhXbPkcM5YHc6qQ6uqulVWtGZIJavW8J92ZBbfZyDqMvoaW2SyveE4liC864o%2BL8Hv%2FVGzVwjT5v%2FNrBs19Kn6kiVmEk5f6pLMsoYCvtA53wOB2WnC7dR%2FBOg1An",
+
+    // MNCSPRT
+    "msport": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2BtzxsJs4JLoVYqw1oVCNDBPYNVKpeRhro9KPZyGCNc8nhrRn5ghQcEM3nFGQAIwUmkLaEwve6UtCEqMr%2F9TwOqZv1bVOyQkqYu40%2BSUM1ktxIcVHcdXdlpmmoFgZIHPK8WZX2sUZSeOAcCopAMV%2BT4tihp1JejUdFroAiirhV6WvY6XqwVUhcElFGC680AuCn0d42EC5GsyinlaO0btaLoCb3cUvotofEd7IJ81mtejRP1WttghcfvXqW5UgewJaxba0j09C6zYw%3D%3D"
   };
 
   document.addEventListener("DOMContentLoaded", function () {
