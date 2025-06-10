@@ -238,7 +238,7 @@
     "msport2": "https://streaming.sportsnews.id/p/mncsport2.html",
     "msport3": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2BeiGrIbTIbuqInHFKrC6Q%2BAcpEl11L6k1R9x7x6Z0UYtbE0ZsTsKrjrFNuhsYEno6JduKC%2Bmb%2BWd7XKafGfHqeSLGA4skPBmPS%2Fdf8MgWs7RZxKVTOca%2B5MNehw1m3%2FErKyRH4XmRZTYUVEJLcXJiCXo70jeSQT%2BkpRiYpUtDXj39npWgZBFPLqlf70vVQSHfSEl3q4K2gpSHgxhzZ8UiDBCBum8GFi0NFw2W%2BGm0Yj9AXgQaFqszT",
     "msport4": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2FSxf5tOdWTr84f4n7jzDeLs8nuYduNXkJTSPzFGGLBiQZGGFughKHhwMNwl4cSPJmbqqIC8lxE0TJHXIWTAELbhKUMOex3qMqlGBwT5AMoTWR79vKI%2FU5TlWZ3m7nhViDjN8lcaGBzLAufPIlcqDFr9FumjlIT1mYCcxDlDcIPUzTzKGBggbyHpAdlFMpFQAycnU7rrT6DA7FN2B8CcDhtXy7gUNcXSKbxeOS4JZlAWEjSE7dyS65U",
-    "soccerhd": "https://streaming.sportsnews.id/p/soccerhd.html"
+    "soccerhd": "https://live.jettv.biz.id/p/ch36.html"
   };
 
   document.addEventListener("DOMContentLoaded", function () {
