@@ -234,8 +234,10 @@
     "kl2": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX1%2BYTe%2BZO1eH78tOJuiEYZRh9EvTWBsBh5E0N1K%2Fen7s45PKt9go0cIuwsoK9RzVeDQXwUIOFMTmNtkSRIQy0xska0YVEmASfkLxwkxwtorPDaLABaCrmbLVa%2BzKYUx5aaHpIWkan7Om%2F8M77ODqJniXQY7QkUZEZTY%3D",
 
     // MNCSPRT
-    "msport": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2BtzxsJs4JLoVYqw1oVCNDBPYNVKpeRhro9KPZyGCNc8nhrRn5ghQcEM3nFGQAIwUmkLaEwve6UtCEqMr%2F9TwOqZv1bVOyQkqYu40%2BSUM1ktxIcVHcdXdlpmmoFgZIHPK8WZX2sUZSeOAcCopAMV%2BT4tihp1JejUdFroAiirhV6WvY6XqwVUhcElFGC680AuCn0d42EC5GsyinlaO0btaLoCb3cUvotofEd7IJ81mtejRP1WttghcfvXqW5UgewJaxba0j09C6zYw%3D%3D",
-    "msport1": "https://streaming.sportsnews.id/p/mncsport2.html"
+    "msport1": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2Fdt6mR%2B66%2FQBdj6cvI4oeJgCJFsoWisQFMJNW%2F2qLPJlXRjq9CibOLsznoKJLsADnZGCoF7YxWVRoK2YZLBwkCtiLFlPGu5AKLkjYycTpQCeNeShx8qpOkCkDdvM4nsI4ct9ek2g6Pc7qNj%2BNYnl83Bf3mvu%2FxdNP7rDUGAKoabaMMKe7ML960vAzrsJ85ivZRBT%2F%2FKDVYPqai3zjiyqoWHVzVeeqTf3dwQULjXNXd12160pkPZR%2BNy29uZHoGfd%2BF79WzIWk5gQ%3D%3D",
+    "msport2": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2BimdZSvmnTtDSwaFSeR1QAdVlWwCi1ZSJOJVUxqGT2wO1O6TO14uR87irrYyUiOSsRuJ2x%2FPQg7hvBJZ8%2BguU%2BB065vmLCcNTtObSH6%2BUec7k%2FQuNWJn%2Bm9o25m6T%2FDJKlM%2F1nnjArl4KdrCyaboHUCCtPSJhx2ukOsTGsdcJPb7TVSpysTN31MhBQOBZ7EjFaBsEAIOsZ4X6rXsDv02iX75kbNMoVKxDTME9UfhOlZO%2B%2FI3pnQ8D5vVkVeTGSIfL4H16NyUXmuw%3D%3D",
+    "msport3": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2BeiGrIbTIbuqInHFKrC6Q%2BAcpEl11L6k1R9x7x6Z0UYtbE0ZsTsKrjrFNuhsYEno6JduKC%2Bmb%2BWd7XKafGfHqeSLGA4skPBmPS%2Fdf8MgWs7RZxKVTOca%2B5MNehw1m3%2FErKyRH4XmRZTYUVEJLcXJiCXo70jeSQT%2BkpRiYpUtDXj39npWgZBFPLqlf70vVQSHfSEl3q4K2gpSHgxhzZ8UiDBCBum8GFi0NFw2W%2BGm0Yj9AXgQaFqszT",
+    "msport4": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2FSxf5tOdWTr84f4n7jzDeLs8nuYduNXkJTSPzFGGLBiQZGGFughKHhwMNwl4cSPJmbqqIC8lxE0TJHXIWTAELbhKUMOex3qMqlGBwT5AMoTWR79vKI%2FU5TlWZ3m7nhViDjN8lcaGBzLAufPIlcqDFr9FumjlIT1mYCcxDlDcIPUzTzKGBggbyHpAdlFMpFQAycnU7rrT6DA7FN2B8CcDhtXy7gUNcXSKbxeOS4JZlAWEjSE7dyS65U"
   };
 
   document.addEventListener("DOMContentLoaded", function () {
