@@ -244,7 +244,8 @@
     //Piala Dunia Klub
     "fwcc1": "https://streaming.sportsnews.id/p/italia1.html",
     "fwcc2": "https://streaming.sportsnews.id/p/tudn-usa.html",
-    "fwcc3": "https://streaming.sportsnews.id/p/daznde2.html"
+    "fwcc3": "https://streaming.sportsnews.id/p/daznde2.html",
+    "fwcc4": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX18PG6h8ORxc%2BSwb9lBKavh9IieR2U4VIFDqzTzvM4yWCt%2BExk%2BYHajBD7SZtM3CrMErCiRZY00ygoWoVJYUlfnGMznrrcyqxVlA154zPasC9JIUQIPGipLkLAtSyIQkcTeF%2B5fvUKlHpsuDKfO24%2FM6J%2BBgpb3KUEA7j5gSJQ0eRkTRp%2FhGerDKWajjGZD5kvZ%2BR3P8H%2FKDc9dRGjBIFbqFXVxWvzd7N%2Bw9510friI94LUnMskgNiMoSUfgAjhD6ty70Qn5RGnsWA%3D%3D"
   };
 
   document.addEventListener("DOMContentLoaded", function () {
