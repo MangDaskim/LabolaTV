@@ -244,9 +244,9 @@
 
     //Piala Dunia Klub
     "fwcc1": "https://streaming.sportsnews.id/p/sky9.html",
-    "fwcc2": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX19n1%2Bo0MQR2DvNJM7PG3OqvIjZR5ZFnuIV%2FChm0UuQrk%2FDdWpOTkjOlLzeVv3wPZOMzvboxPv9md5x9tr0x7drAt5jWvYV%2BQMehX19WwVK41E5rv%2BoBYTWbb22J1WwCyqpNp73V1OV2p3sfql9uWiQ1aif1vehEqykVlWM0f1uws0%2B53Yj5nqHiqfUi8whDoL69y%2FtB5WPA7Gxc8z%2BnqUYLL7e9CFKDwdZ%2Bj4BxSI28PDWRJX5HyBYiWxXPjp%2B%2FkeERyaZzOTo87TcWBsTiwnN7ppzeiflN%2BP8x9m3bKtmxPXvNRjJVlSROoyFVd6Orx8%2FBUDW9dDLrZg%3D%3D",
-    "fwcc3": "https://streaming.sportsnews.id/p/daznde2.html",
-    "fwcc4": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX18PG6h8ORxc%2BSwb9lBKavh9IieR2U4VIFDqzTzvM4yWCt%2BExk%2BYHajBD7SZtM3CrMErCiRZY00ygoWoVJYUlfnGMznrrcyqxVlA154zPasC9JIUQIPGipLkLAtSyIQkcTeF%2B5fvUKlHpsuDKfO24%2FM6J%2BBgpb3KUEA7j5gSJQ0eRkTRp%2FhGerDKWajjGZD5kvZ%2BR3P8H%2FKDc9dRGjBIFbqFXVxWvzd7N%2Bw9510friI94LUnMskgNiMoSUfgAjhD6ty70Qn5RGnsWA%3D%3D"
+    "fwcc2": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2FlJRyAE24W2i0AqmTwf2z8wa7BO%2BiJK19IsUeqF5Vmx%2BNSeMLmofqR3I20NjQwPadevkS8RwBbD7hAR39%2FlYzThkzOTF%2BOrOReX0kaKICl%2B%2FxD4Vi0XoAEa3YqWBK%2Fuz%2BRpjQ6ubQr0i6QfJcUGwbCTljS2m4EX%2BYzPf%2BP1uVIddu1XbHDM3oFVFwEV4qtZ%2FAna720%2BMYmnjP%2BI7jT%2BJYVIXzyhwySTZ3yB1Mlq3ZGGqRT7ySJnoLkTfsVpNCz%2FTV8Ij4EID24UZ4FrNxYskUzSRwcmwd4s1td6oxJAJz9BAQCNRcRI2Ftve8s9JLWNdbVNmatJDen3w%3D%3D",
+    "fwcc3": "https://streaming.sportsnews.id/p/italia1.html",
+    "fwcc4": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2FdeWMu7rnar3EWLmXF43aYLN3bXe%2Fw3Zd1hWAWnMSMqneCggybL7y3JQEbU01UF%2B48ECIG03JU%2BEY1EpCpc6OgyNg0rwLVYQJxr%2BNuOMWMUbsYtRiNVbfyNlydgU2CNIm7MBrbTFo4JyjJVeQWsBZA1zM3jCtbMkLdTi%2F5%2BLEEIqSwNLNWkxDmS8CKTrKL1KsYIMpKerOvjceYsH8n9iRUmn1tDTi7qHYfaMQMRAPXiC5kDjJO1GBAbSnbfU5JcfnYEACm9tSaXg%3D%3D"
   };
 
   document.addEventListener("DOMContentLoaded", function () {
