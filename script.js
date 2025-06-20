@@ -243,8 +243,8 @@
     "soccerhd": "https://live.jettv.biz.id/p/ch36.html",
 
     //Piala Dunia Klub
-    "fwcc1": "https://streaming.sportsnews.id/p/italia1.html",
-    "fwcc2": "https://streaming.sportsnews.id/p/tudn-usa.html",
+    "fwcc1": "https://streaming.sportsnews.id/p/sky9.html",
+    "fwcc2": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX19n1%2Bo0MQR2DvNJM7PG3OqvIjZR5ZFnuIV%2FChm0UuQrk%2FDdWpOTkjOlLzeVv3wPZOMzvboxPv9md5x9tr0x7drAt5jWvYV%2BQMehX19WwVK41E5rv%2BoBYTWbb22J1WwCyqpNp73V1OV2p3sfql9uWiQ1aif1vehEqykVlWM0f1uws0%2B53Yj5nqHiqfUi8whDoL69y%2FtB5WPA7Gxc8z%2BnqUYLL7e9CFKDwdZ%2Bj4BxSI28PDWRJX5HyBYiWxXPjp%2B%2FkeERyaZzOTo87TcWBsTiwnN7ppzeiflN%2BP8x9m3bKtmxPXvNRjJVlSROoyFVd6Orx8%2FBUDW9dDLrZg%3D%3D",
     "fwcc3": "https://streaming.sportsnews.id/p/daznde2.html",
     "fwcc4": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX18PG6h8ORxc%2BSwb9lBKavh9IieR2U4VIFDqzTzvM4yWCt%2BExk%2BYHajBD7SZtM3CrMErCiRZY00ygoWoVJYUlfnGMznrrcyqxVlA154zPasC9JIUQIPGipLkLAtSyIQkcTeF%2B5fvUKlHpsuDKfO24%2FM6J%2BBgpb3KUEA7j5gSJQ0eRkTRp%2FhGerDKWajjGZD5kvZ%2BR3P8H%2FKDc9dRGjBIFbqFXVxWvzd7N%2Bw9510friI94LUnMskgNiMoSUfgAjhD6ty70Qn5RGnsWA%3D%3D"
   };
