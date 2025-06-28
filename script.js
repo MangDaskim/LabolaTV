@@ -248,7 +248,8 @@
     "fwcc3": "https://streaming.sportsnews.id/p/italia1.html",
     "fwcc4": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2FdeWMu7rnar3EWLmXF43aYLN3bXe%2Fw3Zd1hWAWnMSMqneCggybL7y3JQEbU01UF%2B48ECIG03JU%2BEY1EpCpc6OgyNg0rwLVYQJxr%2BNuOMWMUbsYtRiNVbfyNlydgU2CNIm7MBrbTFo4JyjJVeQWsBZA1zM3jCtbMkLdTi%2F5%2BLEEIqSwNLNWkxDmS8CKTrKL1KsYIMpKerOvjceYsH8n9iRUmn1tDTi7qHYfaMQMRAPXiC5kDjJO1GBAbSnbfU5JcfnYEACm9tSaXg%3D%3D",
     "fwcc5": "https://streaming.sportsnews.id/p/canale5.html",
-    "fwcc6": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2FM5mypbo4P1kPatYQ2OGTHdaNBFjShBQ%2BQ7kyrRtNiVaBHo3QjraTOqaqdw9sVJtRqRV8sJLeXfqkdyazscSRgOsM8xA%2Fnj097RV3TW44%2Boxoh1aop2QIN4RMqx%2BSGwmnREmf2kNDm5QRajVOZ7w6cmwnZrjvxaAvGrYT9cJJ34bx0TOnlbSPMw8ciIo7X57fjX2uvDFsY2jlRE3ZfIpOf8nD7hU%2Fwa7LunrYVBlE0BBVXUsmGg6H1dNnSGIVSAID9HSfsTAeG5w%3D%3D"
+    "fwcc6": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2FM5mypbo4P1kPatYQ2OGTHdaNBFjShBQ%2BQ7kyrRtNiVaBHo3QjraTOqaqdw9sVJtRqRV8sJLeXfqkdyazscSRgOsM8xA%2Fnj097RV3TW44%2Boxoh1aop2QIN4RMqx%2BSGwmnREmf2kNDm5QRajVOZ7w6cmwnZrjvxaAvGrYT9cJJ34bx0TOnlbSPMw8ciIo7X57fjX2uvDFsY2jlRE3ZfIpOf8nD7hU%2Fwa7LunrYVBlE0BBVXUsmGg6H1dNnSGIVSAID9HSfsTAeG5w%3D%3D",
+    "fwcc7": "https://streaming.sportsnews.id/p/sky2.html"
   };
 
   document.addEventListener("DOMContentLoaded", function () {
