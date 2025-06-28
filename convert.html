@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convert Dollar PayPal ke Rupiah | Cepat & Aman</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-sky-700 to-sky-900 text-white min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">Dollar2Rupiah</h1>
+    <a href="#order" class="bg-yellow-400 text-black px-4 py-2 rounded-lg font-semibold hover:bg-yellow-300">Order Sekarang</a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="flex flex-col md:flex-row items-center justify-center text-center md:text-left px-6 py-12 md:py-20">
+    <div class="md:w-1/2 mb-6 md:mb-0">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">Jasa Convert Dollar PayPal ke Rupiah</h2>
+      <p class="mb-6 text-lg">Proses cepat, aman, dan terpercaya. Cair ke rekening lokal dalam hitungan menit.</p>
+      <a href="#order" class="bg-yellow-400 text-black px-6 py-3 rounded-lg font-bold hover:bg-yellow-300">Mulai Convert Sekarang</a>
+    </div>
+    <div class="md:w-1/2">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="mx-auto w-60">
+    </div>
+  </section>
+
+  <!-- Info Rate & Kalkulator -->
+  <section class="bg-white text-black py-10 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+
+      <div class="max-w-3xl mx-auto text-center">
+      <h3 class="text-2xl font-bold mb-4">Kalkulator Transaksi</h3>
+      <p class="text-xl mb-6">Cek estimasi konversi atau pembelian saldo PayPal Anda.</p>
+      
+      <div class="flex justify-center mb-6">
+      <button id="tabJual" class="px-4 py-2 bg-sky-700 text-white rounded-l-lg font-semibold hover:bg-sky-800">Jual Dollar</button>
+      <button id="tabBeli" class="px-4 py-2 bg-sky-100 text-black font-semibold hover:bg-sky-200">Beli Dollar</button>
+      <button id="tabAdsterra" class="px-4 py-2 bg-sky-100 text-black rounded-r-lg font-semibold hover:bg-sky-200">Withdraw Adsterra</button>
+      </div>
+      
+      <!-- Tab Jual Dollar -->
+      <div id="jualSection" class="bg-sky-50 p-6 rounded-lg shadow">
+      <h4 class="text-lg font-semibold mb-4">Convert Dollar PayPal ke Rupiah</h4>
+      <p class="mb-4">Rate Hari Ini: <span id="rateJual" class="text-sky-700 font-bold text-lg"></span></p>
+      <input type="number" id="usd" placeholder="Jumlah Dollar" class="w-full mb-4 p-3 border rounded">
+      <button onclick="hitungRupiah()" class="bg-sky-700 text-white px-4 py-2 rounded hover:bg-sky-800">Hitung Rupiah</button>
+      <p id="hasil" class="mt-4 text-xl font-bold"></p>
+      <div id="linkWaContainer" class="mt-4"></div>
+      </div>
+      
+      <!-- Tab Beli Dollar -->
+      <div id="beliSection" class="bg-sky-50 p-6 rounded-lg shadow hidden">
+      <h4 class="text-lg font-semibold mb-4">Beli Saldo Dollar PayPal</h4>
+      <p class="mb-4">Rate Hari Ini: <span id="rateBeli" class="text-sky-700 font-bold text-lg"></span></p>
+      <input type="number" id="usdBeli" placeholder="Jumlah Dollar yang ingin dibeli" class="w-full mb-4 p-3 border rounded">
+      <button onclick="hitungBeli()" class="bg-sky-700 text-white px-4 py-2 rounded hover:bg-sky-800">Hitung Rupiah</button>
+      <p id="hasilBeli" class="mt-4 text-xl font-bold"></p>
+      <div id="linkWaBeliContainer" class="mt-4"></div>
+      </div>
+      
+      <!-- Tab Withdraw Adsterra -->
+      <div id="adsterraSection" class="bg-sky-50 p-6 rounded-lg shadow hidden">
+      <h4 class="text-lg font-semibold mb-4">Withdraw Saldo Adsterra ke Rupiah</h4>
+      <p class="mb-4">Rate Hari Ini: <span id="rateAdsterra" class="text-sky-700 font-bold text-lg"></span></p>
+      <input type="number" id="usdAdsterra" placeholder="Jumlah Dollar Adsterra" class="w-full mb-4 p-3 border rounded">
+      <button onclick="hitungAdsterra()" class="bg-sky-700 text-white px-4 py-2 rounded hover:bg-sky-800">Hitung Rupiah</button>
+      <p id="hasilAdsterra" class="mt-4 text-xl font-bold"></p>
+      <div id="linkWaAdsterraContainer" class="mt-4"></div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Keunggulan -->
+  <section class="py-12 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h3 class="text-2xl font-bold mb-6">Kenapa Pilih Kami?</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-sky-800 p-6 rounded-lg shadow-lg">
+          <h4 class="font-bold mb-2 text-lg">Proses Cepat</h4>
+          <p>Saldo langsung cair ke rekening lokal dalam hitungan menit.</p>
+        </div>
+        <div class="bg-sky-800 p-6 rounded-lg shadow-lg">
+          <h4 class="font-bold mb-2 text-lg">Aman & Terpercaya</h4>
+          <p>Transaksi dijamin aman. Banyak testimoni real dari pelanggan.</p>
+        </div>
+        <div class="bg-sky-800 p-6 rounded-lg shadow-lg">
+          <h4 class="font-bold mb-2 text-lg">Rate Kompetitif</h4>
+          <p>Dapatkan kurs Dollar terbaik setiap hari, tanpa potongan berlebihan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="order" class="py-12 bg-yellow-400 text-black text-center">
+    <h3 class="text-2xl font-bold mb-4">Siap Convert Dollar Anda?</h3>
+    <p class="mb-6">Klik tombol di bawah untuk langsung order via WhatsApp.</p>
+    <a href="https://wa.me/6281234567890" target="_blank" class="bg-black text-white px-6 py-3 rounded-lg font-bold hover:bg-gray-800">Chat Admin Sekarang</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="p-4 text-center text-sm bg-sky-950">
+    &copy; 2025 Dollar2Rupiah. All Rights Reserved.
+  </footer>
+
+<script>
+  // Tab Toggle
+  document.getElementById('tabJual').addEventListener('click', () => {
+  document.getElementById('jualSection').classList.remove('hidden');
+  document.getElementById('beliSection').classList.add('hidden');
+  document.getElementById('adsterraSection').classList.add('hidden');
+  
+  document.getElementById('tabJual').classList.replace('bg-sky-100', 'bg-sky-700');
+  document.getElementById('tabJual').classList.replace('text-black', 'text-white');
+  document.getElementById('tabBeli').classList.replace('bg-sky-700', 'bg-sky-100');
+  document.getElementById('tabBeli').classList.replace('text-white', 'text-black');
+  document.getElementById('tabAdsterra').classList.replace('bg-sky-700', 'bg-sky-100');
+  document.getElementById('tabAdsterra').classList.replace('text-white', 'text-black');
+  });
+  
+  document.getElementById('tabBeli').addEventListener('click', () => {
+  document.getElementById('jualSection').classList.add('hidden');
+  document.getElementById('beliSection').classList.remove('hidden');
+  document.getElementById('adsterraSection').classList.add('hidden');
+  
+  document.getElementById('tabBeli').classList.replace('bg-sky-100', 'bg-sky-700');
+  document.getElementById('tabBeli').classList.replace('text-black', 'text-white');
+  document.getElementById('tabJual').classList.replace('bg-sky-700', 'bg-sky-100');
+  document.getElementById('tabJual').classList.replace('text-white', 'text-black');
+  document.getElementById('tabAdsterra').classList.replace('bg-sky-700', 'bg-sky-100');
+  document.getElementById('tabAdsterra').classList.replace('text-white', 'text-black');
+  });
+  
+  document.getElementById('tabAdsterra').addEventListener('click', () => {
+  document.getElementById('jualSection').classList.add('hidden');
+  document.getElementById('beliSection').classList.add('hidden');
+  document.getElementById('adsterraSection').classList.remove('hidden');
+  
+  document.getElementById('tabAdsterra').classList.replace('bg-sky-100', 'bg-sky-700');
+  document.getElementById('tabAdsterra').classList.replace('text-black', 'text-white');
+  document.getElementById('tabBeli').classList.replace('bg-sky-700', 'bg-sky-100');
+  document.getElementById('tabBeli').classList.replace('text-white', 'text-black');
+  document.getElementById('tabJual').classList.replace('bg-sky-700', 'bg-sky-100');
+  document.getElementById('tabJual').classList.replace('text-white', 'text-black');
+  });
+  
+  // Setting Rate
+  const rateJualDollar = 14800;
+  const rateBeliDollar = 17500;
+  const rateAdsterra = 14000;
+  
+  // Tampilkan Rate ke Masing-masing Tab
+  document.getElementById('rateJual').innerText = `Rp ${rateJualDollar.toLocaleString('id-ID')}`;
+  document.getElementById('rateBeli').innerText = `Rp ${rateBeliDollar.toLocaleString('id-ID')} / USD`;
+  document.getElementById('rateAdsterra').innerText = `Rp ${rateAdsterra.toLocaleString('id-ID')}`;
+  
+  // Kalkulator Jual
+  function hitungRupiah() {
+  const usd = document.getElementById('usd').value;
+  const hasil = document.getElementById('hasil');
+  const linkWaContainer = document.getElementById('linkWaContainer');
+  
+  if (usd && usd > 0) {
+  const rupiah = usd * rateJualDollar;
+  hasil.innerText = `≈ Rp ${rupiah.toLocaleString('id-ID')}`;
+  const pesan = `Halo Admin, saya ingin convert $${usd} menjadi Rp ${rupiah.toLocaleString('id-ID')}`;
+  const link = `https://wa.me/6281234567890?text=${encodeURIComponent(pesan)}`;
+  linkWaContainer.innerHTML = `<a href="${link}" target="_blank" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Order via WhatsApp</a>`;
+  } else {
+  hasil.innerText = 'Masukkan jumlah dollar dengan benar.';
+  linkWaContainer.innerHTML = '';
+  }
+  }
+  
+  // Kalkulator Beli
+  function hitungBeli() {
+  const usd = document.getElementById('usdBeli').value;
+  const hasilBeli = document.getElementById('hasilBeli');
+  const linkWaBeliContainer = document.getElementById('linkWaBeliContainer');
+  
+  if (usd && usd > 0) {
+  const rupiah = usd * rateBeliDollar;
+  hasilBeli.innerText = `Total Bayar ≈ Rp ${rupiah.toLocaleString('id-ID')}`;
+  
+  const pesan = `Halo Admin, saya ingin beli saldo PayPal sebesar $${usd} dan siap transfer Rp ${rupiah.toLocaleString('id-ID')}`;
+  const link = `https://wa.me/6281234567890?text=${encodeURIComponent(pesan)}`;
+  
+  linkWaBeliContainer.innerHTML = `
+  <a href="${link}" target="_blank" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+  Order via WhatsApp
+  </a>
+  `;
+  } else {
+  hasilBeli.innerText = 'Masukkan jumlah dollar dengan benar.';
+  linkWaBeliContainer.innerHTML = '';
+  }
+  }
+  
+  // Kalkulator Adsterra
+  function hitungAdsterra() {
+  const usd = document.getElementById('usdAdsterra').value;
+  const hasilAdsterra = document.getElementById('hasilAdsterra');
+  const linkWaAdsterraContainer = document.getElementById('linkWaAdsterraContainer');
+  
+  if (usd && usd > 0) {
+  const rupiah = usd * rateAdsterra;
+  hasilAdsterra.innerText = `≈ Rp ${rupiah.toLocaleString('id-ID')}`;
+  const pesan = `Halo Admin, saya ingin withdraw saldo Adsterra sebesar $${usd} menjadi Rp ${rupiah.toLocaleString('id-ID')}`;
+  const link = `https://wa.me/6281234567890?text=${encodeURIComponent(pesan)}`;
+  linkWaAdsterraContainer.innerHTML = `<a href="${link}" target="_blank" class="mt-4 inline-block bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Order via WhatsApp</a>`;
+  } else {
+  hasilAdsterra.innerText = 'Masukkan jumlah dollar dengan benar.';
+  linkWaAdsterraContainer.innerHTML = '';
+  }
+  }
+  </script>
+
+</body>
+</html>
