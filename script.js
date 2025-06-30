@@ -251,7 +251,8 @@
     "fwcc6": "https://labolatv.pages.dev/player.html?data=U2FsdGVkX1%2FM5mypbo4P1kPatYQ2OGTHdaNBFjShBQ%2BQ7kyrRtNiVaBHo3QjraTOqaqdw9sVJtRqRV8sJLeXfqkdyazscSRgOsM8xA%2Fnj097RV3TW44%2Boxoh1aop2QIN4RMqx%2BSGwmnREmf2kNDm5QRajVOZ7w6cmwnZrjvxaAvGrYT9cJJ34bx0TOnlbSPMw8ciIo7X57fjX2uvDFsY2jlRE3ZfIpOf8nD7hU%2Fwa7LunrYVBlE0BBVXUsmGg6H1dNnSGIVSAID9HSfsTAeG5w%3D%3D",
     "fwcc7": "https://streaming.sportsnews.id/p/sky2.html",
     "fwcc8": "https://streaming.sportsnews.id/p/mbca.html",
-    "fwcc9": "https://streaming.sportsnews.id/p/mbc2.html"
+    "fwcc9": "https://streaming.sportsnews.id/p/mbc2.html",
+    "fwcc10": "https://streaming.sportsnews.id/p/ch11.html"
   };
 
   document.addEventListener("DOMContentLoaded", function () {
