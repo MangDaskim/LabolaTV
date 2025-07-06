@@ -170,7 +170,7 @@
     "b3": "https://indo-sporttv79.blogspot.com/2025/07/persib-bandung-vs-port-fc-1.html",
     "b4": "https://indo-sporttv79.blogspot.com/2025/07/persib-bandung-vs-port-fc-2.html",
     "b5": "https://ee.cakeo3.online/truc-tiep/persib-bandung-vs-port-fc-6wvklw0y5i-rid-jxydn03dr2",
-    "b6": "https://idn165.marza6.shop/football/2804676-persib-bandung-vs-port-fc.html",
+    "b6": "https://m.jalafi804.cc/player?matchType=1&id=4358533&liveType=2",
     "b7": "https://idn165.marza6.shop/football/2804676-oxford-united-vs-indonesia-super-league-all-star.html",
 
     // RANDOM RM
