@@ -165,11 +165,13 @@
     "a17": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX19RTUK5US%2BbBbC%2B8nnRMW0O9IxBL0%2FQNjiFjqpgjEXFwFgfip0PxYOvSCyFOT87dIEzugNRmzeRM0xhR2oF%2B4GlYRS7nr3V0vksHglMY1qjapyrRxZvpy3h8tN0P8uqC7O2Xpf1M%2FG5sMUMCtW2b%2FU64BNGsBBA%2FrEIn1SomUUmSfKw%2Fz7SDp2Lb%2FQQRSZ3qThi0UrAxSSb8k2OI51sUmtPsCBrP5Sy%2BBm%2FDH7fODAim49sOjaT%2FbpKtrCdA%2Fu%2B7DIsVgB9t%2BPS1rXtjg2DMZYyBWjZRyddB80NQ8%2FYsP%2FjPw4FnSj%2Fe%2BolIUZHDJhuo%2BIY0Y5rms7tfDcEwYW%2Fw0s1pwKAFQva%2F662eZ1NtTM4qKuXkbO%2F0HeYkEcIz1ENYK6TNs5kQBCOXxxcJ1SNow%2FGLTIWFLfQR0Cz1HdKZbmtYhtDfUb0yP75Ttzc0g5RjD0W0Dq8fV4%2Bh3ZIzSqAS7AGVTaUcJRa1PkD9mwmXKFjQRjCmJJA9DwC9fmsBfBMNk0QA44PejO1Zcj%2Fj9JgDe76IiboBpFdwQOOEFZ4dOX9eQIDDZGie4x3N4rkAC3VMpoEA8qyhXHSXQ%3D%3D",
 
     // RANDOM B
-    "b1": "https://play.176.tv/?sfk=PhnGKMTdjxdc2ZHUyMWJBV1QxL09lcHBFbFp6MklyeTczcWVlQUx0Rm1KWFJ5ZUxKM2swZGlQNzdnQWhuRjJlb1RZUG4wcHJIVFA3WnJDczZEK29rYVc1dHFZMkFMT0tZWFB4bWlTWmE0dDNJTFhXZ0trbUlwei9zcGpDeXZsaFU3amxIdW5FS1Z1V2E3cXFsY2s0VmorK0hFQ2p4SHpNT1ZnWFZ4UlVZT0U5Ym9tbWs1b3hBeEZUcVZLRjgrWlNEbjc1TnU0UnBFRGo3OUdrUDhMakpzSDBKRWNFMVFrVFFzbWp2Mmo4RHJFdE0zT2swRnRFM21sK0ZxR1pQVGxuTkxoQjZVZEthSWVhcnkwrTmEkbaH&frm=1&wf=e21f2ecdfac2c114a5f370a48bab56f5547621&yr=1&bn=U0flmAyF5gAOq0ytf2AkNVQ5MDDwKO",
-    "b2": "https://play.956001.tv/?sfk=fmwkBOGIyyaZCY2RsK0VlMW9lbEx1ekUvYTR0ZHJIQUo5alVoTWpoaHZ3RzZVSjIwbXNsMUNDLy9UakJZczZFQnRDWmRCak44S2JWREk4eEtKY0lJM1c1dndUa2oydzdtNDVPVUxRMkpTOVJiRDF1TE50eDEvTlBQOGpPOXF5Rmtyc0NES0JYUEpLT1VYdUFCNUlNQVJDSjZZN2h6aml1U2xQMkF6V0h2aGJ6d0FJaGpKY2pjTnl4ZWU5UlZCSXFVbTdtTWpySG1GWUoyZjB6VncyNCtYUjFqVlBiMXpWK2w4MEh3RmVrWjljMVRoRmQ1SjJoa2Evd1hZZk14WmtHR2pnSEJUNCtXVzI%3DKkD523Sn&frm=1&wf=a6948238f94a8467119f4dd59b553592297381&yr=1&bn=t0Rrm2xFtVA3H02Dfs0kveQAPDuMKq",
-    "b3": "https://play.176.tv/?sfk=FAnjNYmJmQCZxY3VZWmVOZTNmdkNVakRaY0xnSWxLWERvOURLZDAyWnNWUUkyQ3JsSVpqMktXazN0VHdQQTlDbWF1dEJ1ZVloMzF0VFFob21WelBqdWUrbWZEMHB3QWw2QmN1Q1k1MDVJSFNxRTRFS3ZSd01oNFNJSEFGcWRGcDRrT0kxVXMvQmpqK0FPOTh2MzRiV0RadTBmazFaTHpUV2J3N0RzcWJ4eVp5ZGxYUGFYempNbitVeUdPVnRGK1FpT0Yrb0p2ZFNpUG9zNUR4OUN2QjF4YWFZQ1NmdkJSSkcwWFVHaEFrUlpIcnJQaS9pV2RXdlp4SE83T0I5TjlaOFh0Y2c%3DT2Xk6cCR&frm=1&wf=7069d60c78b59b1769e42ea96a69650e406692&yr=1&bn=U0OImxEF5dAla01LfQCkH9QXqDQJKY",
-    "b4": "https://play.176001.tv/?sfk=aR8PxOTYzsDdGMmQybTBabUFUWXlKTGZTSHNkQ2xoVGJ0djRTSkp1bExWQTNQa0FrZ0M1Q0FuMzd6OUJnY3p0VFdrR01lcDM0ZSsxa084dVppQjVFY201azd0Mk8wcy9OQyttZ2o3K05EMXhmQ0lqU0hBcmF4UVJObDE2b3RadkhGU3NNUjBOdGNwZHcxNTlkaFF0QUxRcUwrdmgvNGlpdVRjcWxEVEN2SDAwUmxpY1NxWXp5c0xEZ2c0VHkyQVY2VVdPQ2h3VlZsV2cremV0SFVXbTlvQWlMRDZXTzUxcERKS0IwOEVpaE1Mbjg4WldnR0tETHlOSkM0UnROYXJXOGhwOG5UemErM3Vwdw%3D%3DTkRy3Jy8&frm=1&wf=8af27f5c9d53821fad2a724d864ce6a3994489&yr=1&bn=U0Zhm8KFfAApK0qNfLZkcDQbBDQMKf",
-    "b5": "https://playerhls.com/tv/video-player.php?url=https://hipaf6u2j3pwygg.nice-flower.store/v3/director/VE1MTgwODFiMzBlYjNjLTcyMzktZTUwNC0wOWRkLTY3NzE3NWUy/master.m3u8?auth_key=1748515161-9c0a6a46c38c12e4a2d7a06272a6e319-00000000000000000000000000000000-9cafaed797546272befd3277ff242465",
+    "b1": "https://indo-sporttv79.blogspot.com/2025/07/oxford-united-vs-indonesia-all-star-1.htm",
+    "b2": "https://indo-sporttv79.blogspot.com/2025/07/oxford-united-vs-indonesia-all-star-2.html",
+    "b3": "https://indo-sporttv79.blogspot.com/2025/07/persib-bandung-vs-port-fc-1.html",
+    "b4": "https://indo-sporttv79.blogspot.com/2025/07/persib-bandung-vs-port-fc-2.html",
+    "b5": "https://ee.cakeo3.online/truc-tiep/persib-bandung-vs-port-fc-6wvklw0y5i-rid-jxydn03dr2",
+    "b6": "https://idn165.marza6.shop/football/2804676-persib-bandung-vs-port-fc.html",
+    "b7": "https://idn165.marza6.shop/football/2804676-oxford-united-vs-indonesia-super-league-all-star.html",
 
     // RANDOM RM
     "rm1": "https://streaming.sportsnews.id/p/ch1.html",
