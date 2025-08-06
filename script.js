@@ -214,7 +214,7 @@
     "sscn": "https://streaming.sportsnews.id/p/sscn.html",
 
     // varzhes
-    "varzhes": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX19grGHwPVfYh92Zj1VBsSIcegFNflNuv%2Bs0HbTMsQ%2FfiPJeK5A4tid9t%2B%2Fdbem3gNtJbx%2Bvda5H4sD6%2Fby8YnYZ%2FsFqiueX3YXKvGSmBTvJ%2BnTJXzudvVvq",
+    "varzhes": "https://streaming.sportsnews.id/p/varzhes.html",
 
     // MUTV
     "mutv": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX1%2FO3fPeOyS4FLcAw1heN3S%2BwkPffzh%2FlNY7VuejY79tCcF0QROreig1gaQ3TK42UyFVm2HG6%2FsYh%2BTQxXrlC4r7EGyDUMdWzsfqLFlcxw7P8FFlAyDQIwzx2XXt1A96%2FzKHdQ0ZQPgrv28%2Byky1wKc7x8bOGw2vmC6T7DpwWttlU47z2VU%2BVfTnB2HwVlzFAH2XJawFuI3UXQ%3D%3D",
