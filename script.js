@@ -48,7 +48,8 @@
     "true2pl": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX1%2Bp7V1R1u9C%2BzCCgwa3%2FdRTWSGmMnRjlK6Pq%2F3t4udMBHwEaXaZN0PtAnbiZ%2B1GH8yp5elTQHHItIilJTr8zDjagWpUfGGN0KVjHjXB4VD8xGOMJrSETmqAhj4xkuYxm%2FrEyyHEwugKEw%3D%3D",
     "tsn3": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX198sBOPbywBc%2F3nJiWy70HGN%2BrVLNSJkfqFVVprVQWPBeglvfdvPMS0xm5k3QgwAR3FeDlVpOiZH3qnwCFSQkG%2BdjJHYGXdwt4Wfph%2FdyaZf6N2xXe1DtMh",
     "premier1": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX18otpeicawhmfFtKM0N8%2BYazNq%2BUyaY3D11BgIibjbvgnBXUE%2BbKBzlvddF%2BEthx8BD7xDwyirXen8NeyiVYxLynC4%2B5ZhnrSYHSJBWzw37D8oFNkleTxALCfxS8KFrmxEHQHC0AR05XuJMVEE2877BsfxgGBZn1EVQrr5wnfKUKFp9vY8DZPjtkenABcvUuAS%2BM14i5ktiU5EXKN0lvWFqA%2FNoO7KBKDh2oP1HWRu%2BVE%2B4XFeoLsDNRwN8iSYtopeIEV7f6c%2FbBLRjO%2F7hNa5W%2FmKc0UNfvH0%3D",
-    "premier2": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX1%2BYeTdOrqGKKTkfe8XyeehhAEdbbMbJOQiB92jUkbUzjKUsWY51b7vUke33kJbKNxWK3ADl4uUG69Ds%2BcipdxSIjFuER4odMKeGRlVc2555Inf5EE82YrYVNwdn7tz1YqMKuXRqOwxoxg%3D%3D",
+    "premier2": "https://streaming.sportsnews.id/p/premier2.html",
+    "tv4l4": "https://streaming.sportsnews.id/p/tv4l4.html",
 
     // SKY SPORTS
     "skyfbl": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX1%2Bcoc4Dz6KlP%2BCSUuXGAZbeSNTHiPszpYv8E%2B1p4i491lLaDSdhhRUzNAWKFIpwZyY4xJQiq7SwU%2BXy5RT3mciIGlJR1CtBMc5QEYwqAVz%2F3r7ZYKwyppNP3w76i1PmOC6zz2GqY4VqfQKECj6NTGgZV1n4HLl9qjB1xqm17fHv4Ykz3TCG0cDJ",
