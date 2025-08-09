@@ -219,7 +219,7 @@
     "varzhes": "https://streaming.sportsnews.id/p/varzhes.html",
 
     // MUTV
-    "mutv": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX1%2FO3fPeOyS4FLcAw1heN3S%2BwkPffzh%2FlNY7VuejY79tCcF0QROreig1gaQ3TK42UyFVm2HG6%2FsYh%2BTQxXrlC4r7EGyDUMdWzsfqLFlcxw7P8FFlAyDQIwzx2XXt1A96%2FzKHdQ0ZQPgrv28%2Byky1wKc7x8bOGw2vmC6T7DpwWttlU47z2VU%2BVfTnB2HwVlzFAH2XJawFuI3UXQ%3D%3D",
+    "mutv": "https://streaming.sportsnews.id/p/mutv.html",
 
     // Persiana
     "persiana1": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX18XyxrvhOwToWTCE4jLIm0GL817eyO0u%2B0J%2BFlSKdS6Di5ijEpoj2Zq1I09lhgKA4RJA8eUpcc20TrZTlGCKRu8eAFlRF%2BBYMo%3D",
