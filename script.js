@@ -197,6 +197,7 @@
     "rm19": "https://streaming.sportsnews.id/p/ch19.html",
     "rm20": "https://streaming.sportsnews.id/p/ch20.html",
     "rmpremier1": "https://zeeplayer2.pages.dev/premier1a.html",
+    "universo": "https://streaming.sportsnews.id/p/universo.html",
 
     // KILAT SPORT
     "premiersport1": "https://labolatv.pages.dev/player2.html?data=U2FsdGVkX1%2BlDXVtrnRE7wcgcfL%2FK6WHhD3HBrezkeJFoaTuvgR1%2B21b4ti%2BKtxZQi%2B65Rkwmm14XrWKZzN4rGJPo2l7UTbMAH%2FWA%2FSbv0sIXy8KaOcw32z8hnBmelYnco%2FUh7vhsM%2FK4pLgiS5b9VR89HWd4Uzps25CTNu1Opq6I9sPMgkgXSugn4115vq2",
