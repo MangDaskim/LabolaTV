@@ -258,7 +258,8 @@
     "fwcc7": "https://streaming.sportsnews.id/p/sky2.html",
     "fwcc8": "https://streaming.sportsnews.id/p/mbca.html",
     "fwcc9": "https://streaming.sportsnews.id/p/mbc2.html",
-    "fwcc10": "https://streaming.sportsnews.id/p/ch11.html"
+    "fwcc10": "https://streaming.sportsnews.id/p/ch11.html",
+    "persib": "https://embed-10-08-12-51.linkzhe.eu.org/embed?sportId=1&matchId=3579988"
   };
 
   document.addEventListener("DOMContentLoaded", function () {
